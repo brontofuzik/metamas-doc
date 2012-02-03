@@ -1,0 +1,22 @@
+\select@language {slovak}
+\select@language {english}
+\select@language {slovak}
+\select@language {english}
+\contentsline {chapter}{Introduction}{1}
+\contentsline {chapter}{\numberline {1}Autonomous Agents and Multiagent Systems}{2}
+\contentsline {section}{\numberline {1.1}Autonomous Agents}{2}
+\contentsline {section}{\numberline {1.2}Multiagent Systems}{2}
+\contentsline {chapter}{\numberline {2}Problem Solving using Organizations}{3}
+\contentsline {chapter}{\numberline {3}Poor Model Problem and its Solutions}{4}
+\contentsline {chapter}{\numberline {4}Modelling Organizations -- Platform-Independent Model}{5}
+\contentsline {chapter}{\numberline {5}Modelling Organizations -- Platform-Dependent Model}{6}
+\contentsline {chapter}{\numberline {6}Examples}{7}
+\contentsline {section}{\numberline {6.1}Example 1: Function Invocations}{7}
+\contentsline {section}{\numberline {6.2}Example 2: Expression Evaluation}{7}
+\contentsline {section}{\numberline {6.3}Example 3: Auction}{7}
+\contentsline {chapter}{Conclusion}{8}
+\contentsline {chapter}{Bibliography}{9}
+\contentsline {chapter}{List of Tables}{10}
+\contentsline {chapter}{List of Abbreviations}{11}
+\contentsline {chapter}{Attachments}{12}
+\contentsline {chapter}{\numberline {A}CD-ROM Contents}{13}

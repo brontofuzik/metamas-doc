@@ -1,0 +1,36 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Title (en): Multiagent Systems and Organizations                          %%
+%% Title (cs): Multiagentní systémy a organizace                             %%
+%%                                                                           %%
+%% Author: Bc. Lukáš Kúdela                                                  %%
+%% Supervisor: Prof. RNDr. Petr Štěpánek, DrSc.                              %%
+%%                                                                           %%
+%% Academic year: 2011/2012                                                  %%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\vbox to 0.5\vsize{
+
+% Disable the paragraph indentation.
+\setlength{\parindent}{0mm}
+\setlength{\parskip}{5mm}
+
+Thesis title: Multiagent Systems and Organizations\\
+Author: Bc. Lukáš Kúdela\\
+Author's e-mail address: \url{lukas.kudela@gmail.com}\\
+Department: Department of Theoretical Computer Science and Mathematical Logic\\
+Thesis supervisor: Prof. RNDr. Petr Štěpánek, DrSc.\\
+Supervisor's e-mail address: \url{petr.stepanek@mff.cuni.cz}\\
+
+Abstract: One way to attack a problem is to imagine how a human organization would go about solving it and model this organization as a multiagent system (MAS).
+The problem with this approach lies in the simple fact that no single agreed-upon (standard) notion of organization currently exists in the field of MAS.
+In practice, this means that every agent can, in principle, talk to/with any other agent regardless of whether this is desirable or even allowed within the modelled organization.
+However, this is seldom the case in the real world.
+Here all organizations but the simplest ones are usually structured into sub-organizations (branches, divisions, departments, etc.) which can be further decomposed.
+They define roles and interaction protocols.
+The individual members of the organization assume these roles after meeting declared requirements.
+They follow the interaction protocols associated with the role to fulfill its responsibilities.
+The aim of this presentation is to demonstrate how the concepts related to organizational structure (oranization, role, player) can be introduced as first-class citizens of MAS (just like the concept of Agent) and present a metamodel that defines their structural and behavioral relationships.
+
+Keywords: multiagent systems, organizations, roles, metamodel
+
+\vss}

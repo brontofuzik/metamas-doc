@@ -1,0 +1,26 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Title (en): Multiagent Systems and Organizations                          %%
+%% Title (cs): Multiagentní systémy a organizace                             %%
+%%                                                                           %%
+%% Author: Bc. Lukáš Kúdela                                                  %%
+%% Supervisor: Prof. RNDr. Petr Štěpánek, DrSc.                              %%
+%%                                                                           %%
+%% Academic year: 2011/2012                                                  %%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\chapter{Problem Solving using Organizations}
+
+\begin{flushright}
+\textit{``The achievements of an organization are the results of the combined effort of each individual.''}\\
+\textit{-- Vince Lombardi, American football coach}
+\end{flushright}
+
+- human organization ~ multiagent system
+
+- advantages: straightforward, intuitive
+
+- human organizations have structure
+
+- no standard way to impose structure upon MAS (poor/weak model problem)
+
+- poor/weak problem solutions

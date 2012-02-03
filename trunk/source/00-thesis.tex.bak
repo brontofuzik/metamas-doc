@@ -1,0 +1,160 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Title (en): Multiagent Systems and Organizations                          %%
+%% Title (cs): Multiagentní systémy a organizace                             %%
+%%                                                                           %%
+%% Author: Bc. Lukáš Kúdela                                                  %%
+%% Supervisor: Prof. RNDr. Petr Štěpánek, DrSc.                              %%
+%%                                                                           %%
+%% Academic year: 2011/2012                                                  %%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Document class                                                            %%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\documentclass[12pt,a4paper]{report} % One-sided printing
+%\documentclass[12pt,a4paper,twoside,openright]{report} % Two-sided printing
+
+\setlength\textwidth{145mm}
+\setlength\textheight{247mm}
+\setlength\oddsidemargin{15mm}
+\setlength\evensidemargin{15mm} % One-sided printing
+%\setlength\evensidemargin{0mm} % Two-sided printing
+\setlength\topmargin{0mm}
+\setlength\headsep{0mm}
+\setlength\headheight{0mm}
+
+%
+% \openright - causes the following text to begin on the right-hand side
+%
+\let\openright=\clearpage % One-sided printing
+%\let\openright=\cleardoublepage % Two-sided printing
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Packages                                                                  %%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%% Encoding and multilingual support %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% Accept different input encodings.
+\usepackage[utf8]{inputenc}
+
+%% Standard package for selecting font encodings.
+%\usepackage[T1]{fontenc}
+
+% Multilingual support for Plain TeX or LaTeX.
+\usepackage[english,slovak]{babel}
+
+%% Formatting %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%% Flexible and complete interface to document dimensions.
+%\usepackage[left=4cm]{geometry}
+
+%% "Wide" a4 layout.
+%\usepackage{a4wide}
+
+%% Graphics %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% Enhanced support for graphics.
+\usepackage{graphicx}
+
+% Convert EPS to 'encapsulated' PDF using GhostScript.
+\usepackage{epstopdf}
+
+%% AMS packages %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% AMS mathematical facilities for LaTeX.
+\usepackage{amsmath}
+
+% Typesetting theorems (AMS style).
+\usepackage{amsthm}
+
+\usepackage{amssymb}
+
+% TeX fonts from the American Mathematical Society.
+\usepackage{amsfonts}
+
+%% Micellaneous %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% Make PDF files searchable and copyable.
+\usepackage{cmap}
+
+% Verbatim with URL-sensitive line breaks.
+\usepackage{url}
+
+%% Extensive support for hypertext in LaTeX.
+%\usepackage[ps2pdf,unicode]{hyperref} % URL: 
+%\hypersetup{pdftitle=Multiagent Systems and Organizations}
+%\hypersetup{pdfauthor=Lukáš Kúdela}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Command & Environment Definitions                                         %%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%
+% \chapwithtoc - Defines a unnumbered chapter included in the TOC.
+%
+\newcommand{\chapwithtoc}[1]{
+\chapter*{#1}
+\addcontentsline{toc}{chapter}{#1}
+}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Document                                                                  %%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{document}
+
+% Select English as the default language.
+\selectlanguage{english}
+\nonfrenchspacing
+
+%% Top Matter %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%% Standard title page
+%\title{Multiagent Systems and Organizations}
+%\author{Lukáš Kúdela}
+%\maketitle
+
+% Custom title page 
+\include{01-title-page}
+
+%% Body %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% Page numbering off
+\pagenumbering{gobble}
+
+\include{02-acknowledgement}
+\include{03-declaration}
+\include{04-abstract-en}
+\include{05-abstract-sk}
+
+\include{05-toc}
+
+% Page numbering on
+\pagenumbering{arabic}
+
+\include{09-introduction}
+\include{10-ch1-autonomous-agents-and-multiagent-systems}
+\include{20-ch2-problem-solving-using-organizations}
+\include{30-ch3-poor-model-problem-and-its-solutions}
+\include{40-ch4-modelling-organizations-pim}
+\include{50-ch5-modelling-organizations-pdm}
+\include{60-ch6-examples}
+%\include{30-example}
+\include{89-conclusion}
+
+\include{90-bibliography}
+
+\chapwithtoc{List of Tables}
+\chapwithtoc{List of Abbreviations}
+
+\chapwithtoc{Attachments}
+
+%% Appendices %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\appendix
+
+\include{91-appendixa-cd-rom-contents}
+
+\end{document}
