@@ -1,0 +1,79 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Title (en): Multiagent Systems and Organizations                           %%
+%% Title (cs): Multiagentní systémy a organizace                              %%
+%%                                                                            %%
+%% Author: Bc. Lukáš Kúdela                                                   %%
+%% Supervisor: Prof. RNDr. Petr Štěpánek, DrSc.                               %%
+%%                                                                            %%
+%% Academic year: 2011/2012                                                   %%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\chapter{Modelling Organizations -- Platform-Specific Model}
+
+% About platform-specific models 
+The platform-specific model (PSM) is a model of a software system bound to a specific technological platform (e.g. a hardware environment (processor), operating system or software environment (virtual machine)).
+Platform-specific models are indispensable for the actual implementation of a software system.
+% [Wikipedia: http://en.wikipedia.org/wiki/Platform_Specific_Model]
+
+\section{Agent Platform}
+
+% About agent platforms
+Here we would like to note that there are numerous agent platforms available including proprietary, free/open source, and public domain software.
+
+% General vs. specific agent plaforms
+The primary distinguishing factor among them is the degree of generality.
+The most general among the agent platforms do not impose any particular agent architecture and usually pick a general-purpose programming language (typically the Java programming language) as their AOP language.
+On the other hand, the least general (or more generously - most specific) agent platforms do prescribe a concrete agent architecture and generally make use of some (declarative) domain-specific language.
+
+% Why JADE?
+As our aim was to introduce organizational concepts as first-class citizens in the MAS landscape, we had to steer towards the agent platform offering the most extension points.
+Therefore, we considered only the most general free and open source agent platforms.
+Finally we picked the JADE platform (described in the following section) which, at the time of writing this thesis, appears to be the community choice number one.  
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{JADE}
+
+% About JADE
+JADE (Java Agent Development Framework) is an agent platform and framework in one.
+
+% JADE as agent platform
+It is a \textit{platform} because it provides a run-time environment in which the agents operate, much like a sandbox in which children play.
+JADE also manages the lifetimes of the agents running on the platform, delivers messages (asynchronous message passing) and provides other services (e.g. the yellow pages service).
+
+% JADE as a framework
+JADE is also a \textit{framework} because it comes with an extensive base class libraries and the actual user-defined classes are expected to inherit from these base classes, much like a building is expected to be built within the boundaries of an already erected scaffolding.
+A concrete multiagent system is basically an instantiation of the JADE as a framework.
+
+% About JADE 2
+JADE simplifies the implementation of multiagent systems by acting as a middleware that complies with the FIPA
+[FIPA: http://www.fipa.org]
+specifications
+[FIPA-Specificaiton: http://www.fipa.org/specifications/index.htmls] and by providing a set of graphical tools that support the debugging and deployment phases.
+The agent platform can be distributed across multiple machines (possibly running different operating systems) and it can be configured via a remote graphical tool.
+The configuration can be even changed at run-time by moving agents from one machine to another, as and when required. 
+JADE is written in the Java programming language. 
+
+% Extensibility
+JADE has been specifically designed with extensibility in mind and since our goal is to extend the multiagent systems with organizational concepts, this is the platform of our choice.
+The fact that it places great emphasis on extensibility also manifests in its choice of the actual AOP language - the Java programming language.
+
+% Minimalistic architecture
+A feature of JADE we find particularly noteworthy is its minimalistic architecture.
+Only the most fundamental services (e.g. message delivery) are hard-wired.
+Whenever possible, a service is implemented as a full-fledged agent operating on the platform to whom messages can be sent (e.g. white and yellow pages service).
+Even the graphical tools are only GUI front-ends to these service agents.
+This minimalistic architecture is further evidence that JADE takes extensibility seriously.
+
+% License
+JADE is a free and open source software, distributed under GNU Lesser General Public Licence (LGPL), version 2.
+% TODO Check the spelling of "license".
+The copyright holder is Telecom Italia.
+
+% Version 
+The version of JADE used in this thesis is JADE 4.1.1 released on November 18th, 2011.
+
+% System requirements
+To run JADE 4.1.1, the Java platform, version 1.4 or higher is required.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{JadeOrg}
