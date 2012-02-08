@@ -1,0 +1,62 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Title (en): Multiagent Systems and Organizations                           %%
+%% Title (cs): Multiagentní systémy a organizace                              %%
+%%                                                                            %%
+%% Author: Bc. Lukáš Kúdela                                                   %%
+%% Supervisor: Prof. RNDr. Petr Štěpánek, DrSc.                               %%
+%%                                                                            %%
+%% Academic year: 2011/2012                                                   %%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\chapter{Poor Model Problem and its Solutions}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Poor Model Problem}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Agent UML}
+
+% OOSE and UML
+
+In the field of object-oriented software engineering (OOSE), to describe the design of an object-oriented system (OOS) in a universally understood way, Unified Modelling Language (UML) is used.
+UML is a standardized general-purpose modelling language for OOSE.
+It standard was created (and is managed) by the Object Management Group (OMG).
+It has several essential properties and capabilities that contribute to its popularity.
+
+First and foremost, UML is programming language agnostic.
+This may seem unnecessary since usually by the time the system is designed the programming language will already have been chosen and thus the freedom to change it later (in the implementation phase) is not required.
+However, even if the programming (or implementation) language is well beforehand (and is not likely to change), it can still be convenient to abstract from it in the design phase to be able to ignore the implementation details of that particular programming language.
+
+Secondly, UML can be used to model both structural (static) and behavioural (dynamic) aspects of an OOS.
+Examples of structural aspects are the class and object structures, while an example of a dynamic aspect is the object interaction.
+
+Thirdly, the designer can choose how much they commit to using UML.
+Even though UML is semantically rich enough to support advanced software engineering practices like formal verification (software verification), code generation and metamodelling, the designer can choose to employ its graphic notation techniques to sketch visual models of an OOS.
+
+% AOSE and AUML
+
+The field of agent-oriented software engineering (AOSE) deals with agent-oriented systems (AOS).
+The AOS's (multiagent systems) can be characterized as extensions of OOS's; after all, an agent is basically a special kind of object - an autonomous object.
+This means that we should be able to use UML to describe MAS.
+
+However, it turns out that MAS represent a too big a paradigm shift from classical object-oriented programming (OOP) for UML itself to handle.
+The problem is that AOSE adds another layer of abstractions (abstraction layer) over the traditional OOSE.
+Attempting to talk or write about these (higher-level) abstractions in terms of (lower-level) UML would obfuscate their true nature.
+The situation calls for a higher-level modelling language based on UML.
+
+Agent UML (AUML) [AUML: http://www.auml.org/], an extension of UML, has been developed by FIPA Modeling Technical Comitte [FIPA-MTC: http://www.fipa.org/activities/modeling.html] to facilitate the modelling of AOS's in AOSE.
+According to its authors, AUML does not want to be restricted by UML; it only wants to capitalize on it where it can.
+This in practice means, that instead of strict reliance on the UML as defined by OMG, the AUML's designers intend to reuse portions of UML where it makes sense.
+
+% AUML effort halted
+The current situation of AUML can be described as quiescent [] mostly because other initiatives (UML 2.1, OMG Systems Modeling Language,  OMG UML Metamodel and Profile for Services RFP) have already delivered or are poised to deliver features AUML itself intended to provide.
+
+Altough there is not much effort going into AUML at the moment, we have decided to use it as the modelling language in this thesis.
+The decision is motivated by the fact that we will only use the modelling language to create visual models and AUML is the simplest language enabling that.
+The remainder of this section is devoted to introducing parts of AUML relevant to us.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Aalaadin}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
