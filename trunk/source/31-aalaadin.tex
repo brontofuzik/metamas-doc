@@ -3,11 +3,19 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Aalaadin/AGR}
 
-% Aalaadin - authors & references
-\textbf{Aalaadin} has been conceived by Jacques Ferber, Oliver Gutknecht and their colleagues from Montpellier 2 University in Montpellier, France.
-It is described in an (unpublished) research report \cite{Ferber97} and conference papers \cite{Ferber98}, \cite{Ferber00} and \cite{Ferber03}.
+% Aallaadin/AGR - references
+This section introduces the Aalaadin/AGR\footnote{`Aalaadin' is the old name, whereas `AGR' is the new one. Since it is arguably fancier, we will use the old name.} metamodel described in \cite{Ferber97}, \cite{Ferber98}, \cite{Ferber00} and \cite{Ferber03}.
+The overview presented here is particularly after \cite{Ferber98}.
 
-Aalaadin is a generic metamodel of multiagent systems based on three core concepts: agent, group and role.
+% Aalaadin/AGR - authors
+Aalaadin/AGR has been proposed in 1997 by Jacques Ferber, Oliver Gutknecht and their colleagues from Montpellier 2 University in Montpellier, France.
+
+%% Summary %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+- PIM
+
+% Aalaadin - about
+Aalaadin is a platform-independent (ALT: generic) metamodel of multiagent systems based on three core concepts: agent, group and role.
 It is actually what its authors refer to as \textit{organization-centric multiagent system} (OCMAS) metamodel, because it enables a MAS designer to build/describe/specify various organization models such as flat (e.g. market-like) or hierarchical (e.g. enterprise-like) organizations.
 
 In the following subsections, the Aalaadin metamodel (called simply model) will be introduced.
@@ -28,7 +36,7 @@ To put it differently, an abstract organization represents a (possibly infinite)
 Later we will use the terms \textit{organization instance} and \textit{organization class} to refer to an concrete organization and abstract organization respectively.
 These terms try to capture the essence of the relationship between an abstract and concrete organization (namely, a concrete organization being an instance of an abstract organization and conversely, an abstract organization being a class of a concrete organization) and are imported from OOP where it is necessary to make a similar distinction. 
 
-%% Core Concepts %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Core Concepts}
 
 % Core model - about
@@ -100,7 +108,7 @@ A special role in a group is the \textit{group manager} role, which is automatic
 It has a competence to handle group membership and role playing requests.
 It also has a capacity to revoke roles and cancel group memberships.
 
-%% Methodological Concepts %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Methodological Concepts}
 
 % Methodological model - about
@@ -150,12 +158,12 @@ Similarly to groups, the actual organization is just one possible manifestation 
 Some groups defined in the organizational structure might not be present currently in the organization.
 This also contributes to the overall run-time flexibility.
 
-%% MadKit %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{MadKit}
 
 % MadKit - authors & references
 The authors of Aalaadin/AGR also developed what started out as a proof-of-concept agent platform called \textbf{MadKit} (Multi-Agent Development Kit).
-It is described in an (unpublished) research report \cite{Ferber97} and a conference/workshop articles \cite{Ferber98} and \cite{Gutknecht00}.
+It has been described in an (unpublished) research report \cite{Ferber97} and a conference/workshop articles \cite{Ferber98} and \cite{Gutknecht00}.
 
 %MadKit - design principles
 The \textbf{MadKit} platform implements the Aalaadin/AGR core model and follows three design principles \cite{Ferber97}:

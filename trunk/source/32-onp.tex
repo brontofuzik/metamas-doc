@@ -3,12 +3,18 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{O\&P}
 
-% O&P - authors & references
-Another metamodel has been put forward by James J. Odell, H. van Dyke Parunak and their colleagues.
-It has been elaborated in a series of conference papers \cite{Odell01}, \cite{Parunak02}, \cite{Odell03}, \cite{Odell04} and \cite{Odell05} submitted for the AOSE conference throughout the years 2000 to 2004.
-Since it was not given a name by its authors we will, for the purposes of this text, call it ``O\&P''.
+% O&P - references
+This section introduces the O&P\footnote{The metamodel was not given a name by its authors; we will, for the purposes of this thesis, call it ``O\&P''.} metamodel described in \cite{Odell01}, \cite{Parunak02}, \cite{Odell03b}, \cite{Odell04b} and \cite{Odell05}.
+The overview presented here is due to \cite{Odell05} in particular.
 
-%% Integrated Model %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% O%P - authors
+O&P has been put forward in 2001 by James J. Odell, H. van Dyke Parunak and their colleagues.
+
+%% Summary %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+- PIM
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Integrated Model}
 
 % Integrated model - about
@@ -17,7 +23,7 @@ The following subsections will focus on parts of the integrated model that can b
 We present the full model before discussing its parts (ALT: portions, sections) so that the reader can follow the discussion with assumption about where the part fits.
 
 % Figure: O&P metmodel
-\begin{figure}[h]
+\begin{figure}[ht]
 	\centering
 	\includegraphics[width=0.75\textwidth]{images/onp-metamodel.png}
 	\caption{The O\&P metamodel}
@@ -33,7 +39,7 @@ It is important to make this distinction, because the agent classification is ba
 The reason for this is that the authors did not want to impose object-orientation upon their metamodel.
 After all, it is not at all expected of an agent to exhibit behaviour intrinsic to an object (e.g. polymorphism). 
 
-%% Agent Classifiers and Agent %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Agent Classifiers and Agent}
 
 \textit{Agent Classifier} is a UML Classifier that specifically provides a way to classify Agent instances by a set of features that they have in common \cite{Odell05}.
@@ -41,7 +47,7 @@ Classification is important because it enables a common definition of a set of e
 
 Figure~\ref{figure:onp-agent-classifiers} shows \textsc{Agent Classifier} and its two specializations: \textsc{Agent Physical Specifier} (alias \textsc{Physical Classifier}) and \textsc{Agent Role Specifier} (alias \textsc{Role Classifier}).
 
-\begin{figure}[h]
+\begin{figure}[ht]
 	\centering
 	\includegraphics[width=0.5\textwidth]{images/onp-agent-classifiers.png}
 	\caption{\textsc{Agent Classifier} and its two specializations: \textsc{Agent Physical Classifier} and \textsc{AGent Role Classifier}}
@@ -60,7 +66,7 @@ In comparison to role classifiers, physical classifiers attribute primary and pe
 An example of a physical classifier from the real world would be `Human' agent.
 
 % Figure: Physical classifer examples
-\begin{figure}[h]
+\begin{figure}[ht]
 	\centering
 	\includegraphics[width=0.5\textwidth]{images/onp-physical-classifier-examples.png}
 	\caption{Examples of physical classifiers forming a (class?) hierarchy}
@@ -80,7 +86,7 @@ In comparison to physical classifiers, role classifiers ascribe secondary and tr
 An example of a role classifier from the real world would be `Chess player' agent.
 
 % Figure: Role classifer examples
-\begin{figure}[h]
+\begin{figure}[ht]
 	\centering
 	\includegraphics[width=0.5\textwidth]{images/onp-role-classifier-examples.png}
 	\caption{Examples of role classifiers forming a (class?) hierarchy}
@@ -104,7 +110,7 @@ Agents may be linked via the roles they play.
 In this scenario, \texttt{Agent4} is a broker and brokers something for \texttt{Agent2} who is a seller.
 
 % Figure: Agent examples
-\begin{figure}[h]
+\begin{figure}[ht]
 	\centering
 	\includegraphics[width=0.5\textwidth]{images/onp-agent-examples.png}
 	\caption{Examples of (linked) agents}
@@ -120,7 +126,7 @@ The \texttt{JADE Agent Classifier} physical classifier allows the \texttt{Manage
 Similarly, the \texttt{Cybele Agent Classifier} physical classifier allows the \texttt{Broker}, \texttt{Trust Manager} and \texttt{Buyer} role classifiers to be taken on by Cybele agents.
 
 % Figure: Agent physical classifier to Agent role classifier association
-\begin{figure}[h]
+\begin{figure}[ht]
 	\centering
 	\includegraphics[width=0.75\textwidth]{images/onp-physical-classifier-role-classifier-association.png}
 	\caption{The association between \textsc{Agent Physical Classifier} and \textsc{Agent Role Classifie}}
@@ -136,7 +142,7 @@ Figure~\ref{figure:onp-agent-agent-classifier-association} shows four instances 
 The links represent classification; for example \texttt{Agent1} is classified with \texttt{JADE Aget Classifier} agent physical classifier to be a JADE agent and with \texttt{Manager} agent role classifier to be a manager. 
 
 % Figure: Agent to Agent Classifier association
-\begin{figure}[h]
+\begin{figure}[ht]
 	\centering
 	\includegraphics[width=0.75\textwidth]{images/onp-agent-agent-classifier-association.png}
 	\caption{The association between \textsc{Agent} and \textsc{Agent Classifiers}}
@@ -150,7 +156,7 @@ Second, the role classification is \textit{dynamic} in contrast to physical clas
 Dynamic classification means that an agent can be declassified or reclassified with another role after initial classification. On the contrary, the physical classification is invariable in time
 (``Once a JADE agent, always a JADE agent.'').
 
-%% Group, Agentified Group and Non-agentified Group %%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Group, Agentified Group and Non-agentified Group}
 
 % Group - definition
@@ -168,7 +174,7 @@ Figure~\ref{figure:onp-group} shows the \textsc{Group} class and its association
 The abstract \textsc{Group} class extends the UML Structured Classifier, which means that \textsc{Group} is defined as composite structure \footnote{In UML, Structured Classifier can be thought of as a structured set of classifiers. From this perspective, \textsc{Group} is a structured set of \textsc{Agent Role Classifiers}}.
 
 % Figure: Group
-\begin{figure}[h]
+\begin{figure}[ht]
 	\centering
 	\includegraphics[width=0.75\textwidth]{images/onp-group.png}
 	\caption{The \textsc{Group} class and its associations}
@@ -188,7 +194,7 @@ Observe that groups containing no roles is not allowed, each group must contain 
 The opposite direction of the association requires each role to be contained in at least one group, since roles only make sense within context of a group.
 
 % Figure: Group to Role association
-\begin{figure}[h]
+\begin{figure}[ht]
 	\centering
 	\includegraphics[width=0.75\textwidth]{images/onp-group-role-association.png}
 	\caption{The association between \textsc{Group} and \textsc{Role}}
@@ -208,7 +214,7 @@ Figure~\ref{figure:onp-agentified-group} shows an example of an agentified group
 Notice the <<agent>> stereotype used to mark the group as agentified.
 
 % Figure: agentified group
-\begin{figure}[h]
+\begin{figure}[ht]
 	\centering
 	\includegraphics[width=0.5\textwidth]{images/onp-agentified-group.png}
 	\caption{An example of an agentified group}
@@ -223,21 +229,21 @@ An example of a non-agentified group is shown in figure~\ref{figure:onp-non-agen
 Note that this time there is no <<agent>> stereotype marking the group as agentified.
 
 % Figure: non-agentified group
-\begin{figure}[h]
+\begin{figure}[ht]
 	\centering
 	\includegraphics[width=0.5\textwidth]{images/onp-non-agentified-group.png}
 	\caption{An example of a non-agentified group}
 	\label{figure:onp-non-agentified-group}
 \end{figure}
 
-%% Agent Role Assignment %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Agent Role Assignment}
 
 The assignment of roles to agents is dynamic, i.e. it changes in time, and is modelled by \textit{Agent Role Assignment}.
 Figure~\ref{figure:onp-agent-role-assignment} shows Agent Role Assignment and its associations.  
 
 % Figure: Agent Role Assignment class
-\begin{figure}[h]
+\begin{figure}[ht]
 	\centering
 	\includegraphics[width=0.75\textwidth]{images/onp-agent-role-assignment.png}
 	\caption{The \textsc{Agent Role Assignment} class and its associations}
