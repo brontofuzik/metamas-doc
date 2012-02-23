@@ -8,10 +8,39 @@
 %% Academic year: 2011/2012                                                   %%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\chapter{Autonomous Agents and Multiagent Systems}
+\chapter{Agents and Multiagent Systems}
 
-\section{Autonomous Agents}
+% Purpose of this chapter - introduce agents and MASs
+The purpose of this chapter is to introduce agents and multiagent systems (MASs).
+The introduction is deliberately kept as short as possible - sticking to the most fundamental characteristics.
+Nevertheless, understanding of these is sufficient to comprehend ideas presented in this thesis (ALT: text).
+It is not possible to do justice to the field of agents and MAS anyway; the wide applicability of agents and MASs inevitably causes the field of their study to be vast.
 
-- Are there non-autonomous agents?
+% Agents and MAS - referecnes
+A reader looking for a crash course on MAS can try \cite{Wooldridge02} and \cite{Wooldridge95}; a reader seeking a more in-depth (yet still general) treatise of MAS will not go wrong with any of the well-established works on the subject: \cite{Wooldridge09} and \cite{Weiss99}.
+Alternatively, in \cite{Shoham08} the authors take an algorithmic, game-theoretic and logical\footnote{As in mathematical-logical, not rational.} approach to MASs.
+To our knowledge, \cite{Kubik04} or \cite{Kubik00} is the most complete coverage of MAS in Czech, while \cite{Kubik03} is an overview by the same author.
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Agents}
+
+% No single universally accepted definition of agent exists
+Unfortunately, no single universally accepted definition of agent exists in the agent community.
+However, this does not seem to be a problem at all; despite the lack of agreement on terminological details, many researchers are coming up with interesting agent theories and numerous practitioners are developing useful agent applications.
+It is still advantageous that at least \textit{some} definition of agent exists though - if for nothing else then to protect it from being misused.
+
+% Two usages of the term `agent'
+Two usages of the term \textit{agent} can be recognized: the first is weaker and does not appear to be disputed (ALT: contended), and the second is stronger and generates more discussion in the community.
+In this thesis, it is sufficient to use the weaker notion of agency.
+
+% Agent - definition: situatedness (sensors, actuators), autonomy, reactivity, proactivity and social skills
+An \textit{agent} is a computer system (ALT: computational entity) that is situated in some environment (physical or software) and that is capable of autonomous action in this environment in order to meet its design objectives \cite{Wooldridge02}.
+Being situated in an environment means that the agent can \textit{sense} or \textit{perceive} it (through its \textit{sensors}) and \textit{act} upon it (through its \textit{actuators}).
+An agent can be \textit{reactive} (capable of responding in a timely fashion to changes that occur in the environment \cite{Wooldridge95}) and/or \textit{proactive} (able to exhibit goal-directed behaviour by taking the initiative \cite{Woldridge95}).
+Finally, an agent in a MAS is required to have \textit{social skills} (skills facilitating interaction and communication with other agents).
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Multiagent Systems}
+
+Multiagent (alernatively multi-agent) system is a set of interacting or interdependent components - agents - forming an integrated whole - a society of agents.
+The interaction can be direct (via messages) and indirect (via environment).
