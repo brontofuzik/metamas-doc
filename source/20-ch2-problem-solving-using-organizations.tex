@@ -44,10 +44,45 @@ There is no standardized way to impose organizational structure upon a MAS (ALT:
 In the next section, we will introduce a new type of MAS, focused on the society of agents and its structure as opposed to individual agents, which seem to be the focus of traditional MAS.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{Agent-Centric MAS (ACMAS) vs. Organization-Centric MAS (OCMAS)}
+\section{Agent-Centric MAS vs. Organization-Centric MAS}
 
-% ACMAS vs. OCMAS
+% ACMAS - architecture of individual agents
+An Agent-Centric MAS is the classical conception of MAS - focused on the architecture of individual agents and oblivious to the considerations about the structure of their society.
 
+% ACMAS - characteristics
+ACMAS have the following characteristics \cite{Ferber03}:
+\begin{itemize}
+	\item An agent has an \textit{agent ID} and it can be addressed with it.
+	\item An agent can communicate with any other agent.
+	\item An agent provides a set of services, which are available to every other agent in the system.
+	\item It is the responsibility of each agent to constrain its accessibility from other agents.
+	\item It is the responsibility of each agent to define its relations, contracts, etc. with other agents.
+\end{itemize}
+
+Ironically, the absolute freedom of interaction in ACMAS is the cause of many of its shortcomings \cite{Ferber03}:
+\begin{itemize}
+	\item Predicting the behaviour of the whole system from the behaviour of its constituent components (ALT: parts) is extremely difficult, if not downright impossible, due to high probability (ALT: likelihood) of emergent (and undesirable) behaviour.
+	\item Because there is no implicit security management, it is easy for a malicious agent to misuse or even abuse the system.
+	\item It is not possible to apply \textit{modular design}. Agents cannot be grouped into modules (ALT: packages) with different visibilities (public vs. private) at design-time let alone at run-time.
+	\item It is not possible to pursue \textit{framework approach}. There is only one framework - the agent platform itself - and it is not possible to define sub-frameworks with specific interactions.
+\end{itemize}
+
+% OCMAS - structure of agent society (agent social structure)
+An Organization-Centric MAS, proposed in \cite{Ferber03} is the modern conception of MAS - focusing on the structure of the agent society, ignoring the considerations of the architecture of individual agents.
+Organizations provide a natural way of describing structure of MAS and interactions among its constituent agents.
+This description is situated on the \textit{organization level} - the level above the \textit{agent level}, which is the only level considered in ACMAS.
+
+% OCMAS - organizational level vs. agent level
+The organizational level contains abstract representations of the concrete organizations occurring on the agent level, i.e. the organizational level specifies the types of organizations, their roles and interaction protocols (ALT: institutionalized patterns of interaction) among them, which should occur on the agent level.
+
+% OCMAS - characteristics
+The following are the characteristics of OCMAS \cite{Ferber03}:
+\begin{itemize}
+	\item The organizational level imposes social structure and patterns of interaction upon agents, but does not prescribe how agents should behave; it merely demarcates the space within which the agents can express their individuality.
+	\item The organizational level does not place constraints on the architectures of the agents - deliberative as well as reactive agent can take part in an organization as longs as they behave in an expected way.
+	\item The organizations provide a way to partition a MAS into bounded contexts of interaction.
+	Whereas the structure of an organization is known to its members and they are able to interact with each other, it is opaque to the the non-members whose interaction with the organization (its members) is limited.
+\end{itemize}
 
 % Organizational concept: organization
 An \textit{organization} is a an (organized?) group of agents, which imposes rules on the mutual interaction of its members. 
