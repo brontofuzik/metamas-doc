@@ -8,7 +8,7 @@
 %% Academic year: 2011/2012                                                   %%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\chapter{Modelling Organizations -- Platform-Independent Metamodel -- Thespian}
+\chapter{Platform-Independent Metamodel -- Thespian}
 
 In this chapter we will describe Thespian - our attempt at a platform independent metamodel (PIMM) for organization-centric multiagent systems (OCMASs).
 
@@ -198,8 +198,10 @@ A \textit{Message} is a piece of information exchanged between two parties in a 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Static (Design-Time) Metamodel}	
 
-% Static metamodel - usage
-The Static metamodel contains concepts that represent design-time entities - entities that are created/modified at design-time, i.e. in the MAS source code.
+% Design-time metamodel - usage
+The Design-time metamodel contains concepts whose instances model the design-time MAS entities.
+These entities, as their name suggests, are created and/or modified at design-time by the MAS designer, and they constitute the MAS specification (see this chapter's introduction).
+The models of MAS specifications are also called \textit{static MAS models}.
 
 % Figure: Thespian static metamodel
 \begin{figure}[ht]
@@ -212,8 +214,10 @@ The Static metamodel contains concepts that represent design-time entities - ent
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Dynamic (Run-Time) Metamodel}
 
-% Dynamic metamodel - usage
-The Dynamic metamodel contains abstractions that abstract dynamic entities - entities that are created/modified at run-rime, i.e. in the actual running MAS.
+% Run-time metamodel - usage
+The Run-time metamodel contains constructs that model the run-time MAS entities.
+These entities, as their name implies, are created and/or modified at run-time by the MAS itself, and they make up the MAS manifestation (see this chapter's introduction).
+They models of MAS manifestations are also referred to as \textit{dynamic MAS models} or \textit{MAS snapshots}.
 
 % Figure: Thespian dynamic metamodel
 \begin{figure}[ht]
