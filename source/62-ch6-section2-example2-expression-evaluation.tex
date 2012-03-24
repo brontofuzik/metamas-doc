@@ -114,8 +114,8 @@ The \textit{Evaluate binary operation reply} message (modelled by the \texttt{Ev
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsubsection*{Player Part}
 
-% 'Uncapabler' player type
-The \textit{Uncapabler} player type (modelled by the \texttt{Uncapabler\_Player} agent class) is a player with no capabilities.
+% 'Blank' player type
+The \textit{Blank} player type (modelled by the \texttt{Blank\_Player} agent class) is a player with no capabilities.
 It has one instance in the running MAS - \textit{player1}.
 % 'player1' player
 \textit{player1} (modelled by the \texttt{player1} agent instance) intends to enact the \textit{Evaluator} role in the \textbf{evaluate-expression} organization and to perform the role's \textit{Evaluate expression} competence - to have an expression evaluated by the players of the \textit{Binary operator} roles.
@@ -234,20 +234,20 @@ Note that that in all role activation scenarios, the player activating a role is
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsubsection*{Stage 3: Competence and Responsibility Invocation}
 
-The expression evaluation is initiated by \textit{player1} through its \textit{Evaluator} role and is carried out in a divide-and-conquer fashion by \textit{Evaluator}, \textit{Adder}, \textit{Multiplier} and \textit{Divider} collaborating with one another.
-In this example the expression to be evaluated is $(1*2)+(4/2)$.
+The \textit{Evaluate expression} competence is invoked by \textit{player1} from its \textit{Evaluator} role and is carried out in a divide-and-conquer fashion by an \textit{Evaluator}, an \textit{Adder}, a \textit{Multiplier} and a \textit{Divider} by collaborating with one another and invoking responsibilities from their respective players.
+In this example the expression to be evaluated is $(1\cdot2)+(4/2)$.
 
 % Evaluator: "(1*2)+(4/2)"
-\textit{Evaluator} to evaluate $(1*2)+(4/2)$: it parses the expression and finds the operation to be applied last - addition.
+\textit{Evaluator} to evaluate $(1\cdot2)+(4/2)$: it parses the expression and finds the operation to be applied last - addition.
 It splits the expression into two sub-expressions and requests \textit{Adder} to evaluate their sum (the \textbf{first magenta} interaction scenario).
 It then reports the value (4) to \textit{player1} (the \textbf{first black} interaction scenario).
 
 % Adder: "(1*2)", "(4/2)"
-\textit{Adder} to evaluate the sum of $(1*2)$ and $(4/2)$: it requests \textit{Evaluator} to evaluate both expressions (the \textbf{first cyan} and \textbf{blue} interaction scenarios) and invokes the \textit{Add} responsibility on \textit{player2} to calculate the sum of their values (the \textbf{second cyan} interaction scenario).
+\textit{Adder} to evaluate the sum of $(1\cdot2)$ and $(4/2)$: it requests \textit{Evaluator} to evaluate both expressions (the \textbf{first cyan} and \textbf{blue} interaction scenarios) and invokes the \textit{Add} responsibility on \textit{player2} to calculate the sum of their values (the \textbf{second cyan} interaction scenario).
 It then reports the sum (4) to \textit{Evaluator} (the \textit{first magenta} interaction scenario).
 
 % Evaluator: "(1*2)"
-\textit{Evaluator} to evaluate $(1*2)$: it parses the expression and finds the last-to-be-applied operation - multiplication.
+\textit{Evaluator} to evaluate $(1\cdot2)$: it parses the expression and finds the last-to-be-applied operation - multiplication.
 It splits the expression into two sub-expressions and requests \textit{Multiplier} to evaluate their product (the \textit{pink} interaction scenario).
 It then reports the value (2) to \textit{Adder} (the \textbf{first cyan} interaction scenario).
 
@@ -264,7 +264,7 @@ It reports the value (1) to \textit{Multiplier} (the \textbf{dark green} interac
 It reports the value (2) to \textit{Multiplier} (the \textbf{light green} interaction scenario).
 
 % Evaluator: "(4/2)"
-\textit{Evaluator} to evaluate $(1*2)$: it parses the expression and finds the last-to-be-applied operation - division.
+\textit{Evaluator} to evaluate $(1\cdot2)$: it parses the expression and finds the last-to-be-applied operation - division.
 It splits the expression into two sub-expressions and requests \textit{Divider} to evaluate their quotient (the \textit{yellow} interaction scenario).
 It then reports the value (2) to \textit{Adder} (the \textbf{blue} interaction scenario).
 
