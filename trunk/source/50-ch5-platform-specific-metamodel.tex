@@ -10,6 +10,7 @@
 
 \chapter{Platform-Specific Metamodel -- Thespian4Jade}
 
+% Chapter abstract - Thespian4Jade
 In this chapter, we will describe the platform-
 
 % About platform-specific models 
@@ -28,55 +29,250 @@ The primary distinguishing factor among them is the degree of generality.
 The most general among the agent platforms do not impose any particular agent architecture and usually pick a general-purpose programming language (typically the Java programming language) as their AOP language.
 On the other hand, the least general (or more generously - most specific) agent platforms do prescribe a concrete agent architecture and generally make use of some (declarative) domain-specific language.
 
-% Why JADE?
+% Why Jade?
 As our aim was to introduce organizational concepts as first-class citizens in the MAS landscape, we had to steer towards the agent platform offering the most extension points.
 Therefore, we considered only the most general free and open source agent platforms.
-Finally we picked the JADE platform (described in the following section) which, at the time of writing this thesis, appears to be the community choice number one.  
+Finally we picked the Jade platform (described in the following section) which, at the time of writing this thesis, appears to be the community choice number one.  
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Jade}
 
-% About JADE
-JADE (Java Agent Development Framework) is an agent platform and framework in one.
+% Jade an agent platform and framework in one
+Jade (Java Agent Development Framework) is an agent platform and framework in one.
 
-% JADE as agent platform
+% Jade as agent platform
 It is a \textit{platform} because it provides a run-time environment in which the agents operate, much like a sandbox in which children play.
-JADE also manages the lifetimes of the agents running on the platform, delivers messages (asynchronous message passing) and provides other services (e.g. the yellow pages service).
+Jade also manages the lifetimes of the agents running on the platform, delivers messages (asynchronous message passing) and provides other services (e.g. the yellow pages service).
 
-% JADE as a framework
-JADE is also a \textit{framework} because it comes with an extensive base class libraries and the actual user-defined classes are expected to inherit from these base classes, much like a building is expected to be built within the boundaries of an already erected scaffolding.
-A concrete multiagent system is basically an instantiation of the JADE as a framework.
+% Jade as a framework
+Jade is also a \textit{framework} because it comes with an extensive base class libraries and the actual user-defined classes are expected to inherit from these base classes, much like a building is expected to be built within the boundaries of an already erected scaffolding.
+A concrete multiagent system is basically an instantiation of the Jade as a framework.
 
-% About JADE 2
-JADE simplifies the implementation of multiagent systems by acting as a middleware that complies with the FIPA
+% About Jade
+Jade simplifies the implementation of multiagent systems by acting as a middleware that complies with the FIPA
 [FIPA: http://www.fipa.org]
 specifications
 [FIPA-Specificaiton: http://www.fipa.org/specifications/index.htmls] and by providing a set of graphical tools that support the debugging and deployment phases.
 The agent platform can be distributed across multiple machines (possibly running different operating systems) and it can be configured via a remote graphical tool.
 The configuration can be even changed at run-time by moving agents from one machine to another, as and when required. 
-JADE is written in the Java programming language. 
+Jade is written in the Java programming language. 
 
 % Extensibility
-JADE has been specifically designed with extensibility in mind and since our goal is to extend the multiagent systems with organizational concepts, this is the platform of our choice.
+Jade has been specifically designed with extensibility in mind and since our goal is to extend the multiagent systems with organizational concepts, this is the platform of our choice.
 The fact that it places great emphasis on extensibility also manifests in its choice of the actual AOP language - the Java programming language.
 
 % Minimalistic architecture
-A feature of JADE we find particularly noteworthy is its minimalistic architecture.
+A feature of Jade we find particularly noteworthy is its minimalistic architecture.
 Only the most fundamental services (e.g. message delivery) are hard-wired.
 Whenever possible, a service is implemented as a full-fledged agent operating on the platform to whom messages can be sent (e.g. white and yellow pages service).
 Even the graphical tools are only GUI front-ends to these service agents.
-This minimalistic architecture is further evidence that JADE takes extensibility seriously.
+This minimalistic architecture is further evidence that Jade takes extensibility seriously.
 
 % License
-JADE is a free and open source software, distributed under GNU Lesser General Public Licence (LGPL), version 2.
+Jade is a free and open source software, distributed under GNU Lesser General Public Licence (LGPL), version 2.
 % TODO Check the spelling of "license".
 The copyright holder is Telecom Italia.
 
 % Version 
-The version of JADE used in this thesis is JADE 4.1.1 released on November 18th, 2011.
+The version of Jade used in this thesis is Jade 4.1.1 released on November 18th, 2011.
 
 % System requirements
-To run JADE 4.1.1, the Java platform, version 1.4 or higher is required.
+To run Jade 4.1.1, the Java platform, version 1.4 or higher is required.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Thespian4Jade}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Organization, Role and Competence}
+
+% thespian4jade.core.organization
+The \texttt{thespian4jade.core.organization} package contains classes modelling organizations and their roles with competences.
+
+% Organization
+% Organization_Responder
+
+% Role
+% Role_Responder
+
+\subsubsection{Organization Knowledge Base}
+
+% thespian4jade.core.organization.kb
+The \texttt{thespian4jade.core.organization.kb} package hold the implementation of an organization's knowledge base.
+In Thespian4Jade, organizations and roles are agentified
+\footnote{Implemented as agents.}
+and therefore can actively gather and store knowledge about other agents (players in particular) the system.
+
+% OrganizationKnowledgeBase
+The \texttt{OrganizationKnowledgeBase} represents an organization's knowledge base.
+It stores knowledge about the players enacting roles in the organization (e.g. their responsibilities).
+It provides two views:
+\begin{itemize}
+	\item The \textit{Query} view, accessed via the \texttt{query()} method, exposing API to query the knowledge base.
+	\item The \textit{Update} view, accessed via the \texttt{update()} method, exposing API to update the knowledge base.
+\end{itemize}
+
+\subsubsection{Competence}
+
+% thespianjade.core.organization.competence
+The \texttt{thespianjade.core.organization.competence} package includes classes representing role competences.
+% ICompetence
+The \texttt{ICompetence<TArgument, TResult>} generic interface models a competence with typed argument and result.
+% Synchronous vs. asynchronous competence
+A competence can be either \textit{synchronous} or \textit{asynchronous}.
+% SynchronousCompetence
+
+% AsynchronousCompetence
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Player and Responsibilities}
+
+% thespian4jade.core.player
+The \texttt{thespian4jade.core.player} package contains classes modelling players with responsibilities.
+
+% Player
+% Player_Responder
+
+\subsubsection{Player Knowledge Base}
+
+% thespian4jade.core.player.kb
+The \texttt{thespian4jade.core.player.kb} package holds the implementation of a player's knowledge base.
+In Thespian4Jade, players, being agents, can actively gather and store knowledge about other agents (organizations and roles in particular) the system.
+
+% PlayerKnowledgeBase
+The \texttt{PlayerKnowledgeBase} represents a players's knowledge base.
+It stores knowledge about organizations in which the player enacts roles and the enacted roles (e.g. their competences).
+Like an organization's knowledge base, it also provides the \textit{Query} and \textit{Update} views.
+
+\subsubsection{Responsibilities}
+
+% thespian4jade.core.player.responsibility
+The \texttt{thespian4jade.core.player.responsibility} package includes classes representing player responsibilities.
+% IResponsibility
+The \texttt{IResponsibility<TArgument, TResult>} generic interface models a responsibility with typed argument and result.
+% Synchronous vs. asynchronous responsibility
+A responsibility can be either \textit{synchronous} or \textit{asynchronous}.
+% SynchronousResponsibility
+
+% AsynchronousResponsibility
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Protocols and Messages}
+
+% thespian4jade.protocols
+The \texttt{thespian4jade.protocols} package contains classes modelling protocols.
+By virtue of good design, the same base classes that are used to model the application-agnostic protocols in the framework itself (between a player and an organization or role) can be used to represent the application-specific protocols in the applications using the framework (between roles within an organization). 
+
+% Protocol - package's main class
+The \texttt{Protocol} abstract class models an interaction (or communication) protocol.
+Although Thespian has been designed to support protocols between more than two interacting parties, Thespian4Jade currently supports only protocols between two parties: the initiator and responder parties.
+A concrete protocol must override two abstract methods (\textit{Abstract factory} design pattern):
+\begin{itemize}
+	\item \texttt{createInitiatorParty()} that creates a new \texttt{InitiatorParty} and
+	\item \texttt{createResponderParty()} that creates a new \texttt{ResponderParty}.
+\end{itemize}
+Concrete protocols are singletons - they are never instantiated directly but are retrieved from the protocol registry.
+
+% ProtocolRegistry
+The \texttt{ProtocolRegistry} is a registry of protocols.
+When the framework or an application needs a specific protocol, it does not instantiate the protocol class, but rather uses it as a key to retrieve that protocol's singleton from the protocol registry. 
+
+% Protocols
+The \texttt{Protocols} static class contains the keys to retrieve the infrastructure protocols from the protocol registry.
+There will be an identically named static class of similar purpose in each example holding the keys to retrieve the application-logic protocols from the protocol registry. 
+
+\subsubsection{Organization Protocols}
+
+% thespian4jade.protocols.organization
+The \texttt{thespian4jade.protocols.organization} package and its sub-packages contain classes modelling the protocols that controls the interaction between a player and an organization:
+\begin{itemize}
+	% thespian4jade.protocols.organization.enactrole
+	\item The \texttt{EnactRoleProtocol} class models the \textit{Enact role} protocol.
+	% thespian4jade.protocols.organization.deactrole
+	\item The \texttt{DeactRoleProtocol} class represents the \textit{Deact role} protocol.
+	% thespian4jade.protocols.organization.subscribetoevent
+	\item The \texttt{SubscribeToEventProtocol} class models the \textit{Subscribe to event} protocol.
+	% thespian4jade.protocols.organization.publishrole
+	\item The \texttt{PublishEventProtocol} class represents the \textit{Publish event} protocol.
+\end{itemize}
+
+\subsubsection{Role Protocols}
+
+% thespian4jade.protocols.role
+The \texttt{thespian4jade.protocols.role} package and its sub-packages include classes representing the protocols that governs the communication between a player and a role (more precisely, a position) it enacts:
+\begin{itemize}
+	%thespian4jade.protocols.role.activaterole
+	\item The \texttt{ActivateRoleProtocol} class models the \textit{Activate role} protocol.
+	% thespian4jade.protocols.role.deactivaterole
+	\item The \texttt{DeactivateRoleProtocol} class represents the \textit{Deactivate role} protocol.
+	% thespian4jade.protocols.role.invokecompetence
+	\item The \texttt{InvokeCompetenceProtocol} class models the \textit{Invoke competence} protocol.
+	% thespian4jade.protocols.role.invokeresponsibility
+	\item The \texttt{InvokeResponsibilityProtocol} class represents the \textit{Invoke responsibility} protocol.
+\end{itemize}
+
+\subsubsection{Messages}
+
+% thespian4jade.language
+The \texttt{thespian4jade.language} hold classes modelling messages exchanged in the protocols.
+% Message - packages's main class 
+The \texttt{Message} abstract class models a message with structured content; it is an abstraction over Jade's \texttt{ACLMessage} representing a message with unstructured content.
+A concrete message must override two abstract methods:
+\begin{itemize}
+	\item \texttt{generateACLMessage(): ACLMessage} that converts this T4J message to an ACL message to be sent and
+	\item \texttt{parseACLMessage(aclMessage: ACLMessage)} that converts a received ACL message to this T4J message.
+\end{itemize}
+% TextMessage and BinaryMessage
+A message is either a \textit{text message} or a \textit{binary message} depending whether its payload (a sequence of bytes) is interpreted as a piece of text or a serializable Java object.
+% TextMessage
+Text messages are modelled by the \texttt{TextMessage} abstract class.
+To define a concrete text message, subclass \texttt{TextMessage} and override its two abstract methods:
+\begin{itemize}
+	\item \texttt{generateContent(): String} that generates the content of an ACL message from this text message and
+	\item \texttt{parseContent(content: String)} that parses the content of a received ACL message initializing this text message. 
+\end{itemize}
+% BinaryMessage
+Binary messages are represented by the \texttt{BinaryMessage} abstract class.
+To define a concrete binary message, extend \texttt{BinaryMessage} and override its two abstract methods:
+\begin{itemize}
+	\item \texttt{getContentObject(): Serializable} that gets a serializable object from this binary message to become the ACL message's \textit{content object} (payload) and
+	\item \texttt{setContenObject(contentObject: Serializable)} that sets the content object of a received ACL message initializing this binary message.
+\end{itemize}
+
+% SimpleMessage
+In situations where the content of a message is an unstructured piece of text, and therefore can be inserted to the message at once as opposed to built step by step using various setters, a \textit{simple message} can be used.
+A simple message - a fallback to the unstructured-content approach - is modelled by the \texttt{SimpleMessage} class - a thin wrapper over Jade's \texttt{ACLMessage} class.
+
+% IMessageFactory
+The \texttt{IMessageFactory<TMessage>} is a generic interface for a message factory used in various receiver states to create a new message.
+It follows the \textit{Abstract factory} design pattern.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Utilities}
+
+% thespian4jade.utlities
+This \texttt{thespian4jade.utilities} package contains various utility classes for general use across the whole framework.
+% ClassHelper
+The \texttt{ClassHelper} static class defines (static) helper methods that aid class-related reflection, most notably dynamic class instantiation.
+% StringUtils
+The \textit{StringUtils} static class defines (static) utility methods assisting with string manipulation performed when formulating messages.
+
+% thespian4jade.asynchrony
+This \texttt{thespian4jade.asynchrony} package includes types that support asynchrony in the framework.
+
+% IObserver, IObservable, Observable
+The \texttt{IObserver} and \texttt{IObervable} interfaces specify the Observer design pattern as employed in Thespian4Jade.
+A developer can implement \texttt{IObservable} either from scratch or they can delegate the implementation to an instance of the \textit{Observable} class, which already implements the interface.
+Caution has to be exercised when delegating the implementation as the original observable object has to be passed as an argument to the \texttt{notifyObservers()} method.
+
+% Future
+The \texttt{Future<T>} generic class models a \textit{future} - an object that acts as a proxy for a initially unknown result of a yet-to-be-completed computation.
+Note that a \texttt{Future<T>} is both an \texttt{IObserver} and a \texttt{IObservable}.
+
+Although the equivalents of these types exist in Java SE standard class libraries, we have chosen to define our own lightweight versions that provide only the necessary functionality. 
+
+% thespian4jade.example package
+This \texttt{thespian4jade.example} package holds classes that extends the base classes (e.g. \texttt{Player}) with functionality that is used in all three examples, yet is not inherent to the class being extended.
+% RoleEnacterPlayer
+The \texttt{RoleEnacterPlayer} class models a player whose intention is to enact a predetermined role in an organization decided in advance.
+% COmpetenceInvokerPlayer
+The \texttt{CompetenceInvoker} class, represents a player who intends to invoke a predetermined competence. Such player is also a role-enacter since the competence has to be invoked on some role decided in advance.  
