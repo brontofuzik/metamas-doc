@@ -89,18 +89,39 @@ To run Jade 4.1.1, the Java platform, version 1.4 or higher is required.
 The \texttt{thespian4jade.core.organization} package contains classes modelling organizations and their roles with competences.
 
 % Organization
+The \texttt{Organization} abstract class - one of Thespian4Jade's three core classes - models an organization
+\footnote{Actually, the \texttt{Organization} class models an organization \textit{type} and its instances model organization \textit{tokens}.}.
+Since organizations in Thespian4Jade are agentified
+\footnote{An agentified organization has all the properties of an agent - it it autonomous and can interact (communicate) with other agents. Such an organization is an agent in its own right.}
+, the class is an extension of Jade's \texttt{Agent} class.
 % Organization_Responder
+The \texttt{Organization\_Responder} class implements an organization's responder behaviour configured to respond to the \textit{Enact role}, \textit{Deact role} and \textit{Subscribe to event} protocols.
+
+% Concrete organization type implementation
+To implement a concrete organization:
+\begin{enumerate}
+	\item extend the \texttt{Organization} class and
+	\item override the \texttt{action()} method to add the organization's roles using the \texttt{addRole(roleClass: Class)} method.	
+\end{enumerate}
 
 % Role
+The \texttt{Role} abstract class - one of Thespian4Jade's three core classes - models a role and its instances model the role's positions.
+Since like organizations, roles are agentified, the class extends Jade's \texttt{Agent} class.
 % Role_Responder
+The \texttt{Role\_Responder} class implements a role's responder behaviour configured to respond to the \textit{Activate role}, \textit{Deactiavte role} and \textit{Invoke competence} protocols.
+
+% Concrete role implementation
+To implement a concrete role:
+\begin{enumerate}
+	\item extend the \texttt{Role} class and
+	\item override the \texttt{action()} method to schedule the role's responder behaviour (if the role acts as a responder party in any application-logic protocol) and to add the role's competences using the \texttt{addCompetence(competenceClass: Class)} method.	
+\end{enumerate}
 
 \subsubsection{Organization Knowledge Base}
 
 % thespian4jade.core.organization.kb
 The \texttt{thespian4jade.core.organization.kb} package hold the implementation of an organization's knowledge base.
-In Thespian4Jade, organizations and roles are agentified
-\footnote{Implemented as agents.}
-and therefore can actively gather and store knowledge about other agents (players in particular) the system.
+In Thespian4Jade, organizations and roles are agentified and therefore can actively gather and store knowledge about other agents (players in particular) the system.
 
 % OrganizationKnowledgeBase
 The \texttt{OrganizationKnowledgeBase} represents an organization's knowledge base.
@@ -117,11 +138,27 @@ It provides two views:
 The \texttt{thespianjade.core.organization.competence} package includes classes representing role competences.
 % ICompetence
 The \texttt{ICompetence<TArgument, TResult>} generic interface models a competence with typed argument and result.
+It declares two methods common to all competences:
+\begin{itemize}
+	\item \texttt{setArgument(argument: TArgument)} sets the argument passed to the competence and
+	\item \texttt{getResult(): TResult} gets the result returned from the competence.
+\end{itemize}
+
 % Synchronous vs. asynchronous competence
 A competence can be either \textit{synchronous} or \textit{asynchronous}.
-% SynchronousCompetence
-
+Behaviours in AOP correspond to methods in OOP, except that while the asynchronous method invocation (AMI) in OOP has to be programmed explicitly, in AOP the asynchronous invocation of behaviours is implicit.
+For example, in Jade a behaviour is invoked
+\footnote{More precisely, scheduled for execution.}
+by calling the \texttt{addBehaviour(behaviour: Behaviour)} method of the \texttt{Agent} class.
+The method immediately returns and the invoked behaviour is executed asynchronously and concurrently with other behaviours.
+If a behaviour is to be invoked synchronously from another behaviour in Jade, the calling behaviour has to \textit{include} the called behaviour as its sub-behaviour
+\footnote{For example, the calling FSM behaviour includes the called behaviour as one of its states.}.
+% SycnhronousCompetence
+A synchronous competence is modelled by the \texttt{SynchronousCompetence<TArgument, TResult>} generic abstract class, a kind FSM behaviour.
+To define a concrete synchronous competence, extend this class and implement the competence logic as a beahviour included as a state (or states) of this FSM behaviour.
 % AsynchronousCompetence
+An asynchronous competence is represented by the \texttt{AsynchronousCompetence<TArgument, TResult>} generic abstract class, a kind of one-shot behaviour.
+To define a concrete asynchronous competence, extends this class and implement the competence logic as a behaviour invoked from the overriden \texttt{action()} method.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Player and Responsibilities}
@@ -130,7 +167,31 @@ A competence can be either \textit{synchronous} or \textit{asynchronous}.
 The \texttt{thespian4jade.core.player} package contains classes modelling players with responsibilities.
 
 % Player
-% Player_Responder
+The \texttt{Player} abstract class - one of Thespin4Jade three core classes - models a player
+\footnote{Actually, the \texttt{Player} class models a player \textit{type} and its instances model player \textit{tokens}.}.
+Since the player is basically an agent able to play roles in organizations, the class extends Jade's \texttt{Agent} class.
+% PLayer_Responder
+The \texttt{Player\_Responder} class implements a player's responder behaviour configured to respond to the \textit{Publish event} and \textit{Invoke responsibility} protocols.
+
+% Concrete player implementation
+To implement a concrete player:
+\begin{enumerate}
+	\item extend the \texttt{Player} class and
+	\item override the \texttt{action()} method to add the player's responsibilities using the \texttt{addResponsibility(responsibilityClass: Class)} method.	
+\end{enumerate}
+
+The remaining classes implement a player's behaviour in all eight infrastructure protocols.
+A player acts as:
+\begin{itemize}
+	\item an initiator party in the \textit{Enact role} protocol - \texttt{Player\_EnactRole\_InitiatorParty},
+	\item an initiator party in the \textit{Deact role} protocol - \texttt{Player\_DeactRole\_InitiatorParty},
+	\item an initiator party in the \textit{Subscribe to event} protocol - \texttt{Player\_SubscribeToEvent\_InitiatorParty}.
+	\item a responder party in the \textit{Publis event} protocol - \texttt{Player\_PublishEvent\_ReponderParty},
+	\item an initiator party in the \textit{Activate role} protocol - \texttt{Player\_ActivateRole\_InitiatorParty},
+	\item an initiator party in the \textit{Deactivate role} protocol - \texttt{Player\_DeactivateRole\_InitiatorParty},
+	\item an initiator party in the \textit{Invoke competence} protocol - \texttt{Player\_InvokeCompetence\_InitiatorParty} and
+	\item a responder party in the \textit{Invoke responsibility} protocol - \texttt{Player\_InvokeResponsibility\_RespodnerParty}. 
+\end{itemize}
 
 \subsubsection{Player Knowledge Base}
 
@@ -149,11 +210,15 @@ Like an organization's knowledge base, it also provides the \textit{Query} and \
 The \texttt{thespian4jade.core.player.responsibility} package includes classes representing player responsibilities.
 % IResponsibility
 The \texttt{IResponsibility<TArgument, TResult>} generic interface models a responsibility with typed argument and result.
-% Synchronous vs. asynchronous responsibility
-A responsibility can be either \textit{synchronous} or \textit{asynchronous}.
-% SynchronousResponsibility
+It prescribes two methods common to all responsibilities:
+\begin{itemize}
+	\item \texttt{setArgument(argument: TArgument)} sets the argument passed to the responsibility and
+	\item \texttt{getResult(): TResult} gets the result returned from the responsibility.
+\end{itemize}
 
-% AsynchronousResponsibility
+% Synchronous vs. asynchronous responsibility
+Similarly to a competence, a responsibility can be either synchronous or asynchronous, represented by the \texttt{SynchronousResponsibility<TArgument, TResult>} and \texttt{AsynchronousResponsibility<TArgument, TResult>} generic abstract classes.
+The same that has been said about competences applies to responsibilities as well.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Protocols and Messages}
@@ -265,7 +330,9 @@ A developer can implement \texttt{IObservable} either from scratch or they can d
 Caution has to be exercised when delegating the implementation as the original observable object has to be passed as an argument to the \texttt{notifyObservers()} method.
 
 % Future
-The \texttt{Future<T>} generic class models a \textit{future} - an object that acts as a proxy for a initially unknown result of a yet-to-be-completed computation.
+The \texttt{Future<T>} generic class models a \textit{future}
+\footnote{Also called a \textit{promise} or \textit{IOU (I owe you)}.}
+ - an object that acts as a proxy for a initially unknown result of a yet-to-be-completed computation.
 Note that a \texttt{Future<T>} is both an \texttt{IObserver} and a \texttt{IObservable}.
 
 Although the equivalents of these types exist in Java SE standard class libraries, we have chosen to define our own lightweight versions that provide only the necessary functionality. 
