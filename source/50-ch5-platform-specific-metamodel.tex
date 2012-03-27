@@ -82,6 +82,91 @@ To run Jade 4.1.1, the Java platform, version 1.4 or higher is required.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Thespian4Jade}
 
+Thespian4Jade is the implementation of the Thespian metamodel for the Jade platform.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{States and Parties}
+
+% thespian4jade.behaviours
+The \texttt{thespian4jade.behaviours} package contains abstractions of Jade's behaviours - interaction protocol parties and their states.
+A interaction protocol party is a behaviour of a participant in an interaction protocol and a state its one of its sub-behaviours.
+In order for parties to be composable, their design follows the \textit{Composite} design pattern:
+\begin{itemize}
+	\item \texttt{IState} plays the role of \textit{Component},
+	\item concrete states play the role of \textit{Leaf} and
+	\item \texttt{Party} and its subclasses play the role of \textit{Composite}.
+\end{itemize}
+
+\subsubsection{States}
+
+% thespian4jade.behaviurs.states
+The \texttt{thespian4jade.behaviurs.states} package contains classes that implement states in interaction protocol parties.
+
+% IState, OneShotBehavioursState and FSMBehavioursState
+The \texttt{IState} interface specifies a state of a party.
+It declares methods that streamline registration of states and transitions in parties (FSM behaviours).
+
+% ISenderState, OneShotBehavioursSenderState and FSMBehaviourSenderState
+The \texttt{ISenderState} interface, an extension of \texttt{IState}, specifies a state in which a message is sent to all receivers using the \texttt{send(message: Message, receivers: AID[])} method.
+It has two implementations:
+\begin{itemize}
+	\item \texttt{OneShotBehavioursSenderState} implementing a sender state that is also a Jade's one-shot behaviour and
+	\item \texttt{FSMBehaviourSenderState} implementing a sender state that is also a Jade's FSM behaviour.
+\end{itemize}
+
+% IReceiverState, OneShotBehavioursReceiverState and FSMBehavioursReceiverState
+The \texttt{IReceiverState} interface, an extension of \texttt{IState}, specifies a state in which a message is received from any sender using the \texttt{receive(message: Message, senders: AID[])} method.
+It has two implementations:
+\begin{itemize}
+	\item \texttt{OneShotBehavioursReceiverState} implementing a receiver state that is also a Jade's one-shot behaviour and
+	\item \texttt{FSMBehaviourReceiverState} implementing a sender state that is also a Jade's FSM behaviour.
+\end{itemize}
+
+\subsubsection*{Sender States}
+
+% thespian4jade.behaviours.states.sender
+The \texttt{thespian4jade.behaviours.states.sender} package contains, above all, the \texttt{OuterSenderState} abstract class implementing a state in which the party sends a message to the other party.
+It is further specialized as:
+\begin{itemize}
+	\item \texttt{SingleSenderState<TMessage>} implementing a state in which only one type of message is sent,
+	\item \texttt{SendSuccessOrFailure<TMessage>} implementing a state in which two kinds of messages can be sent - one in case of success and the other one in case of failure - and 
+	\item \texttt{SendAgreeOrRefuse} implementing a state in which either an \textit{agree} or \textit{refuse} message can be sent.
+\end{itemize}
+
+\subsubsection*{Receiver States}
+
+% thespian4jade.behaviours.states.receiver
+The \texttt{thespian4jade.behaviours.states.receiver} package contains the \texttt{OuterReceiverState} abstract class implementing a state in which the party receives a message from the other party.
+It it further specialized by classes analogous to the sender state classes, except they receive messages instead of sending them.
+
+\subsubsection*{Special States}
+
+% thespian4jade.behaviours.states.special
+The \texttt{thespian4jade.behaviours.states.special} package contains classes implementing some special types of states.
+% StateWrapperState
+The \texttt{StateWrapperState<TState>} abstract class implements a state that enables to wrap another state (or a party for that matter) that needs to be provided an argument just before its execution
+\footnote{Usually because it is not yet available at the time of its creation.}
+and provides a result just after its execution.
+It has two specializations:
+\begin{itemize}
+	\item \texttt{InvokeCompetenceState<TArgument, TResult>} that wraps the \textit{Invoke competence} initiator party and
+	\item \texttt{InvokeResponsibilityState<TArgument, TResult>} that wraps the \textit{Invoke responsibility} initiator party.
+\end{itemize}
+
+% EventHandler
+The \texttt{EventHandler<TArgument>} abstract class is an implementation of an event-handling state that is invoked (synchronously) from the \textit{Publis event} protocol responder party.
+
+\subsubsection{Parties}
+
+% tehspian4jade.beahviours.parties
+The \texttt{tehspian4jade.behaviours.parties} contains the \texttt{Party<TAgent>} abstract class modelling an interaction protocol party and its two specializations:
+\begin{itemize}
+	\item \texttt{InitiatorParty<TAgent>} representing a party that initiates an interaction and
+	\item \texttt{ResponderParty<TAgent>} representing a party that responds to the initiation of others.
+\end{itemize}
+% IResultParty<TResult>
+The \texttt{IResultParty<TResult>} interface specifies a party that produces a result, e.g. initiator parties in the \textit{Invoke competence} or \textit{Invoke responsibility} protocols.
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Organization, Role and Competence}
 
@@ -137,7 +222,7 @@ It provides two views:
 % thespianjade.core.organization.competence
 The \texttt{thespianjade.core.organization.competence} package includes classes representing role competences.
 % ICompetence
-The \texttt{ICompetence<TArgument, TResult>} generic interface models a competence with typed argument and result.
+The \texttt{ICompetence<TArgument, TResult>} interface models a competence with typed argument and result.
 It declares two methods common to all competences:
 \begin{itemize}
 	\item \texttt{setArgument(argument: TArgument)} sets the argument passed to the competence and
@@ -154,10 +239,10 @@ The method immediately returns and the invoked behaviour is executed asynchronou
 If a behaviour is to be invoked synchronously from another behaviour in Jade, the calling behaviour has to \textit{include} the called behaviour as its sub-behaviour
 \footnote{For example, the calling FSM behaviour includes the called behaviour as one of its states.}.
 % SycnhronousCompetence
-A synchronous competence is modelled by the \texttt{SynchronousCompetence<TArgument, TResult>} generic abstract class, a kind FSM behaviour.
+A synchronous competence is modelled by the \texttt{SynchronousCompetence<TArgument, TResult>} abstract class, a kind FSM behaviour.
 To define a concrete synchronous competence, extend this class and implement the competence logic as a beahviour included as a state (or states) of this FSM behaviour.
 % AsynchronousCompetence
-An asynchronous competence is represented by the \texttt{AsynchronousCompetence<TArgument, TResult>} generic abstract class, a kind of one-shot behaviour.
+An asynchronous competence is represented by the \texttt{AsynchronousCompetence<TArgument, TResult>} abstract class, a kind of one-shot behaviour.
 To define a concrete asynchronous competence, extends this class and implement the competence logic as a behaviour invoked from the overriden \texttt{action()} method.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -209,7 +294,7 @@ Like an organization's knowledge base, it also provides the \textit{Query} and \
 % thespian4jade.core.player.responsibility
 The \texttt{thespian4jade.core.player.responsibility} package includes classes representing player responsibilities.
 % IResponsibility
-The \texttt{IResponsibility<TArgument, TResult>} generic interface models a responsibility with typed argument and result.
+The \texttt{IResponsibility<TArgument, TResult>} interface models a responsibility with typed argument and result.
 It prescribes two methods common to all responsibilities:
 \begin{itemize}
 	\item \texttt{setArgument(argument: TArgument)} sets the argument passed to the responsibility and
@@ -217,7 +302,7 @@ It prescribes two methods common to all responsibilities:
 \end{itemize}
 
 % Synchronous vs. asynchronous responsibility
-Similarly to a competence, a responsibility can be either synchronous or asynchronous, represented by the \texttt{SynchronousResponsibility<TArgument, TResult>} and \texttt{AsynchronousResponsibility<TArgument, TResult>} generic abstract classes.
+Similarly to a competence, a responsibility can be either synchronous or asynchronous, represented by the \texttt{SynchronousResponsibility<TArgument, TResult>} and \texttt{AsynchronousResponsibility<TArgument, TResult>} abstract classes.
 The same that has been said about competences applies to responsibilities as well.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -308,7 +393,7 @@ In situations where the content of a message is an unstructured piece of text, a
 A simple message - a fallback to the unstructured-content approach - is modelled by the \texttt{SimpleMessage} class - a thin wrapper over Jade's \texttt{ACLMessage} class.
 
 % IMessageFactory
-The \texttt{IMessageFactory<TMessage>} is a generic interface for a message factory used in various receiver states to create a new message.
+The \texttt{IMessageFactory<TMessage>} is a interface for a message factory used in various receiver states to create a new message.
 It follows the \textit{Abstract factory} design pattern.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -330,7 +415,7 @@ A developer can implement \texttt{IObservable} either from scratch or they can d
 Caution has to be exercised when delegating the implementation as the original observable object has to be passed as an argument to the \texttt{notifyObservers()} method.
 
 % Future
-The \texttt{Future<T>} generic class models a \textit{future}
+The \texttt{Future<T>} class models a \textit{future}
 \footnote{Also called a \textit{promise} or \textit{IOU (I owe you)}.}
  - an object that acts as a proxy for a initially unknown result of a yet-to-be-completed computation.
 Note that a \texttt{Future<T>} is both an \texttt{IObserver} and a \texttt{IObservable}.
