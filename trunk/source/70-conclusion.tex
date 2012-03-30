@@ -8,4 +8,70 @@
 %% Academic year: 2011/2012                                                   %%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\chapwithtoc{Conclusion}
+\chapwithtoc{Conclusion and Future Work}
+
+% Conclusion %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% Thesis aims
+The aim of this thesis was to investigate some of the existing approaches to modelling organizations in MAS and propose a new organizational metamodel inspired by some of the existing ones.
+Another goal was to implement this metamodel in a mainstream agent platform and demonstrate its usage on some examples.
+
+% 1. Investigate existing approaches to modelling organizations in MAS
+We have investigated a total of four organizational metamodels and have drawn inspiration from all of them.
+We have observed that they all more or less agree on the core concepts (organization, role) and offer different views of the auxiliary concepts.
+
+% 2. Propose a new organizational metamodel inspired by some of the existing ones - Thespian
+Inspired by the existing ones, we have proposed a new organizational metamodel - \textit{Thespian}.
+\textit{Thespian} is a fusion of investigated metamodels and some original ideas, for example the mechanism of subscribing to organization events, their publishing and subsequent handling.
+\textit{Thespian} was designed to strike a balance between expresiveness and simplicity.
+It provides enough concepts for modelling real world organizations but at the same avoids introducing modelling constructs peripheral this initiative.
+In other words, in \textit{Thespian} we have made an effort to provide a tool to do just one job - modelling organizations - and do it well.
+
+% 3. Implement this metamodel in a mainstream agent platform - Thespian4Jade
+To verify the applicability of \textit{Thespian}, we have implemented it as an extension for Jade (the most popular free general-purpose agent platform) called \textit{Thespian4Jade}.
+To our knowledge, \textit{Thespian4Jade} - being an actually implemented
+\footnote{As opposed to just specified.}
+organizational extension of an existing general-purpose agent platform - is an unprecedented
+\footnote{And at the time of writing this thesis also unique.}
+effort.
+
+% 4. Demonstrate its usage on some examples
+In order to demonstrate the usage of \textit{Thespian4Jade}, we have developed three example MASas raging from a toy problem (function invocation) through a sightly more involved use (expression evaluation) to a real world application (auction).
+With these examples we have highlighted the separation of role-related behaviour from the behaviour inherent to a player.
+This decoupling of innate and acquired behaviour has one particularly appealing consequence - an organization can be designed and developed independently from the players who will later become its members. 
+
+% Future Work %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+Although we are confident \textit{Thespian} is a sufficiently expressive metamodel and \textit{Thespian4Jade} is a useful Jade extension, there are a few places where we made certain assumptions and imposed some restrictions.
+This way, we could do without some features that would otherwise have been indispensable.
+Despite being omitted they are outlined here as some of the strongest candidates for any future work.
+
+% Organization manager
+It is assumed that a concrete organization in which a player wants to enact a role already exists.
+It has to be specified at compile-time, it is created at MAS start-up and never destroyed.
+Undoubtedly, a more flexible approach, where a player could request that an organization of certain type be created and later discarded would be a step in the right direction.
+For this to work, a special agent - \textit{Organization manager} - would have to exist capable of creating organizations on demand.
+
+% Yellow pages for players & organization-initiated role enactment.
+Currently, only a player can initiate the role enactment.
+% Reality
+This is not an accurate reflection of reality.
+In the real world, not only a job-seeker can initiate the recruitment process; a company can take the initiative by selecting candidates for a position from a pool of all job-seekers and making them an offer.
+% Thespian
+Two features would have to be added to \textit{Thespian} in order to support this process: \textit{yellow pages for players} that would enable an organization to search for existing players with certain capabilities and \textit{organization-initiated role enactment}.
+
+% Responsibilities fulfilling monitoring & organization-initiated role deactment
+At present, the role deactment can only by initiated by a player.
+% Reality
+Again, this is not true in the real world.
+In reality, an employee quitting a job is not the only way for them to stop being employed; a company can fire an employee if they fail to fulfil their position's responsibilities.
+% Thespian
+In order for \textit{Thespian} to support this procedure, two features would have to be added: \textit{responsibilities fulfilling monitoring} that would enable an organization to keep track of its players' performance and \textit{organization-initiated role deactment}.
+
+% Holonic MAS
+Another restriction is that only a player can play a role.
+At first sight, this does not seem like a too big a restriction, if it is a restriction at all.
+However, an organization could be viewed as a player as well, capable of more than its individual members put together.
+Therefore, it makes sense to consider the possibility of organizations playing roles in other organizations.
+Such an organization is a \textit{holon} (simultaneously a whole and a part) in a \textit{holonic MAS}.
+\textit{Thespian} and \textit{Thespian4Jade} in particular are well prepared to accommodate this feature with the organizations already being agentified.
