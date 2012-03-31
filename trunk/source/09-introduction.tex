@@ -12,6 +12,65 @@
 
 % Introduction %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-% Thesis Organization %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% AI - autonomous agents
+Autonomous agents were conceived by the artificial intelligence community as entities capable of autonomous behaviour in their environment, most preferably a behaviour that could be considered intelligent.
+% DAI - multiagent systems
+Distributed AI community was especially interested in groups of such agents sharing a common environment and capable of interacting with one another - multiagent systems.
+% SE - multiagent sytems
+Multiagent systems have also attracted a fair amount of attention from the software engineering community in the recent years because they represent a new way of harnessing the complexity involved in analysing, designing and ultimately implementing large heterogeneous software systems.
+ 
+% AOP vs. OOP - small step technologically
+Agent-oriented programming is the latest stage in the evolution of programming paradigms.
+Technologically, it may not seem like a big improvement over its predecessor - object-oriented programming.
+After all, contemporary large-scale multiagent systems are implemented mostly in object-oriented languages and agent-oriented languages are experiencing difficulties in finding their way from academia to industry.
+% AOP vs. OOP - huge leap conceptually
+However, agent-oriented programming represents a huge leap conceptually.
+It is a lot easier for a human mind to think in terms of agents exchanging messages with one another than in terms of objects invoking methods on one another simply because the former resembles something people are very familiar with - a human society.
+% Human society - inspiration for MAS
+Therefore, it makes perfect sense to turn out attention to human societies when looking for ways to expand our notion of multiagent systems and deepen our understanding of them.
 
-The rest of this thesis is organized as follows. Chapter
+% Organization in a human society
+In almost any society organizations of all kinds exist - be they explicit (e.g. a business company) or implicit (e.g. a group of friends playing football), permanent (e.g. a family) or temporary (e.g. a buyer-seller relationship).
+The members of an organization play roles that exist in this organization and interact according to protocols that exist between these roles.
+Organizations have emerged as a natural way to institutionalize behavioural patterns and patterns of interaction, and be doing this they make human interaction more predictable and as such more efficient.
+
+% Organization =/=> loss of individuality & autonomy
+It is important to realize that by becoming a member of an organization and assuming a role in it, a person is not giving up their individuality or autonomy.
+They are still allowed (and often expected) to bring their personal approach to the role they play, and most importantly they are free to leave the organization on terms known at the time of entering it.
+
+% MASes that would benefit from predictability
+Since there are multiagent systems that would benefit from the predictability of agents' behaviour and interaction, there is a demand for approaches to model organizations in multiagent systems.
+
+% Thesis aim, objectives and goal %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+The aim of this thesis is to provide theoretical foundation together with design and implementation tools to model organizations in multiagent systems.
+This general aim can be broken down into four specific objectives:
+\begin{enumerate}
+	% 1	
+	\item Investigate some of the metamodel-based approaches to modelling organizations in multiagent systems.
+	% 2	
+	\item Propose a new organizational metamodel inspired by the existing ones.
+	% 3	
+	\item Implement this metamodel in a mainstream general-purpose agent platform\footnote{Preferably in a free and open-source platform.}.
+	% 4	
+	\item Demonstrate its usage with a number of examples. 
+\end{enumerate}
+The ultimate goal is to contribute to the effort of making multiagent systems a more powerful paradigm for conceptualizing, designing, and implementing software systems.
+
+% Thesis Organization %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+The rest of this thesis is organized as follows.
+% Chapter 1
+Chapter~1 is a brief overview of autonomous agents and multiagent systems and can be skipped by a reader familiar with them.
+% Chapter 2
+In chapter~2 we discuss the motivation for introducing organizations to multiagent systems and talk about some key organizational concepts for the first time in an informal manner.
+% Chapter 3
+In chapter~3 we present four existing approaches to modelling organizations in multiagent systems from which we drew inspiration for our own work.
+% Chapter 4
+Chapter~4 is where the presentation of our work begins. It introduces \textit{Thespian} - a platform-independent metamodel for modelling organizations in multiagent systems. It is the core chapter of this thesis.
+% Chapter 5
+In chapter~5 we introduce \textit{Thespian4Jade} - the platform-specific implementation of \textit{Thespian}. This chapter describes all important packages and classes and provides guidelines on using them to develop organization-centri multiagent systems in the Jade agent platform.
+% Chapter 6
+In chapter~6, we demonstrate the usage of \textit{Thespian4Jade} with three examples of organization-centric multiagent systems: function invocation, expression evaluation and auction.
+% Conclusion and future work
+The last chapter concludes our discussion and suggests possible directions for future work.
