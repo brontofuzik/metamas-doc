@@ -97,7 +97,7 @@ Notice the the \texttt{<<agent role>>} stereotype.
 
 In O\&P, the basic concepts are \textit{Agent Classifier} and \textit{Agent}.
 These modelling constructs are considered fundamental, because they enable a MAS designer to model agents classes and agent instances respectively.
-Agent classes are the design-time constructs providing the classification of the run-time constructs - agent instances.
+Agent classes are the design-time constructs providing the classification of the run-time constructs -- agent instances.
 
 \subsubsection*{Association between Agent Physical Classifier and Agent Role Classifier}
 
@@ -142,36 +142,35 @@ It can be read as follows. \texttt{Agent1}, a JADE agent, is a \texttt{Manager};
 % Group - definition
 A \textit{group} is a set of agents that are related via their roles, where these links must form
 a connected graph within the group \cite{Odell05}.
-This is the agent-centric way to look at at a group.
-Another way of looking at a group is the role-centric way, which says that a group is a composite structure consisting of interrelated roles, where each of the group's roles has any number of agent instances \cite{Odell05}.
-
-% Group - motivation
-A group can be formed to exploit the synergies of its members, resulting in an entity capable of performing processes that none of its constituent agents (ALT: constituents) is capable.
+This is the agent-centric way of lookig at a group.
+Another way of to look at it is the role-centric way -- a group is a composite structure consisting of interrelated roles, where each of the group's roles has any number of agent instances \cite{Odell05}.
+A group can be formed to exploit the synergy of its members, resulting in an entity capable of performing processes that none of its constituents alone is capable of.
 
 \subsubsection*{Group Metamodel}
 
-Figure~\ref{figure:onp-group} shows the \textsc{Group} class and its associations with \textsc{Agent} and \textsc{Role}.
-The abstract \textsc{Group} class extends the UML Structured Classifier, which means that \textsc{Group} is defined as composite structure \footnote{In UML, Structured Classifier can be thought of as a structured set of classifiers. From this perspective, \textsc{Group} is a structured set of \textsc{Agent Role Classifiers}}.
+Figure~\ref{figure:onp-group} shows the \textit{Group} class and its associations with \textit{Agent} and \textit{Role}.
+The abstract \textit{Group} class extends the UML Structured Classifier, which means that \textit{Group} is defined as composite structure
+\footnote{In UML, Structured Classifier can be thought of as a structured set of classifiers. From this perspective, \textit{Group} is a structured set of \textit{Agent Role Classifiers}.}.
 
 % Figure: Group
 \begin{figure}[ht]
 	\centering
 	\includegraphics[width=0.75\textwidth]{images/onp/group.png}
-	\caption{The \textsc{Group} class and its associations}
+	\caption{The \textit{Group} class and its associations}
 	\label{figure:onp-group}
 \end{figure}
 
 % Association between Group and Agent
-Conceptually, a group consists of a set of agents playing roles within this group.
+Conceptually, is constituted by a set of agents playing roles within this group.
 The roles that the agents can play (within this group) are represented by one or more agent role classifiers associated with this group.
-Therefore, the set of agents comprising a group can be derived from the group via the agent role classifiers \cite{Odell05}.
+Therefore, the set of agents forming a group can be derived from the group via the agent role classifiers \cite{Odell05}.
 
 \subsubsection*{Association between Group and Role}
 
 % Association between Group and Agent Role Classifier
-Figure~\ref{figure:onp-group-role-association} illustrates the association between groups and roles played in them by agents.
-Observe that groups containing no roles is not allowed, each group must contain at least one role.
-The opposite direction of the association requires each role to be contained in at least one group, since roles only make sense within context of a group.
+Figure~\ref{figure:onp-group-role-association} illustrates the association between \textit{Group} and \textit{Role}.
+Note that groups containing no roles are not allowed; each group must contain at least one role.
+Also observe that each role has to be defined in at least one group, since roles only make sense within the context of a group.
 
 % Figure: Group to Role association
 \begin{figure}[ht]
@@ -183,15 +182,15 @@ The opposite direction of the association requires each role to be contained in 
 
 \subsubsection*{Agentified and Non-Agentified Groups}
 
-The O\&P metamodel defines two types of groups: agentified and non-agentified.
+O\&P differentiates between two types of groups: agentified and non-agentified.
 
 % Agentified group
-An \textit{agentified group} is a group that is also an agent in its own right, i.e. with its own interactive capability \cite{Odell05}.
-This means that an agentified group can communicate with other agents (or agentified groups for that matter) directly, i.e. without a representative agent.
-It can also be a member of other groups (agentified or not) and play roles, like any other agent.
-To achieve this in the O\&P metamodel, \textsc{Agentified Group} is a subclass of both \textsc{Group} and \textsc{Agent} classes.
+An \textit{agentified group} is a group that is also an agent in its own right, which means it has its own capability to interact \cite{Odell05}.
+An agentified group can communicate with other agents (or agentified groups) directly, i.e. without a representative agent.
+It can also be a member of other groups (agentified or not) and play roles like any other agent.
+To achieve this in O\&P, \textit{Agentified Group} is a subclass of both the \textit{Group} and \textsc{Agent} classes.
 Figure~\ref{figure:onp-agentified-group} shows an example of an agentified group.
-Notice the <<agent>> stereotype used to mark the group as agentified.
+Notice the \texttt{<<agent>>} stereotype used to mark the group as agentified.
 
 % Figure: agentified group
 \begin{figure}[ht]
@@ -202,11 +201,11 @@ Notice the <<agent>> stereotype used to mark the group as agentified.
 \end{figure}
 
 % Non-agentified group
-A \textit{non-agentified group}, while still being a first-class citizen, is not an agent by itself, i.e. is it does not posses any capability to interact.
-This kind of group always communicates with other agents (including agentified groups) through one of its members acting as an intermediary.
-This is achieved in the O\&P metamodel by \textsc{Non-Agentified Group} extending only the \textsc{Group} class and not the \textsc{Agent} class.
+A \textit{non-agentified group}, while still being a first-class citizen, is not an agent in and of itself, meaning it has no capability to interact of its own.
+A non-agentified group always communicates with other agents (including agentified groups) through one of its members acting as an intermediary.
+This is achieved in O\&P by \textit{Non-Agentified Group} subclassing only the \textit{Group} class and not the \textit{Agent} class.
 An example of a non-agentified group is shown in figure~\ref{figure:onp-non-agentified-group}.
-Note that this time there is no <<agent>> stereotype marking the group as agentified.
+Notice the absence of the \texttt{<<agent>>} stereotype.
 
 % Figure: non-agentified group
 \begin{figure}[ht]
@@ -220,27 +219,27 @@ Note that this time there is no <<agent>> stereotype marking the group as agenti
 \subsection{Agent Role Assignment}
 
 The assignment of roles to agents is dynamic, i.e. it changes in time, and is modelled by \textit{Agent Role Assignment}.
-Figure~\ref{figure:onp-agent-role-assignment} shows Agent Role Assignment and its associations.  
+Figure~\ref{figure:onp-agent-role-assignment} shows the \textit{Agent Role Assignment} class and its associations.
 
 % Figure: Agent Role Assignment class
 \begin{figure}[ht]
 	\centering
 	\includegraphics[width=0.75\textwidth]{images/onp/agent-role-assignment.png}
-	\caption{The \textsc{Agent Role Assignment} class and its associations}
+	\caption{The \textit{Agent Role Assignment} class and its associations}
 	\label{figure:onp-agent-role-assignment}
 \end{figure}
 
 \subsubsection*{Agent Role Assignment as a Ternary Association}
 
-A direct association between Agent and Agent Role Classifier would represent that agents play roles.
-However, such model would not be able to represent a situation where an agent plays a role in one group and does not play it in another.
-To model this kind of situations, it is necessary to augment the agent-to-role association with a group context.
-This yields a ternary association, promoted to (ALT: reified as) the Agent Role Assignment class.
-Each instance of the Agent Role Assignment class associates an agent, role and a group.
+A metamodel with a direct association between \textit{Agent} and \textit{Agent Role Classifier} could represent agents playing roles.
+However, such model would not be able to represent a situation where an agent plays a role in one group but does not play it in another.
+To model this kind of situation, it is necessary to augment the agent-to-role association with a group context.
+This yields a ternary association, reified in O\&P as the \textit{Agent Role Assignment} class, whose instances link an agent to a role in a group.
 
 \subsubsection*{Position}
 
-It is possible to associate a group with a role leaving out an agent.
-Such association is called a \textit{position} and models a situation where a concrete agent playing a role within a particular group is yet to be determined.
-This turns out to be an extremely useful modelling concept, since more often than not, the organization modeller does not know (or simply does not care) which agent actually takes up a particular position when the MAS is run.
-One more way to look at the \textsc{Agent Role Assignment} class is to view it as a reified association between the (potential) \textsc{Position} and \textsc{Agent} classes.
+It is possible to associate a group with a role leaving an agent unspecified.
+Such association is called a \textit{position} and represents a situation where a concrete agent playing a role within a particular group is yet to be determined.
+This turns out to be an extremely useful modelling concept, since more often than not, the organization modeller does not know (or simply does not care) which agent will actually take a particular position when the MAS is run.
+Unfortunately, this association is not reified in O\&P.
+If it was reified as the \textit{Position} class, the \textit{Agent Role Assignment} class could be viewed as a reified association between the \textit{Position} and \textit{Agent} classes.
