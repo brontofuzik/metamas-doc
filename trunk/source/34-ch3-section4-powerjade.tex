@@ -1,76 +1,92 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%% powerJade                                                                  %%
+%% Title (en): Multiagent Systems and Organizations                           %%
+%% Title (cs): Multiagentní systémy a organizace                              %%
+%%                                                                            %%
+%% Author: Bc. Lukáš Kúdela                                                   %%
+%% Supervisor: Prof. RNDr. Petr Štěpánek, DrSc.                               %%
+%%                                                                            %%
+%% Academic year: 2011/2012                                                   %%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
 \section{powerJade}
 
-% powerJade - references
-This section introduces the powerJade\footnote{Intentionally uncapitalized.} metamodel described in \cite{Baldoni08a}, \cite{Baldoni08b}, \cite{Baldoni09} and \cite{Baldoni10}.
-The presented overview is due to \cite{Hahn07b} in particular.
-
 % powerJade - authors
-powerJade has been put forward in 2008 by Matteo Baldoni, Guido Boella and their colleagues from University of Turin in Turin, Italy.
+This section introduces the powerJade metamodel
+\footnote{The name is intentionally uncapitalized.}
+put forward in 2008 by Matteo Baldoni, Guido Boella and their colleagues from University of Turin in Turin, Italy.
+% powerJade - references
+It has been described in \cite{Baldoni08a}, \cite{Baldoni08b}, \cite{Baldoni09} and \cite{Baldoni10}.
+The presented overview is extracted from \cite{Hahn07b} in particular.
 
 %% Summary %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 % powerJade inspired by powerJava
-powerJade is a platform independent metamodel inspired by the authors' previous work on powerJava - the extension of the Java programming language with an explicit role construct based on an ontological analysis of roles (see \cite{Baldoni05}, \cite{Baldoni06a}, \cite{Baldoni06b} and \cite{Baldoni07}).
+powerJade is inspired by the authors' previous work on powerJava - an extension of the Java programming language with an explicit role construct, based on an ontological analysis of roles described in \cite{Baldoni05}, \cite{Baldoni06a}, \cite{Baldoni06b} and \cite{Baldoni07}.
 
 % Definitions (organization, role)
-An organization (or, more generally, an institution) belongs to the social reality and it can only be interacted with via the roles it contains \cite{Boella06}.
-It is not an object (as in OOP) that could be manipulated from outside.
-The (modelling?) concept of an \textit{organization} is not only advantageous when modelling problem domains including organizations/institutions of some kind.
-Indeed, we can view every object (as in OOP) as an organization/institution offering different ways of interacting with it, each of which is represented by a different role.
+An organization belongs to the social reality and it can only be interacted with via the roles it defines \cite{Boella06}.
+Specifically, it is not an object that could be manipulated from outside like objects in OOP.
+The concept of organization is useful not only when modelling problem domains including organizations of some kind.
+Indeed, we can view every object as an organization offering different ways of interacting with it, each represented by a different role.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection*{Organization Structure Metamodel}
-% ALT: Ontological Model of an Organization, Organization Ontology
+\subsection*{Organizational Structure Metamodel}
 
 An ontological analysis of roles in \cite{Boella04} yields the following properties of roles:
 \begin{itemize}
-	\item \textit{Foundation} - a role instance is always associated with an instance of the organization class to which is belongs and with a player instance.
-	\item \textit{Definitional dependence} - the role definition depends on the organizations it belongs to.
-	\item \textit{Institutional powers} - the role operations (called \textit{powers}) have access to the state of the organization and other roles of the organization.
-	\item \textit{Prerequisities} - to be granted (and play) a role, the player must be able to perform operations (called \textit{requirements}) which can be requested while it plays the role.
+	\item \textit{Foundation} -- A role instance is always associated with an instance of the organization class to which is belongs and with a player instance.
+	\item \textit{Definitional dependence} - The definition of a role depends on the organizations it belongs to.
+	\item \textit{Institutional powers} -- Role operations (called \textit{powers}) have access to the state of the organization and other roles of the organization.
+	\item \textit{Prerequisities} -- To be granted a role, the player must be able to perform operations (called \textit{requirements}) which can be requested while it plays the role.
 \end{itemize}
 
+
+The metmodel in \cite{Boella04} is focused on organizational structure.
 % Ontological status of organizations and roles compared to agents
-The metamodel in \cite{Boella04} focuses on the organization structure.
-The ontological status of organizations and roles \cite{Boella04} does not differ completely from that of agents (AOP) or objects (OOP).
-On one hand, roles do not exist as independent entities (like objects in OOP), since they are necessarily linked to organizations.
-Additionally, organizations and roles are not autonomous and act via players.
+The ontological status of organizations and roles does not differ completely from that of agents or even objects \cite{Boella04}.
+% Differences
+On one hand, organizations and roles, unlike agents, are not autonomous and act via their members and players.
+Additionally, roles, unlike objects, do not exist as independent entities, since they are necessarily linked to organizations.
+% Similarities
 On the other hand, organizations and roles, like agents, are descriptions of complex behaviour.
-In the real world, organizations are considered legal entities; they can even act like agents, although via a representative role.
+In the real world, organizations are considered legal entities; they can even act like agents, albeit via a representative role.
 Since they share some properties with agents, they can be modelled using similar primitives.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection*{Role Dynamics Metamodel}
-% ALT: Ontological Model of Role Dynamics, Role Dynamics Ontology
 
 The metamodel in \cite{Dastani04} is focused on role dynamics.
-Four operations pertaining to the role dynamics are defined: \textit{enact} and \textit{deact} which mean that agent assumes (ALT: acquires) and relinquishes a role respectively, and \textit{activate} and \textit{deactivate} which mean the agent actually starts and stops playing (invoking powers) a role respectively.
-Even though it is possible (and very common indeed) for an agent to be enacting multiple roles simultaneously, only one of these can be active at any moment.
-Naturally, it is possible that none is active.
-In particular, when an agent is invoking (ALT: performing, executing) a power, at that moment exactly one of its roles is active.
+% Four operations: Enact, deact, actiavte, deactivate
+Four operations pertaining to the role dynamics are defined: \textit{enact} and \textit{deact} meaning that an agent acquires and relinquishes a role, and \textit{activate} and \textit{deactivate} meaning that the agent actually starts and stops playing a role.
+Even though it is possible (and very common) for an agent to be enacting multiple roles simultaneously, only one of these can be active at any moment.
+Naturally, it is possible that at some moment none is active.
+In particular, when an agent is invoking a power, exactly one of its roles is active.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection*{Unified Model}
+\subsection*{Unified Metamodel}
 
-The authors of powerJade merged the metamodels in \cite{Boella04} (organization strucure) and \cite{Boella04} (role dynamics) to model \textit{open systems}\footnote{Open multiagent system is a system that agents can enter and/or leave.}.
-Organizations and roles are not just design-time constructions (ALT: abstractions) and players are not isolated agents - the are all agents interaction with one another.
-A logical specification of this unified model can be found in \cite{Boella07}.
+The authors of powerJade merged the models in \cite{Boella04} (organization strucure) and \cite{Boella04} (role dynamics) into a unified metamodel.
+Organizations and roles are not just design-time abstractions with no run-time projections and players are not just isolated agents; they are all agents interacting with one another.
+A logical specification of this unified metamodel can be found in \cite{Boella07}.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection*{Powers and Requirements}
 
 % Role (AOPwO) vs. interace (OOP)
-Roles can be compared to interfaces from OOP; just like an interface is a contract between a calling class and called class, a role is a contract between an organization and an agent.
+Roles in powerJade can be compared to interfaces from OOP.
+Just like an interface is a contract between a calling class and called class, a role is a contract between an organization and an agent.
 
-% Relationship between interface and implementing entity (class, player agent instance)
-In OOP, the relationship between an interface and a class is a static one - the class definition (design-time) specifies a set of interfaces the class implements and no interfaces can be added or removed at run-time.
-In contrast, the relationship between a role and a player agent instance in AOP with Organizations (AOPwO) is dynamic - the player agent instance definition (design-time) usually does not specify roles it plays, but it can enact and deact roles at run-time.
+% OOP: called class implements interfaces vs. powerJade: player enacts roles
+% OOP
+In OOP, the relationship between a class and the interfaces it implements is a rigid one -- the interfaces a class implements are part of its design-time definition and cannot be implemented or un-implemented at run-time.
+% powerJade
+In contrast, the relationship between a player and roles it enacts in powerJade is a flexible one -- the roles the a player enacts are not part of its design-time definition and can be enacted and deacted at run-time.
 
-% Interface methods & events vs. role requirements & powers
-Interfaces in OOP declare methods the implementing class must implement and events it may raise (ALT: fire, trigger).
-Interface methods are the class' \textit{responsibilities} (what it \textit{must} do?) and the interface events are the class' \textit{competences} (what it \textit{can} do?).
-Similarly, role \textit{requirements} are the responsibilities the player agent takes by enacting/activating the role and the role \textit{powers} are the competences they player gains by enacting/activating the role.
-Thus, interface methods correspond to role requirements, while interface events are analogous to role powers.
+% OOP: interfaces declare methods & events vs. AOPwO: roles define requirements & powers
+% OOP
+Interfaces in OOP declare methods and events.
+When implementing an interface, a class has to implement its methods and it can raise its events.
+% powerJade
+Similarly, roles in powerJade define \textit{requirements} and \textit{powers}.
+When eancting a role, a player has to execute its requirements and it can invoke its powers.
+Thus, interface methods correspond to role requirements (both are responsibilities), while interface events are analogous to role powers (both are competences).
