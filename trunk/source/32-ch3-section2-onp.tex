@@ -4,15 +4,11 @@
 \section{O\&P}
 
 % O&P - references
-This section introduces the O\&P\footnote{The metamodel was not given a name by its authors; we will, for the purposes of this thesis, call it ``O\&P''.} metamodel described in \cite{Odell01}, \cite{Parunak02}, \cite{Odell03b}, \cite{Odell04b} and \cite{Odell05}.
-The overview presented here is due to \cite{Odell05} in particular.
-
-% O%P - authors
-O\&P has been put forward in 2001 by James J. Odell, H. van Dyke Parunak and their colleagues.
-
-%% Summary %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-- PIM
+This section introduces the O\&P metamodel
+\footnote{The metamodel was not given a name by its authors. In this thesis, we will call it O\&P.}
+put forward in 2001 by James J. Odell, H. van Dyke Parunak and their colleagues.
+It has been described in \cite{Odell01}, \cite{Parunak02}, \cite{Odell03b}, \cite{Odell04b} and \cite{Odell05}.
+The overview presented here is extracted from \cite{Odell05} in particular.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Integrated Model}
@@ -20,7 +16,7 @@ O\&P has been put forward in 2001 by James J. Odell, H. van Dyke Parunak and the
 % Integrated model - about
 Figure~\ref{figure:onp-metamodel} shows the integrated model proposed in \cite{Odell05}.
 The following subsections will focus on parts of the integrated model that can be studied in isolation.
-We present the full model before discussing its parts (ALT: portions, sections) so that the reader can follow the discussion with assumption about where the part fits.
+We present the full model before discussing its parts so that the reader can follow the discussion knowing how each part fits into the big picture.
 
 % Figure: O&P metmodel
 \begin{figure}[ht]
@@ -33,128 +29,112 @@ We present the full model before discussing its parts (ALT: portions, sections) 
 % UML Classifier vs. UML Class
 To understand the integrated model, it is essential to differentiate between the \textit{Classifier} and the \textit{Class} UML classes.
 In short, Classifier does not have features that are associated with a OOP class (e.g. attributes, inheritance or interfaces).
-On the other hand, the Class has these features.
+On the other hand, Class has these features.
 Class is in fact a specialization of Classifier.
 It is important to make this distinction, because the agent classification is based on an extension of Classifier, not Class.
 The reason for this is that the authors did not want to impose object-orientation upon their metamodel.
-After all, it is not at all expected of an agent to exhibit behaviour intrinsic to an object (e.g. polymorphism). 
+After all, it is not at all expected of an agent to exhibit behaviour intrinsic to an object, such as polymorphism. 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Agent Classifiers and Agent}
 
-\textit{Agent Classifier} is a UML Classifier that specifically provides a way to classify Agent instances by a set of features that they have in common \cite{Odell05}.
+\textit{Agent Classifier} is a UML Classifier that specifically provides a way to classify agent instances by a set of features that they have in common \cite{Odell05}.
 Classification is important because it enables a common definition of a set of entities that are in some sense similar, i.e. share some features and/or capabilities.
 
-Figure~\ref{figure:onp-agent-classifiers} shows \textsc{Agent Classifier} and its two specializations: \textsc{Agent Physical Specifier} (alias \textsc{Physical Classifier}) and \textsc{Agent Role Specifier} (alias \textsc{Role Classifier}).
+Figure~\ref{figure:onp-agent-classifiers} shows \textit{Agent Classifier} and its two specializations: \textit{Agent Physical Classifier} and \textit{Agent Role Classifer}.
 
 \begin{figure}[ht]
 	\centering
 	\includegraphics[width=0.5\textwidth]{images/onp/agent-classifiers.png}
-	\caption{\textsc{Agent Classifier} and its two specializations: \textsc{Agent Physical Classifier} and \textsc{Agent Role Classifier}}
+	\caption{\textit{Agent Classifier} and its two specializations: \textit{Agent Physical Classifier} and \textit{Agent Role Classifier}}
 	\label{figure:onp-agent-classifiers}
 \end{figure}
 
 \subsubsection*{Agent Physical Classifier}
 
 % Physical classifier - definition
-The purpose of \textsc{Agent Physical Classifier} is to define a set of core features that an agent classified with it has independent of roles it plays \cite{Odell05}.
-Every agent must be classified with exactly one physical classifier \footnote{Compare this with OOP, where an object must be an instance of exactly one class.} and is almost never reclassified during its lifetime.
+The purpose of \textit{Agent Physical Classifier} is to define a set of inherent features that an agent classified with it has independent of roles it plays \cite{Odell05}.
+Every agent must be classified with exactly one physical classifier
+\footnote{Compare this with OOP, where every object must be an instance of exactly one class.} and is never reclassified during its lifetime.
 
 % Physical classifiers vs. role classifiers
-Figure~\ref{figure:onp-physical-classifier-examples} illustrates some examples of physical classifiers forming a (class?) hierarchy.
-In comparison to role classifiers, physical classifiers attribute primary and permanent features to agents.
-An example of a physical classifier from the real world would be `Human' agent.
+In contract to role classifiers, physical classifiers attribute primary and permanent features to agents.
+Examples of physical classifiers from the real world are \textit{Human}, \textit{Male} or \textit{Female}.
+
+Figure~\ref{figure:onp-physical-classifier-examples} shows some examples of physical classifiers forming a small class hierarchy.
+Notice the the \texttt{<<agent physical classification>>} stereotype.
 
 % Figure: Physical classifer examples
 \begin{figure}[ht]
 	\centering
 	\includegraphics[width=0.5\textwidth]{images/onp/physical-classifier-examples.png}
-	\caption{Examples of physical classifiers forming a (class?) hierarchy}
+	\caption{Examples of physical classifiers forming a class hierarchy}
 	\label{figure:onp-physical-classifier-examples}
 \end{figure}
 
 \subsubsection*{Agent Role Classifier}
 
 % Role classifier - definition
-The \textsc{Agent Role Classifier} is a classifier that defines a set of peripheral (as opposed to core) features that an agent classified with it has.
+\textit{Agent Role Classifier} is a classifier that defines a set of acquired features that an agent classified with it has.
 An agent can be classified with more than one role classifier at once (\textit{multiple classification}) and can be reclassified over time (\textit{dynamic classification}).
 
-% Role hierarchy vs. class hierarchy
-Figure~\ref{figure:onp-role-classifier-examples} depicts a small (class?) hierarchy of role classifiers.
-In AUML, they are marked with the <<agent role>> stereotype.
 In comparison to physical classifiers, role classifiers ascribe secondary and transient features to agents.
-An example of a role classifier from the real world would be `Chess player' agent.
+An example of a role classifier from the real world would be \textit{Chess player}.
+
+% Role hierarchy vs. class hierarchy
+Figure~\ref{figure:onp-role-classifier-examples} depicts a small class hierarchy of role classifiers.
+Notice the the \texttt{<<agent role>>} stereotype.
 
 % Figure: Role classifer examples
 \begin{figure}[ht]
 	\centering
 	\includegraphics[width=0.5\textwidth]{images/onp/role-classifier-examples.png}
-	\caption{Examples of role classifiers forming a (class?) hierarchy}
+	\caption{Examples of role classifiers forming a class hierarchy}
 	\label{figure:onp-role-classifier-examples}
 \end{figure}
 
 \subsubsection*{Agent}
 
-In O\&P, the basic concepts are \textsc{Agent Classifier} and \textsc{Agent}.
-These modelling constructs are considered fundamental, because they enable a MAS designer to model \textit{agents classes} and \textit{agent instances} respectively.
-Agent classes are the design-time (ALT: compile-time?) constructs providing the classification (features) of the actual run-time constructs - agent instances.
-Said differently, an agent classifier defines features (state and behaviour) the the associated agents have. 
-
-% TODO: Consider deleting this paragraph.
-An \textsc{Agent} instance describes an agent.
-This description can be incomplete; the purpose of an \textsc{Agent} instance is to only show what is of interest about an agent in the modelled MAS \cite{Odell05}.
-
-% Figure - about
-Figure~\ref{figure:onp-agent-examples} shows two \textsc{Agent} instances: \texttt{Agent4} and \texttt{Agent2}.
-Agents may be linked via the roles they play.
-In this scenario, \texttt{Agent4} is a broker and brokers something for \texttt{Agent2} who is a seller.
-
-% Figure: Agent examples
-\begin{figure}[ht]
-	\centering
-	\includegraphics[width=0.5\textwidth]{images/onp/agent-examples.png}
-	\caption{Examples of (linked) agents}
-	\label{figure:onp-agent-examples}
-\end{figure}
+In O\&P, the basic concepts are \textit{Agent Classifier} and \textit{Agent}.
+These modelling constructs are considered fundamental, because they enable a MAS designer to model agents classes and agent instances respectively.
+Agent classes are the design-time constructs providing the classification of the run-time constructs - agent instances.
 
 \subsubsection*{Association between Agent Physical Classifier and Agent Role Classifier}
 
-The association between \textsc{Agent Physical Classifier} and \textsc{Agent Role Classifier} specifies which role classifiers are permitted for each physical classifier, independent of the capabilities of the individual agents classified with that that particular physical classifier \cite{Odell05}.
+The association between \textit{Agent Physical Classifier} and \textit{Agent Role Classifier} specifies which role classifiers are permitted for each physical classifier, independent of the capabilities of the individual agents classified with that particular physical classifier \cite{Odell05}.
 
-Figure~\ref{figure:onp-physical-classifier-role-classifier-association} illustrates the association between \textsc{Agent Physical Classifier} and \textsc{Agent Role Classifier}. It shows instances of \textsc{Agent Physical Classifier}: \texttt{JADE Agent Classifier} and \texttt{Cybele Agent Classifier}; and instances of \textsc{Agent Role Classifier}: \texttt{Manager}, \texttt{Broker}, \texttt{Trust Manager} and \texttt{Buyer}.
-The \texttt{JADE Agent Classifier} physical classifier allows the \texttt{Manager} and \texttt{Broker} role classifiers to be played by JADE agents.
-Similarly, the \texttt{Cybele Agent Classifier} physical classifier allows the \texttt{Broker}, \texttt{Trust Manager} and \texttt{Buyer} role classifiers to be taken on by Cybele agents.
+Figure~\ref{figure:onp-physical-classifier-role-classifier-association} illustrates this association.
+It can be interpreted as follows. JADE agents can play the \texttt{Broker} and \texttt{Manager} roles and the \texttt{Broker}, \texttt{Trust Manager} and \texttt{Buyer} roles can be taken on by Cybele agents.
 
 % Figure: Agent physical classifier to Agent role classifier association
 \begin{figure}[ht]
 	\centering
 	\includegraphics[width=0.75\textwidth]{images/onp/physical-classifier-role-classifier-association.png}
-	\caption{The association between \textsc{Agent Physical Classifier} and \textsc{Agent Role Classifie}}
+	\caption{The association between \textit{Agent Physical Classifier} and \textit{Agent Role Classifie}}
 	\label{figure:onp-physical-classifier-role-classifier-association}
 \end{figure}
 
 \subsubsection*{Association between Agent and Agent Classifier}
 
-The links of an agent with its agent classifiers (physical and role) determine its features.
+The association between \textit{Agent} and \textit{Agent Classifier} defines agents' features.
 Each agent classifier classifies an agent as a member of a set of agents sharing some physical or role-related features.
 
-Figure~\ref{figure:onp-agent-agent-classifier-association} shows four instances of the \textsc{Agent} class: \texttt{Agent1}, \texttt{Agent2}, \texttt{Agent3} and \texttt{Agent4}; two instances of \textsc{Agent Physical Classifier}: \texttt{JADE Agent Classifier} and \texttt{Cybele Agent Classifier}; and four instances of \textsc{Agent Role Classifier}: \texttt{Manager}, \texttt{Buyer}, \textsc{Trust Manager} and \texttt{Broker}.
-The links represent classification; for example \texttt{Agent1} is classified with \texttt{JADE Aget Classifier} agent physical classifier to be a JADE agent and with \texttt{Manager} agent role classifier to be a manager. 
+% Physical vs. role classification
+There are two main differences between the physical and role classification. First, the role classification is \textit{multiple} whereas the physical classification is \textit{single}.
+While an agent can be classified with more than one (or even none) role classifiers at the same time, it must be classified with exactly one physical classifiers.
+Second, the role classification is \textit{dynamic} in contrast to physical classification, which is \textit{static}.
+Dynamic classification means that an agent can be declassified or reclassified with another role after the initial classification; static classification is invariant in time.
+
+Figure~\ref{figure:onp-agent-agent-classifier-association} illuminates this association.
+It can be read as follows. \texttt{Agent1}, a JADE agent, is a \texttt{Manager}; \texttt{Agent2}, a Cybele agent, is a \texttt{Manager} and \texttt{Buyer}; \texttt{Agent3}, another Cybele agent, is a \texttt{Trust Manager}; and \texttt{Agent4}, also a Cybele agent, is a \texttt{Broker}.
 
 % Figure: Agent to Agent Classifier association
 \begin{figure}[ht]
 	\centering
 	\includegraphics[width=0.75\textwidth]{images/onp/agent-agent-classifier-association.png}
-	\caption{The association between \textsc{Agent} and \textsc{Agent Classifiers}}
+	\caption{The association between \textit{Agent} and \textit{Agent Classifiers}}
 	\label{figure:onp-agent-agent-classifier-association}
 \end{figure}
-
-% Physical vs. role classification
-Observe the two main differences between the physical and role classification. First, the role classification is \textit{multiple} whereas the physical classification is \textit{single}.
-While an agent can be classified with more than one (or even none) role classifiers at the same time, it must be classified with exactly one physical classifiers.
-Second, the role classification is \textit{dynamic} in contrast to physical classification, which is \textit{static}.
-Dynamic classification means that an agent can be declassified or reclassified with another role after initial classification. On the contrary, the physical classification is invariable in time
-(``Once a JADE agent, always a JADE agent.'').
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Group, Agentified Group and Non-agentified Group}

@@ -20,37 +20,42 @@
 Consider a problem with the following properties:
 \begin{itemize}
 	\item \textbf{Decomposability} It can easily be decomposed into well-defined subproblems. These subproblems can either be decomposable themselves or atomic.
-	Note that the subproblems do not necessarily have to resemble the original problem or each other\footnote{A problem characteristic necessary for divide and conquer algorithms.}. 
-	\item \textbf{Subproblem independence} The subproblems can be solved more or less independently and therefore, providing enough computational entities are available, simultaneously (ALT: concurrently).
-	Note that this is a continuous characteristic, not a categorical (yes or no) one.
+	Note that the subproblems do not necessarily have to resemble the original problem or each other
+	\footnote{A characteristic necessary for divide and conquer algorithms.}. 
+	\item \textbf{Subproblem independence} The subproblems can be solved more or less independently and therefore, providing enough computational entities are available, concurrently.
+	Note that this is a quantitative characteristic, not a categorical one.
 \end{itemize}
 
 % Solving such a problem with a MAS
-Such a problem can be solved by first pondering how a society of humans (intelligent autonomous computational entities) would go about solving it, then modelling this society as a multiagent system and finally running the MAS.
+Such a problem can be solved by first pondering how a society of humans (intelligent autonomous computational entities) would go about solving it, then modelling this society as a MAS and finally running the system.
 However there is an issue we must address - organizational structure of human societies.
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{Organizational Structure of Human Societies}
-
 % Organizational structure of human societies
-In all human societies but the most primitive ones, various types of \textit{organizations} emerge to facilitate cooperation of their members.
+In all human societies but the most primitive ones, various types of \textit{organizations} emerge to facilitate cooperation among their members.
 In these organization types \textit{roles} appear and \textit{interaction protocols} governing their interaction crystallize among them.
-We are facing the challenge of carrying these \textit{organizational concepts} over to the realm of MAS.
-It should come as no surprise to anybody who is familiar with the field of MAS that no a) single, b) precise (ALT: exact) and c) widely agreed upon (ALT: universally accepted) notions of organization, role or interaction protocol currently exist within it.
+We are facing the challenge of carrying these \textit{organizational concepts} over to the realm of MASes.
 
-% Plain vanilla MAS - every agent can talk to any other agent
-In plain vanilla MAS, every agent can (in principle) talk to any other agent, regardless of whether this is desirable or even allowed in the modelled society.
-There is no standardized way to impose organizational structure upon a MAS (ALT: MASs). 
-In the next section, we will introduce a new type of MAS, focused on the society of agents and its structure as opposed to individual agents, which seem to be the focus of traditional MAS.
+% No standardized way to impose organizational structure upon MASes
+Unfortunately, there is no standardized way to impose organizational structure upon MASes.
+It should come as no surprise to anybody who is familiar with the field that no single, precise and universally accepted notions of organization, role or interaction protocol currently exist among researchers.
+In a plain vanilla MAS, every agent can (in principle) talk to any other agent, regardless of whether this is desirable or even allowed in the society being modelled by the MAS.
+
+% ACMAS vs. OCMAS
+In the next two sections, we will introduce two ways of looking at MASes:
+\begin{itemize}
+	\item agent-centric -- focused on the structure of individual agents (the traditional viewpoint) and
+	\item organization-centric -- focused on the structure of agent societies (a novel perspective).
+\end{itemize}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{Organizational Structure of Multiagent Systems}
+\section{Agent-Centric Multiagent Systems}
 
 % ACMAS - architecture of individual agents
-An Agent-Centric MAS is the classical conception of MAS - focused on the architecture of individual agents and oblivious to the considerations about the structure of their society.
+An \textit{agent-centric multiagent system} (ACMAS) is the classical conception of MAS.
+It focuses on the architecture of individual agents, oblivious to the considerations about the structure of their society.
 
 % ACMAS - characteristics
-ACMAS have the following characteristics \cite{Ferber03}:
+An ACMAS has the following characteristics \cite{Ferber03}:
 \begin{itemize}
 	\item An agent has an \textit{agent ID} and it can be addressed with it.
 	\item An agent can communicate with any other agent.
@@ -61,40 +66,52 @@ ACMAS have the following characteristics \cite{Ferber03}:
 
 Ironically, the absolute freedom of interaction in ACMAS is the cause of many of its shortcomings \cite{Ferber03}:
 \begin{itemize}
-	\item Predicting the behaviour of the whole system from the behaviour of its constituent components (ALT: parts) is extremely difficult, if not downright impossible, due to high probability (ALT: likelihood) of emergent (and undesirable) behaviour.
-	\item Because there is no implicit security management, it is easy for a malicious agent to misuse or even abuse the system.
-	\item It is not possible to apply \textit{modular design}. Agents cannot be grouped into modules (ALT: packages) with different visibilities (public vs. private) at design-time let alone at run-time.
-	\item It is not possible to pursue \textit{framework approach}. There is only one framework - the agent platform itself - and it is not possible to define sub-frameworks with specific interactions.
+	\item Predicting the behaviour of the whole system from the behaviour of its constituent components is extremely difficult (if not downright impossible) due to high probability of emergent (and undesirable) behaviour.
+	\item Because there is no implicit security management, it is easy for a malicious agent to unknowingly misuse or even intentionally abuse the system.
+	\item It is not possible to apply the principles of \textit{modular design}. Agents cannot be grouped into modules with different visibilities to the outside world (public vs. private) at design-time let alone at run-time.
+	\item It is not possible to pursue the \textit{framework approach}. There is only one framework - the agent platform itself - and it is impossible to define sub-frameworks with specific interactions.
 \end{itemize}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Organization-Centric Multiagent Systems}
 
 % OCMAS - structure of agent society (agent social structure)
-An Organization-Centric MAS, proposed in \cite{Ferber03} is the modern conception of MAS - focusing on the structure of the agent society, ignoring the considerations of the architecture of individual agents.
-Organizations provide a natural way of describing structure of MAS and interactions among its constituent agents.
-This description is situated on the \textit{organization level} - the level above the \textit{agent level}, which is the only level considered in ACMAS.
+An \textit{organization-centric multiagent system} (OCMAS) is the modern conception of MAS proposed in \cite{Ferber03}.
+It focuses on the structure of the agent society, ignoring the considerations of the architecture of individual agents.
 
 % OCMAS - organizational level vs. agent level
-The organizational level contains abstract representations of the concrete organizations occurring on the agent level, i.e. the organizational level specifies the types of organizations, their roles and interaction protocols (ALT: institutionalized patterns of interaction) among them, which should occur on the agent level.
+Organizations provide a natural way of describing structure of a MAS and interactions among its constituent agents.
+This description is situated on the \textit{organization level} of an OCMAS, the level above the \textit{agent level}, which is the only level considered in an ACMAS.
+The organizational level contains abstract representations of the concrete organizations occurring on the agent level; in particular, it specifies the types of organizations, their roles and interaction protocols among them, which should occur on the agent level.
 
 % OCMAS - characteristics
-The following are the characteristics of OCMAS \cite{Ferber03}:
+The following are the characteristics of an OCMAS \cite{Ferber03}:
 \begin{itemize}
 	\item The organizational level imposes social structure and patterns of interaction upon agents, but does not prescribe how agents should behave; it merely demarcates the space within which the agents can express their individuality.
-	\item The organizational level does not place constraints on the architectures of the agents - deliberative as well as reactive agent can take part in an organization as longs as they behave in an expected way.
+	\item The organizational level does not place constraints on the architectures of the agents; deliberative as well as reactive agent can take part in an organization as longs as they behave in an expected way.
 	\item The organizations provide a way to partition a MAS into bounded contexts of interaction.
-	Whereas the structure of an organization is known to its members and they are able to interact with each other, it is opaque to the the non-members whose interaction with the organization (its members) is limited.
+	Whereas the structure of an organization is known to its members and they are able to interact with one another, it is opaque to the non-members whose interaction with the organization (its members) is limited.
 \end{itemize}
 
-% Organizational concept: organization
-An \textit{organization} is a an (organized?) group of agents, which imposes rules on the mutual interaction of its members. 
-These rules are imposed by (ALT: via) roles defined in the organization.
+\section{Organizational Concepts}
 
-% Organizational concept: role
-A \textit{role} is an interface between an organization and its members; the organization interacts with its members via their roles.
+% Organization
+An \textit{organization} is a a structured group of agents, which imposes rules on the behaviour and mutual interaction of its members. 
+These rules are imposed by roles and interaction protocols defined in the organization.
+
+% Role
+A \textit{role} is an interface between an organization and its member; the organization interacts with its members through their roles.
 Is is also an interface between the organization members themselves; the members interact with each other via the roles they play.
+A role always exists and operates within the context of its defining organization.
 
-% Organizational concept: competence and responsibility
-A role is a collection of \textit{competences} - operations the player can do at its own will when playing that role - and \textit{responsibilities} - operations the player must do at the role's will when playing that role.
-A role always exists within the context of its defining organization.
-% TODO More precisely, a role can only be defined in the context of an organization type and a position (role instance) always exists in the context of
+% Competence & responsibility
+When playing a role, a player is entitled to exercise the role's competences but also obliged to fulfil its responsibilities.
+A \textit{competence} is an operation the role's player \textit{can} perform as a result of playing that role.
+A \textit{responsibility} is an operation the role's player \textit{has to} perform as a consequence of playing that role.
 
-% Interaction protocol and party
+% Interaction protocol
+An \textit{interaction protocol} is a institutionalized pattern of interaction 
+\footnote{In this thesis, the only kind of interaction we consider is communication. Therefore, we will use the terms \textit{interaction} and \textit{communication} interchangeably.}
+between certain roles in an organization.
+It defines by intension a set of possible communication scenarios between the players of these roles.
+In the context of a protocol, the participating roles (or their players) are called \textit{parties}.
