@@ -15,7 +15,73 @@ In this chapter, we will introduce four approaches to modelling organizations in
 All of them are based on platform-independent metamodels.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{Metamodelling and Metmodels}
+\section{Models and Metamodels}
+
+\subsection*{Models and Modelling}
+
+% Models, representation, conformance and modelling
+Before talking about metamodels and metamodelling, its absolutely necessary to have a clear understanding of models, modelling and two basic relationships: representation and conformance. 
+
+% Model - representation
+A \textit{model} is a simplified \textit{representation} of a certain reality, for example, a system.
+A system can be represented by a set of different models.
+Each model captures a specific aspect (or view) of the system depending on the purpose of that model.
+A model must not represent the system with absolute preciseness; it is useful only because it is a simplified representation.
+
+% Model - conformance
+A model also has to be expressed in some modelling language.
+Therefore, the full definition of a model is the following: a model is a simplified representation of a certain reality \textit{conforming} to the rules of a certain modelling language. In short, a model represents a system and conforms to a metamodel. Figure~\ref{figure:representation-and-conformance} illustrates both relationships.
+
+% Figure: Representation and conformance relationships
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=0.25\textwidth]{images/representation-and-conformance-relationships.png}
+	\caption{The representation and conformance relationships}
+	\label{figure:representation-and-conformance}
+\end{figure}
+
+% Modelling
+Modelling, in the most general sense, is the use of a model to represent a certain reality for some cognitive purpose.
+
+% Contextual substitutability
+A model is characterized by \textit{contextual substitutability}: it should be able to answer a given set of questions in the same way the system would answer them.
+
+\subsection*{Metamodels and Metamodelling}
+
+% Metamodel
+A metamodel is a special kind of model that specifies the abstract syntax of a modelling language \cite{OMG-MDA-Foundation-Model}.
+
+% Metamodel - what it represents
+A metamodel represents an abstract syntax of a modelling language; it does \textit{not} represent a model or a set of models
+\footnote{The popular expression ``model of a model'' is particularly confusing.}.
+% Metamodel - what it conforms to
+A metamodel conforms to a meta-metamodel.
+
+Consider the metalayers shown figure~\ref{figure:metalayers}:
+
+% Figure: Metalayers
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=0.75\textwidth]{images/metalayers.png}
+	\caption{Metalayers}
+	\label{figure:metalayers}
+\end{figure}
+
+% Model conforms to metamodel
+On the bottom level, a \textit{model} conforms to a modelling language whose abstract syntax is represented by a \textit{metamodel}.
+Transitively, we can say that a \textit{model} conforms to a \textit{metamodel}.
+
+On the middle level, a \textit{metamodel} conforms to a metamodelling language whose abstract syntax is represented by a \textit{meta-metamodel}.
+Transitively, we can say that a \textit{metamodel} conforms to a \textit{meta-metamodel}.
+
+On the top level, A \textit{reflexive meta-metamodel} conforms to a language whose abstract syntax is represented by \textit{itself}.
+Transitively, we can say that a \textit{meta-metamodel} conforms to \textit{itself}.
+
+% represented-by =/= conforms-to
+The represented-by and conforms-to relationships are essentially different; arranging them in the same direction might be confusing.
+
+% Using 'model' to refer to a metamodel
+Since metamodels are models themselves, we will use the less cumbersome `model' to refer to a metamodel where it is obvious from the context that we are talking about the metamodel and not one of the models it specifies.  
 
 \input{31-ch3-section1-aalaadin}
 
