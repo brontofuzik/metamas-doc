@@ -4,56 +4,60 @@
 \section{PIM4Agents}
 
 % PIM4Agents - references
-This section introduces the PIM4Agents\footnote{For `Platform-independent model for agents'.} metamodel described in \cite{Hahn07a}, \cite{Hahn07b} and \cite{Hahn08}.
-We will present only a brief overview (particularly after \cite{Hahn07b}) since our work does not draw inspiration from PIM4Agents.
-
-% PIM4Agents - authors
-PIM4Agents has been proposed in 2007 by Christian Hahn, Cristián Madrigal-Mora and Klaus Fischer from German Research Centre for Artificial Intelligence (Deutsches Forschungszentrum f\"{u}r K\"{u}nstliche Intelligenz, DFKI).
+This section introduces the PIM4Agents metamodel 
+\footnote{For `Platform-independent model for agents'.}
+proposed in 2007 by Christian Hahn, Cristián Madrigal-Mora and Klaus Fischer from German Research Centre for Artificial Intelligence (Deutsches Forschungszentrum f\"{u}r K\"{u}nstliche Intelligenz, DFKI).
+It has been described described in \cite{Hahn07a}, \cite{Hahn07b} and \cite{Hahn08}.
+We will present only a brief overview (distilled from \cite{Hahn07b} in particular) since our work does not draw much inspiration from PIM4Agents.
 
 %% Summary %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-- PIM
-
 % PIM4Agents & MDA
-PIM4Agents has been specifically designed to be employed in the Model-driven engineering (MDE) software development methodology, more precisely the Model-driven architecture (MDA) by Object Management Group (OMG).
-Apart from the platform-independent metamodel itself, the authors have proposed two platform-specific metamodels: JackMM (for JACK) and JadeMM (for JADE).
-They have also described two sets of model transformations to convert platform-independent models (PIM) to platform-specific models (PSM): PIM4Agents to JackMM and PIM4Agents to JadeMM.
+PIM4Agents has been specifically designed to be employed in the Model-driven engineering (MDE) software development methodology, more precisely in Model-driven architecture (MDA) by Object Management Group (OMG).
+Apart from the platform-independent metamodel itself, the authors have proposed two platform-specific metamodels: JackMM and JadeMM for the JACK and Jade agent platforms respectively.
+They have also described two sets of model transformations to convert platform-independent models (PIM) to platform-specific models (PSM): PIM4Agents-to-JackMM and PIM4Agents-to-JadeMM.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection*{Core Metamodel}
+\subsection*{Core Model}
 
 % Core metamodel
-In order to support an evolution, the PIM4Agents metamodel is structured around a small core that could possibly be augmented with extensions to model specific (even unforeseen) aspects of MAS, for example security.
-The core metamodel is shown in figure~\ref{figure:pim4agents-metamodel}.
-The metamodel, like previous metamodels, is built around the concept of \textsc{Agent}, an autonomous entity capable of sensing and acting upon its environment.
-Each \textsc{Agent} has access to a set of \textsc{Resources} from its surrounding \textsc{Environment}.
+To support adaptability, PIM4Agents is structured around a small core that could be augmented with extensions to model specific aspects of MASes, for example, security.
+Figure~\ref{figure:pim4agents-metamodel} shows the core model.
 
-\textsc{Behaviour} can be primitive (ALT: simple) or composed of sub-behaviours; a whole hierarchy of specific \textsc{Behaviours} can be created.
-\textsc{Behaviour} may also send or receive a \textsc{Message} according to a given \textsc{Protocol}.
-\textsc{Capability} allows to group \textsc{Behaviours} that, conceptually, have a correspondence with regard to what they allow \textsc{Agent} to do.
+% Agent
+The metamodel, like previously introduced metamodels, is built around the concept of \textit{Agent}, an autonomous entity capable of sensing its environment and acting upon it.
+Each \textit{Agent} has access to a set of \textit{Resources} from its surrounding \textit{Environment} \cite{Hahn07b}.
 
-\textsc{Role} is an abstraction of the social behaviour of the Agent in a given social context, usually \textsc{Cooperation}.
-This \textsc{Role} specifies the responsibilities of \textsc{Agent} in that social context.
-Correspondingly, \textsc{Cooperation} represents the interaction between \textsc{Agents} performing the required set of \textsc{Roles}.
-The detailed realisation of this interaction is described by \textsc{Protocol} that indicates what are \textsc{Messages} to be expected from each of \textsc{Roles} at which point in time.
-The execution of \textsc{Protocol} is performed by a set of \textsc{Behaviours}, each of which sends and/or receives \textsc{Messages} in accordance to its \textsc{Role}.
+% Behaviour, Capability
+A \textit{Behaviour} can be atomic or composed of sub-behaviours.
+This way, a whole hierarchy of specific \textit{Behaviours} can be created.
+A \textit{Behaviour} may also send or receive \textit{Messages} according to a \textit{Protocol}.
+A \textit{Capability} allows to group conceptually related \textit{Behaviours} \cite{Hahn07b}.
 
-\textsc{Agents} can take part in \textsc{Organisation}, a special kind of \textsc{Cooperation} that also has the same characteristics as \textsc{Agent}.
-Therefore, \textsc{Organisation} can perform roles and has \textsc{Capabilities} which can be performed by its members, be it \textsc{Agents} or sub-organisations.
-The multiple inheritance of \textsc{Organisation} from \textsc{Agent} and \textsc{Cooperation} also allows it to have its own internal protocol that specifies how \textsc{Organisation} coordinates its members.
+% Role, Cooperation, Protocol, Message
+A \textit{Role} is an abstraction of the social behaviour of an \textit{Agent} in a given social context, usually a \textit{Cooperation}; it specifies the responsibilities of a \textit{Agent} in that social context.
+A \textit{Cooperation} represents the interaction between \textsc{Agents} playing the required set of \textit{Roles}.
+The detailed realisation of this interaction is described by a \textit{Protocol} that specifies the \textit{Messages} exchanged between the \textit{Roles} and at which point in time they are to be expected.
+A \textit{Protocol} is executed by a set of \textit{Behaviours} sending and receiving \textit{Messages} in accordance to their \textit{Roles}.
+
+% Organziation
+\textit{Agents} can take part in an \textit{Organization}, a special kind of \textit{Cooperation} that also has the same characteristics as an \textit{Agent}.
+Being a \textit{Cooperation}, an \textit{Organization} can have its own internal protocol that specifies how it coordinates its members.
+Being also an \textit{Agent}, an \textit{Organization} can play roles in other \textit{Organizations} (super-organization) and has \textit{Capabilities} which can be performed by its members, be they \textit{Agents} or other \textit{Organizations} (sub-organizations).
 
 % Figure: PIM4Agents metamodel
 \begin{figure}[ht]
 	\centering
-	\includegraphics[width=\textwidth]{images/pim4agents/pim4agents-metamodel.png}
-	\caption{The PIM4Agents metamodel}
+	\includegraphics[width=0.75\textwidth]{images/pim4agents/pim4agents-metamodel.png}
+	\caption{The PIM4Agents core model}
 	\label{figure:pim4agents-metamodel}
 \end{figure}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{JadeOrgs}
 
-JadeOrgs is an extension of the JADE (agent?) platform that implements the JadeMM platform-specific metamodel.
-JadeMM is defined using Eclipse Modeling Framework (EMF) to exploit EMF's code generation facility; given a platform-independent model of a MAS (conforming to PIM4Agents), the corresponding JADE/JadeOrgs platform-specific model (conforming to JadeMM) can be derived automatically.
+JadeOrgs is an extension of the Jade framework that implements the JadeMM platform-specific metamodel.
+It has been described in \cite{Madrigal-Mora08} and \cite{Madrigal-Mora09}.
 
-JadeOrgs has been described in \cite{Madrigal-Mora08} and \cite{Madrigal-Mora09}.
+JadeMM is defined using Eclipse Modeling Framework (EMF) to exploit EMF's code generation facility.
+Given a platform-independent model of a MAS (conforming to PIM4Agents), the corresponding Jade/JadeOrgs platform-specific model (conforming to JadeMM) can be derived automatically.
