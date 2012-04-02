@@ -14,11 +14,6 @@
 In this chapter, we will present Thespian4Jade -- an implementation of Thespian for the Jade agent platform.
 Thespian4Jade defines classes that can be subclassed to build platform-specific models of OCMASs.
 
-% PSM
-The platform-specific model (PSM) is a model of a software system bound to a specific technological platform (e.g. a hardware environment (processor), operating system or software environment (virtual machine)).
-% PSM - motivation
-Platform-specific models are indispensable for the actual implementation of a software system \cite{Wikipedia-PSM}
-
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Agent Platform}
 
@@ -27,8 +22,8 @@ There are numerous agent platforms available including proprietary, free/open so
 
 % General vs. specific agent plaforms
 The primary distinguishing factor among them is the degree of generality.
-The most general among the agent platforms do not impose any particular agent architecture and usually pick a general-purpose programming language (typically the Java programming language) as their AOP language.
-On the other hand, the least general (or more generously - most specific) agent platforms do prescribe a concrete agent architecture and generally make use of some (declarative) domain-specific language.
+The most general among the agent platforms do not impose any particular agent architecture and usually pick a general-purpose programming language (typically the Java programming language) as their agent programming language.
+On the other hand, the least general (or more generously -- most specific) agent platforms do prescribe a concrete agent architecture and generally make use of some (declarative) domain-specific language.
 
 % Why Jade?
 As our aim was to introduce organizational concepts as first-class citizens in the MAS landscape, we had to steer towards the agent platform offering the most extension points.
@@ -60,7 +55,7 @@ Jade is written in the Java programming language.
 
 % Extensibility
 Jade has been specifically designed with extensibility in mind and since our goal is to extend the multiagent systems with organizational concepts, this is the platform of our choice.
-The fact that it places great emphasis on extensibility also manifests in its choice of the actual AOP language - the Java programming language.
+The fact that it places great emphasis on extensibility also manifests in its choice of the actual agent programming language -- the Java programming language.
 
 % Minimalistic architecture
 A feature of Jade we find particularly noteworthy is its minimalistic architecture.
@@ -89,7 +84,7 @@ Thespian4Jade is the implementation of the Thespian metamodel for the Jade platf
 \subsection{States and Parties}
 
 % thespian4jade.behaviours
-The \texttt{thespian4jade.behaviours} package contains abstractions of Jade's behaviours - interaction protocol parties and their states.
+The \texttt{thespian4jade.behaviours} package contains abstractions of Jade's behaviours -- interaction protocol parties and their states.
 A interaction protocol party is a behaviour of a participant in an interaction protocol and a state its one of its sub-behaviours.
 In order for parties to be composable, their design follows the \textit{Composite} design pattern:
 \begin{itemize}
@@ -130,7 +125,7 @@ The \texttt{thespian4jade.behaviours.states.sender} package contains, above all,
 It is further specialized as:
 \begin{itemize}
 	\item \texttt{SingleSenderState<TMessage>} implementing a state in which only one type of message is sent,
-	\item \texttt{SendSuccessOrFailure<TMessage>} implementing a state in which two kinds of messages can be sent - one in case of success and the other one in case of failure - and 
+	\item \texttt{SendSuccessOrFailure<TMessage>} implementing a state in which two kinds of messages can be sent -- one in case of success and the other one in case of failure -- and 
 	\item \texttt{SendAgreeOrRefuse} implementing a state in which either an \textit{agree} or \textit{refuse} message can be sent.
 \end{itemize}
 
@@ -169,16 +164,16 @@ The \texttt{tehspian4jade.behaviours.parties} contains the \texttt{Party<TAgent>
 The \texttt{IResultParty<TResult>} interface specifies a party that produces a result, e.g. initiator parties in the \textit{Invoke competence} or \textit{Invoke responsibility} protocols.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{Organization, Role and Competence}
+\subsection{Organization, Role and Competences}
 
 % thespian4jade.core.organization
 The \texttt{thespian4jade.core.organization} package contains classes modelling organizations and their roles with competences.
 
 % Organization
-The \texttt{Organization} abstract class - one of Thespian4Jade's three core classes - models an organization
+The \texttt{Organization} abstract class -- one of Thespian4Jade's three core classes -- models an organization
 \footnote{Actually, the \texttt{Organization} class models an organization \textit{type} and its instances model organization \textit{tokens}.}.
 Since organizations in Thespian4Jade are agentified
-\footnote{An agentified organization has all the properties of an agent - it it autonomous and can interact (communicate) with other agents. Such an organization is an agent in its own right.}
+\footnote{An agentified organization has all the properties of an agent -- it it autonomous and can interact (communicate) with other agents. Such an organization is an agent in its own right.}
 , the class is an extension of Jade's \texttt{Agent} class.
 % Organization_Responder
 The \texttt{Organization\_Responder} class implements an organization's responder behaviour configured to respond to the \textit{Enact role}, \textit{Deact role} and \textit{Subscribe to event} protocols.
@@ -191,7 +186,7 @@ To implement a concrete organization:
 \end{enumerate}
 
 % Role
-The \texttt{Role} abstract class - one of Thespian4Jade's three core classes - models a role and its instances model the role's positions.
+The \texttt{Role} abstract class -- one of Thespian4Jade's three core classes -- models a role and its instances model the role's positions.
 Since like organizations, roles are agentified, the class extends Jade's \texttt{Agent} class.
 % Role_Responder
 The \texttt{Role\_Responder} class implements a role's responder behaviour configured to respond to the \textit{Activate role}, \textit{Deactiavte role} and \textit{Invoke competence} protocols.
@@ -232,7 +227,7 @@ It declares two methods common to all competences:
 
 % Synchronous vs. asynchronous competence
 A competence can be either \textit{synchronous} or \textit{asynchronous}.
-Behaviours in AOP correspond to methods in OOP, except that while the asynchronous method invocation (AMI) in OOP has to be programmed explicitly, in AOP the asynchronous invocation of behaviours is implicit.
+Behaviours in agent-oriented programming correspond to methods in OOP, except that while the asynchronous method invocation has to be programmed explicitly in OOP, in agent-oriented programming, the asynchronous invocation of behaviours is implicit.
 For example, in Jade a behaviour is invoked
 \footnote{More precisely, scheduled for execution.}
 by calling the \texttt{addBehaviour(behaviour: Behaviour)} method of the \texttt{Agent} class.
@@ -253,7 +248,7 @@ To define a concrete asynchronous competence, extends this class and implement t
 The \texttt{thespian4jade.core.player} package contains classes modelling players with responsibilities.
 
 % Player
-The \texttt{Player} abstract class - one of Thespin4Jade three core classes - models a player
+The \texttt{Player} abstract class -- one of Thespin4Jade three core classes -- models a player
 \footnote{Actually, the \texttt{Player} class models a player \textit{type} and its instances model player \textit{tokens}.}.
 Since the player is basically an agent able to play roles in organizations, the class extends Jade's \texttt{Agent} class.
 % PLayer_Responder
@@ -269,14 +264,14 @@ To implement a concrete player:
 The remaining classes implement a player's behaviour in all eight infrastructure protocols.
 A player acts as:
 \begin{itemize}
-	\item an initiator party in the \textit{Enact role} protocol - \texttt{Player\_EnactRole\_InitiatorParty},
-	\item an initiator party in the \textit{Deact role} protocol - \texttt{Player\_DeactRole\_InitiatorParty},
-	\item an initiator party in the \textit{Subscribe to event} protocol - \texttt{Player\_SubscribeToEvent\_InitiatorParty}.
-	\item a responder party in the \textit{Publis event} protocol - \texttt{Player\_PublishEvent\_ReponderParty},
-	\item an initiator party in the \textit{Activate role} protocol - \texttt{Player\_ActivateRole\_InitiatorParty},
-	\item an initiator party in the \textit{Deactivate role} protocol - \texttt{Player\_DeactivateRole\_InitiatorParty},
-	\item an initiator party in the \textit{Invoke competence} protocol - \texttt{Player\_InvokeCompetence\_InitiatorParty} and
-	\item a responder party in the \textit{Invoke responsibility} protocol - \texttt{Player\_InvokeResponsibility\_RespodnerParty}. 
+	\item an initiator party in the \textit{Enact role} protocol -- \texttt{Player\_EnactRole\_InitiatorParty},
+	\item an initiator party in the \textit{Deact role} protocol -- \texttt{Player\_DeactRole\_InitiatorParty},
+	\item an initiator party in the \textit{Subscribe to event} protocol -- \texttt{Player\_SubscribeToEvent\_InitiatorParty}.
+	\item a responder party in the \textit{Publis event} protocol -- \texttt{Player\_PublishEvent\_ReponderParty},
+	\item an initiator party in the \textit{Activate role} protocol -- \texttt{Player\_ActivateRole\_InitiatorParty},
+	\item an initiator party in the \textit{Deactivate role} protocol -- \texttt{Player\_DeactivateRole\_InitiatorParty},
+	\item an initiator party in the \textit{Invoke competence} protocol -- \texttt{Player\_InvokeCompetence\_InitiatorParty} and
+	\item a responder party in the \textit{Invoke responsibility} protocol -- \texttt{Player\_InvokeResponsibility\_RespodnerParty}. 
 \end{itemize}
 
 \subsubsection{Player Knowledge Base}
@@ -321,7 +316,7 @@ A concrete protocol must override two abstract methods (\textit{Abstract factory
 	\item \texttt{createInitiatorParty()} that creates a new \texttt{InitiatorParty} and
 	\item \texttt{createResponderParty()} that creates a new \texttt{ResponderParty}.
 \end{itemize}
-Concrete protocols are singletons - they are never instantiated directly but are retrieved from the protocol registry.
+Concrete protocols are singletons -- they are never instantiated directly but are retrieved from the protocol registry.
 
 % ProtocolRegistry
 The \texttt{ProtocolRegistry} is a registry of protocols.
@@ -391,7 +386,7 @@ To define a concrete binary message, extend \texttt{BinaryMessage} and override 
 
 % SimpleMessage
 In situations where the content of a message is an unstructured piece of text, and therefore can be inserted to the message at once as opposed to built step by step using various setters, a \textit{simple message} can be used.
-A simple message - a fallback to the unstructured-content approach - is modelled by the \texttt{SimpleMessage} class - a thin wrapper over Jade's \texttt{ACLMessage} class.
+A simple message -- a fallback to the unstructured-content approach -- is modelled by the \texttt{SimpleMessage} class -- a thin wrapper over Jade's \texttt{ACLMessage} class.
 
 % IMessageFactory
 The \texttt{IMessageFactory<TMessage>} is a interface for a message factory used in various receiver states to create a new message.
@@ -418,7 +413,7 @@ Caution has to be exercised when delegating the implementation as the original o
 % Future
 The \texttt{Future<T>} class models a \textit{future}
 \footnote{Also called a \textit{promise} or \textit{IOU (I owe you)}.}
- - an object that acts as a proxy for a initially unknown result of a yet-to-be-completed computation.
+ -- an object that acts as a proxy for a initially unknown result of a yet-to-be-completed computation.
 Note that a \texttt{Future<T>} is both an \texttt{IObserver} and a \texttt{IObservable}.
 
 Although the equivalents of these types exist in Java SE standard class libraries, we have chosen to define our own lightweight versions that provide only the necessary functionality. 

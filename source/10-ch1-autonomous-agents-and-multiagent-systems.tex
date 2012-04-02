@@ -11,15 +11,15 @@
 \chapter{Agents and Multiagent Systems}
 
 % Chapter abstract - Agents and MAS introduction
-The purpose of this chapter is to introduce agents and multiagent systems (MASes).
+The purpose of this chapter is to introduce agents and multiagent systems.
 The introduction is deliberately kept as short as possible, sticking to the most fundamental characteristics.
 Nevertheless, understanding of these is sufficient to comprehend ideas presented in this thesis.
-It is not possible to even begin doing justice to the field of agents and MAS anyway; the wide applicability of agents and MASes inevitably causes the field of their study to be vast.
+It is not possible to even begin doing justice to the field of agents and MAS anyway; the wide applicability of agents and multiagent systems inevitably causes the field of their study to be vast.
 
 % Agents and MAS - referecnes
-A reader looking for a crash course on MASes can try \cite{Wooldridge02} and \cite{Wooldridge95}; one seeking a more in-depth (yet still general) treatise of MASes can pick up one of the well-established works on the subject: \cite{Wooldridge09} and \cite{Weiss99}.
-Alternatively, in \cite{Shoham08} the authors take an algorithmic, game-theoretic and logical\footnote{As in mathematical-logical, not rational.} approach to MASes.
-To our knowledge, \cite{Kubik04} or \cite{Kubik00} is the most complete coverage of MASes in Czech, while \cite{Kubik03} is an overview by the same author.
+A reader looking for a crash course on multiagent systems can try \cite{Wooldridge02} and \cite{Wooldridge95}; one seeking a more in-depth (yet still general) treatise of multiagent systems can pick up one of the well-established works on the subject: \cite{Wooldridge09} and \cite{Weiss99}.
+Alternatively, in \cite{Shoham08} the authors take an algorithmic, game-theoretic and logical\footnote{As in mathematical-logical, not rational.} approach to multiagent systems.
+To our knowledge, \cite{Kubik04} or \cite{Kubik00} is the most complete coverage of multiagent systemsM in Czech, while \cite{Kubik03} is an overview by the same author.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Agents}
@@ -27,7 +27,7 @@ To our knowledge, \cite{Kubik04} or \cite{Kubik00} is the most complete coverage
 % No single universally accepted definition of agent exists
 Unfortunately, no single and universally accepted definition of an agent exists in the agents community.
 However, this does not seem to be a problem at all; despite the lack of agreement on terminological details, many researchers are coming up with interesting agent theories and numerous practitioners are developing useful agent applications.
-It is still important that at least some definition of an agent exists though - if for nothing else then to protect it from being blatantly misused.
+It is still important that at least some definition of an agent exists though -- if for nothing else then to protect it from being blatantly misused.
 
 % Two usages of the term `agent'
 Two usages of the term \textit{agent} can be recognized.
@@ -43,7 +43,7 @@ Note that the definition does not specify the \textit{type} of environment an ag
 Being capable of autonomous action means that the ``agents are able to act without the intervention of humans or other systems: they have control both over their own internal state, and over their behavior.'' \cite{Wooldridge02}
 
 % Intelligent agent - definition: reactivity, proactivity and social skills
-An important type of agent - especially in artificial intelligence - is an \textit{intelligent agent}.
+An important type of agent -- especially in artificial intelligence -- is an \textit{intelligent agent}.
 In \cite{Wooldridge02}, an intelligent agent is defined as an agent capable of \textit{flexible} autonomous action in order to meet its design objectives, where flexibility means three things:
 \begin{itemize}
 	\item \textit{reactiveness} -- an ability to respond in a timely fashion to changes that occur in the agent's environment;
@@ -64,7 +64,7 @@ This interaction is usually an ongoing, non-terminating one.
 \end{figure}
 
 % Agent - example: softbot
-An example of an agent is a \textit{softbot} (software robot) - an agent situated in a software environment interacting with it via commands. A softbot's sensors are commands meant to provide information about its environment (e.g. \texttt{ls} or \texttt{pwd} in Unix) and its effectors are commands meant to change the environment (e.g. \texttt{mv} or \texttt{compress} in Unix).
+An example of an agent is a \textit{softbot} (software robot) -- an agent situated in a software environment interacting with it via commands. A softbot's sensors are commands meant to provide information about its environment (e.g. \texttt{ls} or \texttt{pwd} in Unix) and its effectors are commands meant to change the environment (e.g. \texttt{mv} or \texttt{compress} in Unix).
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Multiagent Systems}
@@ -75,7 +75,7 @@ There is a popular slogan in the multiagent systems community: ``There's no such
 % MAS - definition
 \textit{Multiagent system}
 \footnote{Alternatively spelled multi-agent system.}
-(MAS) is a set of interacting or interdependent components - agents - forming an integrated whole - an agent society.
+(MAS) is a set of interacting or interdependent components -- agents -- forming an integrated whole -- an agent society.
 
 % MAS vs. single agent
 Like a single agent,a MAS is situated in an environment, which means that all its constituent agents are situated in the same environment.
@@ -83,9 +83,9 @@ While the single agents field studies agents' interaction with their environment
 This inter-agent interaction can be either \textit{direct} (via messages) or \textit{indirect} (via environment).
 
 % Empty environment
-In this thesis, we do not consider agents' interaction with their environment and we do consider only direct inter-agent interaction - \textit{communication}.
-Hence, we do not assume anything about the environment in which MASes are situated; in fact, as far as the discussion in this thesis goes, MASess do not have to be situated in any environment, i.e. situated in an empty (non-perceivable, non-affectable) environment.
+In this thesis, we do not consider agents' interaction with their environment and we do consider only direct inter-agent interaction -- \textit{communication}.
+Hence, we do not assume anything about the environment in which MASs are situated; in fact, as far as the discussion in this thesis goes, MASs do not have to be situated in any environment, i.e. situated in an empty (non-perceivable, non-affectable) environment.
 
-Most importantly, we do not assume any social structure of MASes; a MAS is really just a group of agents with no special relationships among them.
+Most importantly, we do not assume any social structure of MASs; a MAS is really just a group of agents with no special relationships among them.
 In other words, all agents are equal.
-It is the aim of this thesis to introduce social structure to MASes.
+It is the aim of this thesis to introduce social structure to MASs.
