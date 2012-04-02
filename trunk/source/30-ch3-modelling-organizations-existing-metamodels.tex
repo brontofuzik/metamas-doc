@@ -11,32 +11,42 @@
 % TODO Rename to Organization-Centric MAS Metamodels
 \chapter{Modelling Organizations -- Existing Approaches}
 
-In this chapter, we will introduce four approaches to modelling organizations in MASes.
+In this chapter, we will introduce four approaches to modelling organizations in MASs.
 All of them are based on platform-independent metamodels.
+
+% PIM
+In software engineering, \textit{platform-independent model} (PIM) is a model of a software system, that is independent of the specific technological platform used to implement it \cite{Wikipedia-PIM}.
+% PIM - motivation
+The main motivation to use a PIM is to build the model once and then automatically transform it to any number of platform-specific models (PSMs) for different (ALT: various) deployment platforms.
+
+% PSM
+The \textit{platform-specific model} (PSM) is a model of a software system bound to a specific technological platform (e.g. a hardware environment (processor), operating system or software environment (virtual machine)).
+% PSM - motivation
+Platform-specific models are indispensable for the actual implementation of a software system \cite{Wikipedia-PSM}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Models and Metamodels}
 
-\subsection*{Models and Modelling}
+\subsection{Models and Modelling}
 
 % Models, representation, conformance and modelling
 Before talking about metamodels and metamodelling, its absolutely necessary to have a clear understanding of models, modelling and two basic relationships: representation and conformance. 
 
 % Model - representation
-A \textit{model} is a simplified \textit{representation} of a certain reality, for example, a system.
+A \textit{model} is a simplified \textit{representation} of a certain reality, for example, a system \cite{Genova09}.
 A system can be represented by a set of different models.
 Each model captures a specific aspect (or view) of the system depending on the purpose of that model.
-A model must not represent the system with absolute preciseness; it is useful only because it is a simplified representation.
+A model must not represent the system with absolute preciseness; it is useful only because it is a simplified representation \cite{Genova09}.
 
 % Model - conformance
 A model also has to be expressed in some modelling language.
-Therefore, the full definition of a model is the following: a model is a simplified representation of a certain reality \textit{conforming} to the rules of a certain modelling language. In short, a model represents a system and conforms to a metamodel. Figure~\ref{figure:representation-and-conformance} illustrates both relationships.
+Therefore, the full definition of a model is the following: a model is a simplified representation of a certain reality \textit{conforming} to the rules of a certain modelling language \cite{Genova09}. In short, a model represents a system and conforms to a metamodel. Figure~\ref{figure:representation-and-conformance} illustrates both relationships.
 
 % Figure: Representation and conformance relationships
 \begin{figure}[h]
 	\centering
 	\includegraphics[width=0.25\textwidth]{images/representation-and-conformance-relationships.png}
-	\caption{The representation and conformance relationships}
+	\caption{The representation and conformance relationships \cite{Genova09}}
 	\label{figure:representation-and-conformance}
 \end{figure}
 
@@ -44,9 +54,9 @@ Therefore, the full definition of a model is the following: a model is a simplif
 Modelling, in the most general sense, is the use of a model to represent a certain reality for some cognitive purpose.
 
 % Contextual substitutability
-A model is characterized by \textit{contextual substitutability}: it should be able to answer a given set of questions in the same way the system would answer them.
+A model is characterized by \textit{contextual substitutability}: it should be able to answer a given set of questions in the same way the system would answer them \cite{Genova09}.
 
-\subsection*{Metamodels and Metamodelling}
+\subsection{Metamodels and Metamodelling}
 
 % Metamodel
 A metamodel is a special kind of model that specifies the abstract syntax of a modelling language \cite{OMG-MDA-Foundation-Model}.
@@ -63,7 +73,7 @@ Consider the metalayers shown figure~\ref{figure:metalayers}:
 \begin{figure}[h]
 	\centering
 	\includegraphics[width=0.75\textwidth]{images/metalayers.png}
-	\caption{Metalayers}
+	\caption{Metalayers \cite{Genova09}}
 	\label{figure:metalayers}
 \end{figure}
 

@@ -8,12 +8,10 @@
 %% Academic year: 2011/2012                                                   %%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{Example 1: Function Invocations}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Example 1: Function Invocation}
 
 % Function invocation organization
-This example demonstrates a simple organization - the function invocation.
+This example demonstrates a simple organization -- the function invocation.
 % Function invocation organization - purpose
 The purpose of this organization is to facilitate remote function invocation by grouping two agents: one agent invokes a function and the other one executes it.
 % Assumptions
@@ -26,31 +24,31 @@ In this example, an agent invokes the factorial function, but it should be obvio
 \subsubsection*{Organization Part}
 
 % 'Function invocation' organization type
-The \textit{Invoke function} organization type (modelled by the \texttt{FunctionInvocation\_Organization} agent class) contains two roles - \textit{Asker} and \textit{Answerer} - and one protocol - \textit{Invoke function}.
+The \textit{Invoke function} organization type (modelled by the \texttt{FunctionInvocation\_Organization} agent class) contains two roles -- \textit{Asker} and \textit{Answerer} -- and one protocol -- \textit{Invoke function}.
 % 'function-invocation' organization
-\textit{Invoke function} has one instance in the running MAS - the \textit{invoke-function} organization (modelled by the \texttt{invokeFunction\_Organization} agent instance).
+\textit{Invoke function} has one instance in the running MAS -- the \textit{invoke-function} organization (modelled by the \texttt{invokeFunction\_Organization} agent instance).
 
 % 'Invoker' role
 The \textit{Invoker} role (modelled by the \texttt{Invoker\_Role} class) can invoke (not compute) a function to be executed.
 % 'Invoker' role - multiplicity, competences & responsibilities
 The \textit{Invoker} role is a \textit{single} role.
-It has one competence - \textit{Invoke function} - and no responsibilities.
+It has one competence -- \textit{Invoke function} -- and no responsibilities.
 
 % 'Invoke function' competence
 The \textit{Invoke function} competence (modelled by the \texttt{InvokeFunction\_Competence} class) is a competence to invoke a function.
 % 'Invoke function' competence - argument & result
-It has one argument - the function argument - and one result - the function value. 
+It has one argument -- the function argument -- and one result -- the function value. 
 
 % 'Executer' role
 The \textit{Executer} role (modelled by the \texttt{Executer\_Role} class) can execute a function upon its invocation.
 % 'Execute' role - multiplicity, competences & responsibilities
 The \textit{Executer} role is a \textit{single} role.
-It has no competences and one responsibility - \textit{Execute function}.
+It has no competences and one responsibility -- \textit{Execute function}.
 
 % 'Execute function' responsibility
 The \textit{Execute function} responsibility (modelled by the \texttt{ExecuteFunction\_Responsibility} class) is a responsibility to execute a function together for some argument.
 % 'Execute function' responsibility - argument & result
-It has one argument - the function argument - and one result - the function value.
+It has one argument -- the function argument -- and one result -- the function value.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsubsection*{Protocol Part}
@@ -68,15 +66,15 @@ The \textit{Invoke function reply} message (modelled by the \texttt{InvokeFuncti
 
 % 'Blank' player type
 The \textit{Blank} player type (modelled by the \texttt{Blank\_Player} agent class) is a player with no capabilities.
-It has one instance in the running MAS - \textit{player1}.
+It has one instance in the running MAS -- \textit{player1}.
 % 'player1' player
-\textit{player1} (modelled by the \texttt{player1} agent instance) intends to enact the \textit{Invoker} role in the \textit{invoke-function} organization and to perform the role's \textit{Invoke function} competence - to invoke a function to be executed by the player of the \textit{Executer} role.
+\textit{player1} (modelled by the \texttt{player1} agent instance) intends to enact the \textit{Invoker} role in the \textit{invoke-function} organization and to perform the role's \textit{Invoke function} competence -- to invoke a function to be executed by the player of the \textit{Executer} role.
 
 % 'Factorial computer' player type
 The \textit{Factorial computer} player type (modelled by the \texttt{FactorialComputer\_Player} agent class) is a player capable of computing (ALT: evaluating) the factorial function.
-It has one instance in the running MAS - \textit{player2}.
+It has one instance in the running MAS -- \textit{player2}.
 % 'player2' player
-The intention of \textit{player2} (modelled by the \texttt{player2} agent instance) is to enact the \textit{Executer} role in the \textit{invoke-organization} organization and perform the role's \textit{Execute function} responsibility - to execute the function invoked by the player of the \textit{Invoker} role.
+The intention of \textit{player2} (modelled by the \texttt{player2} agent instance) is to enact the \textit{Executer} role in the \textit{invoke-organization} organization and perform the role's \textit{Execute function} responsibility -- to execute the function invoked by the player of the \textit{Invoker} role.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection*{Manifestation}
@@ -105,7 +103,7 @@ The \textbf{blue} interaction scenario between \textit{player1} and the \textit{
 % Yellow
 The \textbf{yellow} interaction scenario between \textit{player2} and the \textit{invoke-function} organization follows the \textit{Enact role} protocol.
 \textit{player2} requests \textit{invoke-function} to enact the \textit{Executer} role (1\textsuperscript{st}) and is informed about the role's responsibilities (2\textsuperscript{nd} message).
-Since \textit{player2} can perform one \textit{Executer}'s responsibility - the \textit{Execute function} responsibility - it agrees that it can indeed enact the role (3\textsuperscript{rd} message).
+Since \textit{player2} can perform one \textit{Executer}'s responsibility -- the \textit{Execute function} responsibility -- it agrees that it can indeed enact the role (3\textsuperscript{rd} message).
 \textit{invoke-function} then creates the \textit{executer-player2} position (modelled by the \texttt{executer\_Role\_player2} agent instance) and informs \textit{player2} of its AID (4\textsuperscript{th} message).
 
 % Red

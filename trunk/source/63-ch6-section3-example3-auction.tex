@@ -8,12 +8,10 @@
 %% Academic year: 2011/2012                                                   %%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Example 3: Auction}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 % Auction organization
-This example demonstrates a relatively complex organization - the auction.
+This example demonstrates a relatively complex organization -- the auction.
 % Auction organization - purpose
 The purpose of this organization is to facilitate auction by bringing together several agents: one agent auctions an item and the other agents bid for it.
 The item can be auctioned in an envelope, Vickrey, english or dutch auction.
@@ -27,31 +25,31 @@ In this example, agents sell and buy works of art (famous paintings) in an envel
 \subsubsection*{Organization Part}
 
 % 'Auction' organizaiton type
-The \textit{Auciton} organization type (modelled by the \texttt{Auction\_Organization} agent class) contains two roles - \textit{Auctioneer} and \textit{Bider} - and four protocols - \textit{Envelope auction}, \textit{Vickrey auction}, \textit{English auction} and \textit{Dutch auction}.
+The \textit{Auciton} organization type (modelled by the \texttt{Auction\_Organization} agent class) contains two roles -- \textit{Auctioneer} and \textit{Bider} -- and four protocols -- \textit{Envelope auction}, \textit{Vickrey auction}, \textit{English auction} and \textit{Dutch auction}.
 % 'auction' organization
-\textit{Auction} has one instance in the running MAS - the \textit{auction} organization (modelled by the \texttt{auction\_Organization} agent instance).
+\textit{Auction} has one instance in the running MAS -- the \textit{auction} organization (modelled by the \texttt{auction\_Organization} agent instance).
 
 % 'Auctioneer' role
 The \textit{Auctioneer} role (modelled by the \texttt{Auctioneer\_Role} class) can sell an item in an auction, i.e. it can auction an item.
 % 'Auctioneer' role - multiplicity, competences & responsibilities
 The \textit{Auctioneer} role is a \textit{single} role.
-It has one competence - \textit{Auction} - and no responsibilities.
+It has one competence -- \textit{Auction} -- and no responsibilities.
 
 % 'Auction' competence
 The \textit{Auction} competence (modelled by the \texttt{Auction\_Competence} class) is a competence to auction an item.
 % 'Auction' competence - argument & result
-It has several arguments depending on the type of the auction - mainly the name of the item - and several results - particularly the hammer price.
+It has several arguments depending on the type of the auction -- mainly the name of the item -- and several results -- particularly the hammer price.
 
 % 'Bidder' role
 The \textit{Bidder} role (modelled by the \texttt{Bidder\_Role} class) can buy an item in an auction, i.e. it can bid for an item. 
 % 'Bidder' role - multiplicity, competences & responsibilities
 The \textit{Bidder} role is a \textit{multiple} role.
-It has no competences and one responsibility - \textit{Bid}.
+It has no competences and one responsibility -- \textit{Bid}.
 
 % 'Bid' responsibility
 The \textit{Bid} responsibility (modelled by the \texttt{Bid\_Responsibility} class) is a responsibility to bid for an item.
 % 'Bid' responsibility - argument & result
-It has several arguments depending on the type of the auction - mainly the name of the item - and several results - the bid in particular.
+It has several arguments depending on the type of the auction -- mainly the name of the item -- and several results -- the bid in particular.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsubsection*{Protocol Part}
@@ -95,9 +93,9 @@ The \textit{Bid propose} message (modelled by the \texttt{BidProposeMessage} cla
 
 % 'Participant' player type
 The \textit{Participant} player type (modelled by the \texttt{Participant} agent class) is a player capable of biding for an item.
-\textit{Participant} has three instances in the running MAS - \textit{player1}, \textit{player2} and \textit{player3}.
-All of them intend to enact both the \textit{Auctioneer} and \textit{Bidder} roles in the \textit{auction} organization and perform the \textit{Auctioneer} role's \textit{Auction} competence - to auction an item to the players of the \textbf{Bidder} role.
-They also intend to perform the \textit{Bidder} role's \textit{Bid} responsibility - to bid for an item auctioned by the player of the \textit{Auctioneer} role.
+\textit{Participant} has three instances in the running MAS -- \textit{player1}, \textit{player2} and \textit{player3}.
+All of them intend to enact both the \textit{Auctioneer} and \textit{Bidder} roles in the \textit{auction} organization and perform the \textit{Auctioneer} role's \textit{Auction} competence -- to auction an item to the players of the \textbf{Bidder} role.
+They also intend to perform the \textit{Bidder} role's \textit{Bid} responsibility -- to bid for an item auctioned by the player of the \textit{Auctioneer} role.
 % 'player1' player
 \textit{player1} (modelled by the \texttt{player1} agent instance) intends to play the \textbf{Auctioneer} in the first round and be the \textbf{Bidder} in the second and third rounds.
 % 'player2' player
@@ -106,7 +104,7 @@ They also intend to perform the \textit{Bidder} role's \textit{Bid} responsibili
 \textit{player3} (modelled by the \texttt{player3} agent instance) intends to play the \textit{Auctioneer} in the third rounds and be the \textit{Bidder} in the first and second rounds.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{Manifestation} 
+\subsection*{Manifestation} 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsubsection*{Stage 3: Competence and Responsibility Invocation}
@@ -119,10 +117,10 @@ They also intend to perform the \textit{Bidder} role's \textit{Bid} responsibili
 	\label{figure:example3-stageA3}
 \end{figure}
 
-First, \textit{player1} invokes the \textit{Auction} competence from its \textit{auctioneer-player1} position with parameters of the auction - the name of the item and the reservation price (the \textbf{dark green} interaction scenario).
+First, \textit{player1} invokes the \textit{Auction} competence from its \textit{auctioneer-player1} position with parameters of the auction -- the name of the item and the reservation price (the \textbf{dark green} interaction scenario).
 \textit{auctioneer-player1} calls for proposals for the item price from all \textit{Bidder} positions (the \textbf{light green} interaction scenario).
 To come up with their bids, the \textit{bidder-player2} and \textit{bidder-player3} invoke the \textit{Bid} responsibilities from \textit{player2} and \textit{player3} respectively (the \textbf{purple} and \textbf{blue} interaction scenarios respectively).
 \textit{bidder-player2} and \textit{bidder-player3} propose their bids to \textit{auctioneer-player1} who determines if the auction is successful or not, i. e. whether the auction winner has been found.
 If the highest bid is at least as high as the reservation price, the auction is successful, the winner is the highest bidding bidder and the hammer price is their bid; otherwise, the auction is unsuccessful.
 Next, \textit{auctioneer-player1} informs the winner (if there is one) that his proposal has been accepted and all other bidders that their proposal has been rejected.
-Finally, \textit{auctioneer-player1} informs \textit{player1} about the outcome of the auction - whether it was successful or not and in case it were, who is the winner and what is the hammer price (the \textbf{dark green} interaction scenario again).
+Finally, \textit{auctioneer-player1} informs \textit{player1} about the outcome of the auction -- whether it was successful or not and in case it were, who is the winner and what is the hammer price (the \textbf{dark green} interaction scenario again).
