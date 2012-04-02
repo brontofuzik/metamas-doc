@@ -54,7 +54,7 @@ It has one argument -- the function argument -- and one result -- the function v
 \subsubsection*{Protocol Part}
 
 % 'Invoke function' protocol
-The \textit{Invoke function} protocol (modelled by the \texttt{InvokeFunctionProtocol} class) is a protocol through (ALT: via) which an \textit{Invoker} (the initiator party, modelled by the \texttt{InvokeFunction\_InitiatorParty}) requests an \textit{Executor} (the responder party, modelled by the \texttt{InvokeFunction\_RespodnerParty}) to execute a function (the factorial function in this example).
+The \textit{Invoke function} protocol (modelled by the \texttt{InvokeFunctionProtocol} class) is a protocol by which an \textit{Invoker} (the initiator party, modelled by the \texttt{InvokeFunction\_InitiatorParty}) requests an \textit{Executor} (the responder party, modelled by the \texttt{InvokeFunction\_RespodnerParty}) to execute a function (the factorial function in this example).
 
 % 'Invoke function request' message
 The \textit{Invoke function request} message (modelled by the \texttt{InvokeFunctionRequestMessage} class) is a message sent by an \textit{Invoker} to an \textit{Executor} requesting the latter to execute a function for a particular argument.
@@ -71,7 +71,7 @@ It has one instance in the running MAS -- \textit{player1}.
 \textit{player1} (modelled by the \texttt{player1} agent instance) intends to enact the \textit{Invoker} role in the \textit{invoke-function} organization and to perform the role's \textit{Invoke function} competence -- to invoke a function to be executed by the player of the \textit{Executer} role.
 
 % 'Factorial computer' player type
-The \textit{Factorial computer} player type (modelled by the \texttt{FactorialComputer\_Player} agent class) is a player capable of computing (ALT: evaluating) the factorial function.
+The \textit{Factorial computer} player type (modelled by the \texttt{FactorialComputer\_Player} agent class) is a player capable of computing the factorial function.
 It has one instance in the running MAS -- \textit{player2}.
 % 'player2' player
 The intention of \textit{player2} (modelled by the \texttt{player2} agent instance) is to enact the \textit{Executer} role in the \textit{invoke-organization} organization and perform the role's \textit{Execute function} responsibility -- to execute the function invoked by the player of the \textit{Invoker} role.
