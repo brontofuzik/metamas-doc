@@ -11,7 +11,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Static Metamodel}
 
-The static Thespian metamodel is used to model static (structural) aspects of OCMAS like
+The static Thespian metamodel is used to model static (structural) aspects of OCMAS like:
 \begin{itemize}
 	\item an organization's role structure and protocols,
 	\item a role's competences and responsibilities or
@@ -37,7 +37,7 @@ It is classified by an \textit{Organization type} which specifies its role struc
 Note that despite an organization being a run-time entity, it can be declared at design-time, created at MAS start-up and destroyed at MAS shut-down.
 
 % Organization type
-\textit{Organization type} (also called \textit{Organization class}) is a class (ALT: family) of organizations sharing the same role structure; it is a design-time entity.
+\textit{Organization type} (also called \textit{Organization class}) is a class of organizations sharing the same role structure; it is a design-time entity.
 % Organization type - state
 It contains a set of \textit{Roles} defining its role structure.
 % Organization type - behaviour
@@ -60,7 +60,7 @@ A \textit{Position} (sometimes called \textit{Role instance}) is a role realizat
 It is a realization of \textit{Role} which specifies its competences
 It belongs to an \textit{Organization} and is played by a \textit{Player}.
 % Position - note
-Note that a \textit{Position} it is usually not declared at design-time, it is created when an \textit{Player} starts playing a rule in an \textit{Organization} and destroyed when that \textit{Player} stops doing so (ALT: playing the \textit{Role} in the \textit{Organization}).
+Note that a \textit{Position} is usually not declared at design-time; it is created when an \textit{Player} starts playing a role in an \textit{Organization} and destroyed when that \textit{Player} stops doing so.
 
 \subsubsection*{Competence and Responsibility}
 
@@ -100,7 +100,7 @@ It is classified by a player type which specifies its responsibilities.
 Note that despite a player being a run-time entity, it has to be declared at design-time, created at MAS start-up and destroyed at MAS shut-down.
 
 % Player type
-\textit{Player type} (also called \textit{Player class})is a class (ALT: family) of players sharing the same characteristics, namely responsibilities; it is a design-time entity.
+\textit{Player type} (also called \textit{Player class})is a class of players sharing the same characteristics, namely responsibilities; it is a design-time entity.
 % Player type - state
 It has a set of responsibilities defining its capabilities when playing a role.
 % Player type - behaviour
@@ -131,11 +131,11 @@ The Protocol metamodel (figure~\ref{figure:thespian-protocol-metamodel}) contain
 \subsubsection*{Protocol}
 
 % Protocol
-An \textit{Interaction protocol} is an institutionalized pattern of interaction (ALT: communication) between two or more roles within an organization; it is a design-time entity modelled by the \textsc{Protocol} class.
+An \textit{Interaction protocol} is an institutionalized pattern of interaction (communication) between two or more roles within an organization; it is a design-time entity modelled by the \textsc{Protocol} class.
 It defines parties involved in the interaction and messages exchanged in the communication.
 
 % Scenario
-A realization of an interaction (ALT: communication) protocol is an \textit{Interaction scenario} -- a sequence of actions performed (ALT: messages exchanged) by two or more roles within an organization; a scenario is a purely run-time entity.
+A realization of an interaction protocol is an \textit{Interaction scenario} -- a sequence of actions performed (messages exchanged) by two or more roles within an organization; a scenario is a purely run-time entity.
 In other words, a protocol is a framework and a scenario (is) one of its possible instantiations.
 Since scenarios are usually not (explicitly?) modelled\footnote{Scenarios can be (explicitly?) modelled in snapshots.}, Thespian does not contain the concept of an \textit{Interaction scenario}.
 

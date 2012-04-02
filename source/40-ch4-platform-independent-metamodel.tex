@@ -10,17 +10,19 @@
 
 \chapter{Platform-Independent Metamodel -- Thespian}
 
-In this chapter, we will present Thespian -- a platform independent metamodel for modelling OCMASs.
-Thespian defines language for expressing platform-independent models of OCMASs.
+% Thespian - defnition
+In this chapter, we will present Thespian -- a platform independent metamodel for specifying models of OCMASs.
+% Thespian - details
+Thespian represents a modelling language for specifying PIMs of OCMASs.
 
 % Thespian name inspiration - Thespis of Icaria
-Thespian is named after \textit{Thespis of Icaria} (present-day Dionysos, Greece), who lived in the 6th century BC and, according to certain Ancient Greece sources and especially Aristotle, was the first person ever to appear on stage as an actor playing a character in a play (instead of (ALT: as opposed to) speaking as himself) \cite{Wikipedia-Thespis}.
+Thespian is named after \textit{Thespis of Icaria} (present-day Dionysos, Greece), who lived in the 6th century BC and, according to certain Ancient Greece sources and especially Aristotle, was the first person ever to appear on stage as an actor playing a character in a play (instead of just speaking as himself) \cite{Wikipedia-Thespis}.
 
 % Thespian inspiration - Aalaadin, O&P, PIM4Agents and powerJade
 Thespian is inspired by all four metamodels introduced in the previous chapter: Aalaadin, O\&P, PIM4Agents and powerJade.
 Similarly to Aalaadin, it contains both dynamic and static concepts (called \textit{core} and \textit{methodological} concepts in Aalaadin). Instances of dynamic/static concepts will end up as run-time/design-time entities in the platform-specific model.
 Like O\&P, it can be used to model holonic MASe.
-Similarly to PIM4Agents, it enables explicit modelling of protocol and messages exchanged in these protocols (ALT: in them). 
+Similarly to PIM4Agents, it enables explicit modelling of protocols and messages exchanged in these protocols. 
 And finally like powerJade, it is able to represent competences (powers) and responsibilities (requirements) of roles.
 
 % Two partitions: {organization, player and protocol}, {desgn-time and run-time}
@@ -34,8 +36,8 @@ The organization/protocol part of the MAS can be designed (and implemented) inde
 
 % Low-level partition
 The low-level partition separates the concepts based on whether they represent design-time or run-time entities.
-The design-time entities are created already at design-time and are usually implemented as \textit{agent classes} on the target agent platform (ALT: in the target agent framework); they are analogous to the concept of \textit{Class} in OOP.
-The run-time entities are created only at run-time and are usually implemented as \textit{agent instances} on the target agent platform (ALT: in the target agent framework); they are analogous to the concept of \textit{Instance} in OOP.
+The design-time entities are created already at design-time and are usually implemented as \textit{agent classes} in the target agent platform; they are analogous to the concept of \textit{Class} in OOP.
+The run-time entities are created only at run-time and are usually implemented as \textit{agent instances} in the target agent platform; they are analogous to the concept of \textit{Instance} in OOP.
 
 % Type-token distinction - definition
 Before continuing with the presentation of Thespian, it is important to explain the \textit{type-token distinction}.
