@@ -8,29 +8,27 @@
 %% Academic year: 2011/2012                                                   %%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\vbox to 0.5\vsize{
-
-% Disable the paragraph indentation.
-\setlength{\parindent}{0mm}
-\setlength{\parskip}{5mm}
-
-Thesis title: Multiagent Systems and Organizations\\
+Title: Multiagent Systems and Organizations\\
 Author: Bc. Lukáš Kúdela\\
 Author's e-mail address: \url{lukas.kudela@gmail.com}\\
 Department: Department of Theoretical Computer Science and Mathematical Logic\\
-Thesis supervisor: Prof. RNDr. Petr Štěpánek, DrSc.\\
+Thesis Supervisor: Prof. RNDr. Petr Štěpánek, DrSc.\\
 Supervisor's e-mail address: \url{petr.stepanek@mff.cuni.cz}\\
 
-Abstract: One way to attack a problem is to imagine how a human organization would go about solving it and model this organization as a multiagent system (MAS).
-The problem with this approach lies in the simple fact that no single agreed-upon (standard) notion of organization currently exists in the field of MAS.
-In practice, this means that every agent can, in principle, talk to/with any other agent regardless of whether this is desirable or even allowed within the modelled organization.
-However, this is seldom the case in the real world.
-Here all organizations but the simplest ones are usually structured into sub-organizations (branches, divisions, departments, etc.) which can be further decomposed.
-They define roles and interaction protocols.
-The individual members of the organization assume these roles after meeting declared requirements.
-They follow the interaction protocols associated with the role to fulfill its responsibilities.
-The aim of this presentation is to demonstrate how the concepts related to organizational structure (oranization, role, player) can be introduced as first-class citizens of MAS (just like the concept of Agent) and present a metamodel that defines their structural and behavioral relationships.
+% Motivation - Why do we care about the problem and the results?
+Abstract: Multiagent systems (MASs) are emerging as a promising paradigm for conceptualizing, designing and implementing large-scale heterogeneous software systems.
+The key advantage of looking at components in such systems as autonomous agents is that as agents they are capable of flexible self-organization, instead of being rigidly organized by the system's architect.
+However, self-organization is like evolution -- it takes a lot of time and the results are not guaranteed.
+More often than not, the system's architect has an idea about how the agents should organize themselves -- what types of organizations they should form.
+% Problem statement - What problem are we trying to solve?
+In our work, we tried to solve the problem of modelling organizations and their roles in a MAS, independent on the agent platform on which the MAS will eventually run.
+% Approach - How did we go about solving or making progress on the problem?
+First and foremost, we have proposed a metamodel for expressing platform-independent organization models.
+Furthermore, we have implemented the proposed metamodel for the Jade agent platform as a module extending the framework.
+Finally, we have demonstrated the usage of this module by modelling three specific organization types: remote function invocation, arithmetic expression evaluation and sealed-bid auction.
+% Results - What's the answer?
+Our work shows how to separate the acquired role-related behaviour from the behaviour intrinsic to an agent. 
+% Conclusions - What are the implications of our answer?   
+This separation enables organizations to be developed independently of the agents that will participate in them, thus facilitating the development of open systems.
 
 Keywords: multiagent systems, organizations, roles, metamodel
-
-\vss}
