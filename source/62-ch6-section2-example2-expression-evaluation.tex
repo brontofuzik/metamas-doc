@@ -10,14 +10,15 @@
 %% Academic year: 2011/2012                                                   %%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\section{Example 2: Expression Evaluation}
+\section{Example 2: Arithmetic Expression Evaluation}
 
-% Expression evaluation organziation
-This example demonstrates a not-so-simple organization -- the expression evaluation.
-% Function invocation organization - purpose
-The purpose of this organization is to facilitate divide-and-conquer expression evaluation by grouping five agents: one agent breaks the expression down (the `divide' part) and the other four compute addition, subtraction, multiplication and division (the `conquer' part).
+% Section intro - 'Arithmetic expression evaluation' organziation
+This example demonstrates a not-so-simple organization---arithmetic expression evaluation.
+% 'Arithmetic expression evaluation' - purpose
+The purpose of this organization is to facilitate divide-and-conquer evaluation of arithmetic expressions by grouping five agents: one agent breaks the expression down (the `divide' part) and the other four compute addition, subtraction, multiplication and division (the `conquer' part), each agent computing one arithmetic operation.
+The reason the organization is formed in the first place is because the agent breaking the expression down is not capable of computing any arithmetic operation itself.
 % Assumptions
-In this example, agents evaluate simple arithmetic expressions (consists of natural numbers, four binary operations -- addition, subtraction, multiplication and integral division -- and parentheses), but it should be apparent that any arithmetic expressions could be evaluated this way.
+In this example, agents evaluate simple arithmetic expressions (consists of natural numbers, four basic arithmetic operations---addition, subtraction, multiplication and integral division--and parentheses), but it should be apparent that any arithmetic expressions could be evaluated this way.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection*{Specification}
@@ -26,9 +27,9 @@ In this example, agents evaluate simple arithmetic expressions (consists of natu
 \subsubsection*{Organization Part}
 
 % 'Evaluate expression' organizaiton type
-The \textit{Evaluate expression} organization type (modelled by the \texttt{EvaluateExpression\_Organization} agent class) contains five roles -- \textit{Evaluator}, \textit{Adder}, \textit{Subtractor}, \textit{Multiplier} and \textit{Divider} -- and two protocols -- \textit{Evaluate expression} and \textit{Evaluate binary operation}.
+The \textit{Expression evaluation} organization type (modelled by the \texttt{Expression Evaluation\_Organization} agent class) contains five roles---\textit{Evaluator}, \textit{Adder}, \textit{Subtractor}, \textit{Multiplier} and \textit{Divider}---and two protocols--\textit{Evaluate expression} and \textit{Evaluate binary operation}.
 % 'evalute-expression' organization
-\textit{Evaluate expression} has one instance in the running MAS -- the \textit{evaluate-expression} organization (modelled by the \texttt{evaluateExpression\_Organization} agent instance).
+\textit{Evaluate expression} has one instance in the running MAS: the \textit{evaluate-expression} organization (modelled by the \texttt{evaluateExpression\_Organization} agent instance).
 
 % 'Evaluator' role
 The \textit{Evaluator} role (modelled by the \texttt{Evaluator\_Role} class) can evaluate a simple arithmetic expression.
@@ -36,56 +37,56 @@ The \textit{Evaluator} role (modelled by the \texttt{Evaluator\_Role} class) can
 The \textit{Evaluator} role is a \textit{multiple} role
 \footnote{However, only one agent plays the \textit{Evaluator} role in our example.}
 .
-It has one competence -- \textit{Evaluate expression} -- and no responsibilities.
+It has one competence---\textit{Evaluate expression}---and no responsibilities.
 
 % 'Evaluate expression' competence
 The \textit{Evaluate expression} competence (modelled by the \texttt{EvaluateExpression\_Competence} class) is a competence to evaluate a simple arithmetic expression.
 % 'Evaluate expression' competence - argument & result
-It has one argument -- an expression string -- and one result -- the integral value of this expression. 
+It has one argument---an expression string---and one result---the integral value of this expression. 
 
 % 'Adder' role
 The \textit{Adder} role (modelled by the \texttt{Adder\_Role} class) can perform addition of two simple arithmetic expressions.
 % 'Adder' role - multiplicity, competences & responsibilities
 The \textit{Adder} role is a \textit{single} role.
-It has no competences and one responsibility -- \textit{Add}.
+It has no competences and one responsibility---\textit{Add}.
 
 % 'Add' responsibility
 The \textit{Add} responsibility (modelled by the \texttt{Add\_Responsibility} class) is a responsibility to perform addition of two integers.
 % 'Add' responsibility - argument & result
-It has two arguments -- a pair of addends -- and one result -- their sum.
+It has two arguments---a pair of addends---and one result---their sum.
 
 % 'Subtractor' role
 The \textit{Subtractor} role (modelled by the \texttt{Subtractor\_Role} class) can perform subtraction of two simple arithmetic expressions.
 % 'Subtractor' role - multiplicity, competences & responsibilities
 The \textit{Adder} role is a \textit{single} role.
-It has no competences and one responsibility -- \textit{Subtract}.
+It has no competences and one responsibility---\textit{Subtract}.
 
 % 'Subtract' responsibility
 The \textit{Subtract} responsibility (modelled by the \texttt{Subtract\_Responsibility} class) is a responsibility to perform subtraction of two integers.
 % 'Subtract' responsibility - argument & result
-It has two arguments -- a minuend and a subtrahend -- and one result -- their difference.
+It has two arguments---a minuend and a subtrahend---and one result---their difference.
 
 % 'Multiplier' role
 The \textit{Multiplier} role (modelled by the \texttt{Multiplier\_Role} class) can perform multiplication of two simple arithmetic expressions.
 % 'Multiplier' role - multiplicity, competences & responsibilities
 The \textit{Adder} role is a \textit{single} role.
-It has no competences and one responsibility -- \textit{Multiply}.
+It has no competences and one responsibility---\textit{Multiply}.
 
 % 'Multiply' responsibility
 The \textit{Multiply} responsibility (modelled by the \texttt{Multiply\_Responsibility} class) is a responsibility to perform multiplication of two integers.
 % 'Multiply' responsibility - argument & result
-It has two arguments -- a pair of factors -- and one result -- their product.
+It has two arguments---a pair of factors---and one result---their product.
 
 % 'Divider' role
 The \textit{Divider} role (modelled by the \texttt{Divider\_Role} class) can perform division of two simple arithmetic expressions.
 % 'Divider' role - multiplicity, competences & responsibilities
 The \textit{Divider} role is a \textit{single} role.
-It has no competences and one responsibility -- \textit{Divide}. 
+It has no competences and one responsibility---\textit{Divide}. 
 
 % 'Divide' responsibility
 The \textit{Divide} responsibility (modelled by the \texttt{Divide\_Responsibility} class) is a responsibility to perform integral division of two integers.
 % 'Multiply' responsibility - argument & result
-It has two arguments -- a dividend and a divisor -- and one result -- their quotient.
+It has two arguments---a dividend and a divisor---and one result---their quotient.
 
 % 'Binary operator' role
 In the following, we will use the \textit{Binary operator} abstract role to refer to refer to the \textit{Adder}, \textit{Subtractor}, \textit{Multiplier} or \textit{Divisor} role where it is not necessary to distinguish between them.
@@ -116,33 +117,33 @@ The \textit{Evaluate binary operation reply} message (modelled by the \texttt{Ev
 
 % 'Blank' player type
 The \textit{Blank} player type (modelled by the \texttt{Blank\_Player} agent class) is a player with no capabilities.
-It has one instance in the running MAS -- \textit{player1}.
+It has one instance in the running MAS: \textit{player1}.
 % 'player1' player
-\textit{player1} (modelled by the \texttt{player1} agent instance) intends to enact the \textit{Evaluator} role in the \textbf{evaluate-expression} organization and to perform the role's \textit{Evaluate expression} competence -- to have an expression evaluated by the players of the \textit{Binary operator} roles.
+\textit{player1} (modelled by the \texttt{player1} agent instance) intends to enact the \textit{Evaluator} role in the \textbf{evaluate-expression} organization and to perform the role's \textit{Evaluate expression} competence---to have an expression evaluated by the players of the \textit{Binary operator} roles.
 
 % 'Addition computer' player type
 The \textit{Addition computer} player type (modelled by the \texttt{AdditionComputer\_Player} agent class) is a player capable of computing the addition operation.
-It has one instance in the running MAS -- \textit{player2}.
+It has one instance in the running MAS: \textit{player2}.
 % 'player2' player
-\textit{player2} (modelled by the \texttt{player2} agent instance) intends to enact the \textit{Adder} role in the \textbf{evaluate-expression} organization and perform the role's \textit{Add} responsibility -- to compute addition during the evaluation of the expression from the player of the \textit{Evaluator} role.
+\textit{player2} (modelled by the \texttt{player2} agent instance) intends to enact the \textit{Adder} role in the \textbf{evaluate-expression} organization and perform the role's \textit{Add} responsibility---to compute addition during the evaluation of the expression from the player of the \textit{Evaluator} role.
 
 % 'Subtraction computer' player type
 The \textit{Subtraction computer} player type (modelled by the \texttt{SubtractionComputer\_Player} agent class) is a player capable of computing the subtraction operation.
-It has one instance in the running MAS -- \textit{player3}.
+It has one instance in the running MAS: \textit{player3}.
 % 'player3' player
-The intention of \textit{player3} (modelled by the \texttt{player3} agent instance) is to enact the \textit{Subtractor} role in the \textbf{evaluate-expression} organization and perform the role's \textit{Subtract} responsibility -- to compute subtraction during the evaluation of the expression from the player of the  \textit{Evaluator} role.
+The intention of \textit{player3} (modelled by the \texttt{player3} agent instance) is to enact the \textit{Subtractor} role in the \textbf{evaluate-expression} organization and perform the role's \textit{Subtract} responsibility---to compute subtraction during the evaluation of the expression from the player of the  \textit{Evaluator} role.
 
 % 'Multiplication computer' player type
 The \textit{Multiplication computer} player type (modelled by the \texttt{MultiplicationComputer\_Player} agent class) is a player capable of computing the multiplication operation.
-It has one instance in the running MAS -- \textit{player4}.
+It has one instance in the running MAS: \textit{player4}.
 % 'player4' player
-\textit{player4} (modelled by the \texttt{player4} agent instance) intends to enact the \textit{Multiplier} role in the \textbf{evaluate-expression} organization and perform the role's \textit{Multiply} responsibility -- to compute multiplication during the evaluation of the expression from the player of the \textit{Evaluator} role.
+\textit{player4} (modelled by the \texttt{player4} agent instance) intends to enact the \textit{Multiplier} role in the \textbf{evaluate-expression} organization and perform the role's \textit{Multiply} responsibility---to compute multiplication during the evaluation of the expression from the player of the \textit{Evaluator} role.
 
 % 'Division computer' player type
 The \textit{Division computer} player type (modelled by the \texttt{DivisionCompuater\_Player} agent class) is a player capable of computing the division operation.
-It has one instance in the running MAS -- \textit{player5}.
+It has one instance in the running MAS: \textit{player5}.
 % 'player5' player
-The intention of \textit{player5} (modelled by the \texttt{player5} agent instance) is to enact the \textit{Divisor} role in the \textbf{evaluate-expression} organization and perform the role's \textit{Divide} responsibility -- to compute division during the evaluation of the expression from the player of the \textit{Evaluator} role.
+The intention of \textit{player5} (modelled by the \texttt{player5} agent instance) is to enact the \textit{Divisor} role in the \textbf{evaluate-expression} organization and perform the role's \textit{Divide} responsibility---to compute division during the evaluation of the expression from the player of the \textit{Evaluator} role.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection*{Manifestation}
@@ -246,7 +247,7 @@ The \textit{Evaluate expression} competence is invoked by \textit{player1} from 
 In this example the expression to be evaluated is $(1\cdot2)+(4/2)$.
 
 % Evaluator: "(1*2)+(4/2)"
-\textit{Evaluator} to evaluate $(1\cdot2)+(4/2)$: it parses the expression and finds the operation to be applied last -- addition.
+\textit{Evaluator} to evaluate $(1\cdot2)+(4/2)$: it parses the expression and finds the operation to be applied last---addition.
 It splits the expression into two sub-expressions and requests \textit{Adder} to evaluate their sum (the \textbf{first magenta} interaction scenario).
 It then reports the value (4) to \textit{player1} (the \textbf{first black} interaction scenario).
 
@@ -255,7 +256,7 @@ It then reports the value (4) to \textit{player1} (the \textbf{first black} inte
 It then reports the sum (4) to \textit{Evaluator} (the \textit{first magenta} interaction scenario).
 
 % Evaluator: "(1*2)"
-\textit{Evaluator} to evaluate $(1\cdot2)$: it parses the expression and finds the last-to-be-applied operation -- multiplication.
+\textit{Evaluator} to evaluate $(1\cdot2)$: it parses the expression and finds the last-to-be-applied operation---multiplication.
 It splits the expression into two sub-expressions and requests \textit{Multiplier} to evaluate their product (the \textit{pink} interaction scenario).
 It then reports the value (2) to \textit{Adder} (the \textbf{first cyan} interaction scenario).
 
@@ -272,7 +273,7 @@ It reports the value (1) to \textit{Multiplier} (the \textbf{dark green} interac
 It reports the value (2) to \textit{Multiplier} (the \textbf{light green} interaction scenario).
 
 % Evaluator: "(4/2)"
-\textit{Evaluator} to evaluate $(1\cdot2)$: it parses the expression and finds the last-to-be-applied operation -- division.
+\textit{Evaluator} to evaluate $(1\cdot2)$: it parses the expression and finds the last-to-be-applied operation---division.
 It splits the expression into two sub-expressions and requests \textit{Divider} to evaluate their quotient (the \textit{yellow} interaction scenario).
 It then reports the value (2) to \textit{Adder} (the \textbf{blue} interaction scenario).
 
