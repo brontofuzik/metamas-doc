@@ -36,8 +36,7 @@ Finally we picked the Jade platform (described in the following section) which, 
 \section{Jade}
 
 % Jade an agent platform and framework in one
-Jade\footnote{Jade Agent Development Framework --- \url{http://jade.tilab.com/}}
-is an agent platform and agent development framework in one.
+Jade\footnote{Jade Agent Development Framework --- \url{http://jade.tilab.com/}} is an agent platform and agent development framework in one.
 
 % Jade as agent platform
 It is a \textit{platform} because it provides a run-time environment in which the agents operate, much like a sandbox in which children play.
@@ -49,8 +48,7 @@ A concrete multi-agent system is basically an instantiation of the Jade as a fra
 
 % About Jade
 Jade simplifies the implementation of multi-agent systems by acting as a middleware that complies with the FIPA\footnote{The Foundation for Intelligent Physical Agents --- \url{http://www.fipa.org/}}
-specifications\footnote{\url{http://www.fipa.org/specifications/index.html}}
-and by providing a set of graphical tools that support the debugging and deployment phases.
+specifications\footnote{\url{http://www.fipa.org/specifications/index.html}} and by providing a set of graphical tools that support the debugging and deployment phases.
 The agent platform can be distributed across multiple machines (possibly running different operating systems) and it can be configured via a remote graphical tool.
 The configuration can be even changed at run-time by moving agents from one machine to another, as and when required. 
 Jade is written in the Java programming language. 
@@ -144,9 +142,7 @@ It it further specialized by classes analogous to the sender state classes, exce
 % thespian4jade.behaviours.states.special
 The \texttt{thespian4jade.behaviours.states.special} package contains classes implementing some special types of states.
 % StateWrapperState
-The \texttt{StateWrapperState<TState>} abstract class implements a state that enables to wrap another state (or a party for that matter) that needs to be provided an argument just before its execution
-\footnote{Usually because it is not yet available at the time of its creation.}
-and provides a result just after its execution.
+The \texttt{StateWrapperState<TState>} abstract class implements a state that enables to wrap another state (or a party for that matter) that needs to be provided an argument just before its execution\footnote{Usually because it is not yet available at the time of its creation.} and provides a result just after its execution.
 It has two specializations:
 \begin{itemize}
 	\item \texttt{InvokeCompetenceState<TArgument, TResult>} that wraps the \textit{Invoke competence} initiator party and
@@ -230,12 +226,9 @@ It declares two methods common to all competences:
 % Synchronous vs. asynchronous competence
 A competence can be either \textit{synchronous} or \textit{asynchronous}.
 Behaviours in agent-oriented programming correspond to methods in OOP, except that while the asynchronous method invocation has to be programmed explicitly in OOP, in agent-oriented programming, the asynchronous invocation of behaviours is implicit.
-For example, in Jade a behaviour is invoked
-\footnote{More precisely, scheduled for execution.}
-by calling the \texttt{addBehaviour(behaviour: Behaviour)} method of the \texttt{Agent} class.
+For example, in Jade a behaviour is invoked\footnote{More precisely, scheduled for execution.} by calling the \texttt{addBehaviour(behaviour: Behaviour)} method of the \texttt{Agent} class.
 The method immediately returns and the invoked behaviour is executed asynchronously and concurrently with other behaviours.
-If a behaviour is to be invoked synchronously from another behaviour in Jade, the calling behaviour has to \textit{include} the called behaviour as its sub-behaviour
-\footnote{For example, the calling FSM behaviour includes the called behaviour as one of its states.}.
+If a behaviour is to be invoked synchronously from another behaviour in Jade, the calling behaviour has to \textit{include} the called behaviour as its sub-behaviour\footnote{For example, the calling FSM behaviour includes the called behaviour as one of its states.}.
 % SycnhronousCompetence
 A synchronous competence is modelled by the \texttt{SynchronousCompetence<TArgument, TResult>} abstract class, a kind FSM behaviour.
 To define a concrete synchronous competence, extend this class and implement the competence logic as a beahviour included as a state (or states) of this FSM behaviour.
@@ -250,10 +243,9 @@ To define a concrete asynchronous competence, extends this class and implement t
 The \texttt{thespian4jade.core.player} package contains classes modelling players with responsibilities.
 
 % Player
-The \texttt{Player} abstract class---one of Thespin4Jade three core classes---models a player
-\footnote{Actually, the \texttt{Player} class models a player \textit{type} and its instances model player \textit{tokens}.}.
+The \texttt{Player} abstract class---one of Thespin4Jade three core classes---models a player\footnote{Actually, the \texttt{Player} class models a player \textit{type} and its instances model player \textit{tokens}.}.
 Since the player is basically an agent able to play roles in organizations, the class extends Jade's \texttt{Agent} class.
-% PLayer_Responder
+% Player_Responder
 The \texttt{Player\_Responder} class implements a player's responder behaviour configured to respond to the \textit{Publish event} and \textit{Invoke responsibility} protocols.
 
 % Concrete player implementation
@@ -413,9 +405,7 @@ A developer can implement \texttt{IObservable} either from scratch or they can d
 Caution has to be exercised when delegating the implementation as the original observable object has to be passed as an argument to the \texttt{notifyObservers()} method.
 
 % Future
-The \texttt{Future<T>} class models a \textit{future}
-\footnote{Also called a \textit{promise} or \textit{IOU (I owe you)}.}
----an object that acts as a proxy for a initially unknown result of a yet-to-be-completed computation.
+The \texttt{Future<T>} class models a \textit{future}\footnote{Also called a \textit{promise} or \textit{IOU (I owe you)}.}---an object that acts as a proxy for a initially unknown result of a yet-to-be-completed computation.
 Note that a \texttt{Future<T>} is both an \texttt{IObserver} and a \texttt{IObservable}.
 
 Although the equivalents of these types exist in Java SE standard class libraries, we have chosen to define our own lightweight versions that provide only the necessary functionality. 
