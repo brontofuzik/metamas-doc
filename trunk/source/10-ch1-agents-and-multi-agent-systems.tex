@@ -12,7 +12,7 @@
 
 \chapter{Agents and Multi-Agent Systems}
 
-% Chapter intro - introduce agents and multi-agent systems
+% Chapter intro
 The purpose of this chapter is to introduce agents and multi-agent systems.
 The introduction is kept as short as possible, sticking to the most fundamental characteristics; nevertheless, it provides all necessary background to understand the ideas presented in this thesis.
 
@@ -30,7 +30,7 @@ To our knowledge, \cite{Kubik04} is the most complete coverage of multi-agent sy
 % No single universally accepted definition of agent exists
 Unfortunately, no single and universally accepted definition of an agent exists in the agents community.
 However, this does not seem to be a problem at all; despite the lack of agreement on terminological details, many researchers are coming up with interesting agent theories and numerous practitioners are developing useful agent applications.
-It is still important that at least some definition of an agent exists though -- if for nothing else then to protect it from being blatantly misused.
+It is still important that at least some definition of an agent exists though---if for nothing else then to protect it from being blatantly misused.
 
 % Two usages of the term `agent'
 Two usages of the term \textit{agent} can be recognized.
@@ -46,12 +46,12 @@ Note that the definition does not specify the \textit{type} of environment an ag
 Being capable of autonomous action means that the ``agents are able to act without the intervention of humans or other systems: they have control both over their own internal state, and over their behavior.'' \cite{Wooldridge02}
 
 % Intelligent agent - definition: reactivity, proactivity and social skills
-An important type of agent -- especially in artificial intelligence -- is an \textit{intelligent agent}.
+An important type of agent---especially in artificial intelligence--is an \textit{intelligent agent}.
 In \cite{Wooldridge02}, an intelligent agent is defined as an agent capable of \textit{flexible} autonomous action in order to meet its design objectives, where flexibility means three things:
 \begin{itemize}
-	\item \textit{reactiveness} -- an ability to respond in a timely fashion to changes that occur in the agent's environment;
-	\item \textit{proactiveness} -- an ability to exhibit goal-directed behaviour by taking the initiative;
-	\item \textit{social ability} -- an ability to interact with other agents (and possibly humans).
+	\item \textit{reactiveness} --- an ability to respond in a timely fashion to changes that occur in the agent's environment;
+	\item \textit{proactiveness} --- an ability to exhibit goal-directed behaviour by taking the initiative;
+	\item \textit{social ability} --- an ability to interact with other agents (and possibly humans).
 \end{itemize}
 
 Figure~\ref{figure:agent-environment-interaction} shows an abstract view of agent interacting with its environment.
@@ -67,7 +67,7 @@ This interaction is usually an ongoing, non-terminating one.
 \end{figure}
 
 % Agent - example: softbot
-An example of an agent is a \textit{softbot} (software robot) -- an agent situated in a software environment interacting with it via commands. A softbot's sensors are commands meant to provide information about its environment (e.g. \texttt{ls} or \texttt{pwd} in Unix) and its effectors are commands meant to change the environment (e.g. \texttt{mv} or \texttt{compress} in Unix).
+An example of an agent is a \textit{softbot}---an agent situated in a software environment interacting with it via commands. A softbot's sensors are commands meant to provide information about its environment (e.g. \texttt{ls} or \texttt{pwd} in Unix) and its effectors are commands meant to change the environment (e.g. \texttt{mv} or \texttt{compress} in Unix).
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Multi-Agent Systems}
@@ -86,7 +86,7 @@ While the single agents field studies agents' interaction with their environment
 This inter-agent interaction can be either \textit{direct} (via messages) or \textit{indirect} (via environment).
 
 % Empty environment
-In this thesis, we do not consider agents' interaction with their environment and we do consider only direct inter-agent interaction -- \textit{communication}.
+In this thesis, we do not consider agents' interaction with their environment and we do consider only direct inter-agent interaction---\textit{communication}.
 Hence, we do not assume anything about the environment in which MASs are situated; in fact, as far as the discussion in this thesis goes, MASs do not have to be situated in any environment, i.e. situated in an empty (non-perceivable, non-affectable) environment.
 
 Most importantly, we do not assume any social structure of MASs; a MAS is really just a group of agents with no special relationships among them.

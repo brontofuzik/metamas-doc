@@ -10,22 +10,32 @@
 %% Academic year: 2011/2012                                                   %%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\chapter{Platform-Independent Metamodel -- Thespian}
+\chapter{Platform-Independent Metamodel---Thespian}
+
+% Chapter intro
+In this chapter, we will present our platform-independent metamodel for modelling organizations in MASs---Thespian.
 
 % Thespian - defnition
-In this chapter, we will present Thespian -- a platform independent metamodel for specifying models of OCMASs.
-% Thespian - details
-Thespian represents a modelling language for specifying PIMs of OCMASs.
+Thespian is a metamodel to which platform-independent models of organizations in MASs must conform; in more detail, it is a model
+\footnote{Recall that a metamodel is a kind of model.}
+representing a modelling language
+\footnote{When can call this language the \textit{Thespian modelling language}.}
+to which platform-independent models of organizations in MASs must conform.
 
 % Thespian name inspiration - Thespis of Icaria
 Thespian is named after \textit{Thespis of Icaria} (present-day Dionysos, Greece), who lived in the 6th century BC and, according to certain Ancient Greece sources and especially Aristotle, was the first person ever to appear on stage as an actor playing a character in a play (instead of just speaking as himself) \cite{Wikipedia-Thespis}.
 
 % Thespian inspiration - Aalaadin, O&P, PIM4Agents and powerJade
 Thespian is inspired by all four metamodels introduced in the previous chapter: Aalaadin, O\&P, PIM4Agents and powerJade.
-Similarly to Aalaadin, it contains both dynamic and static concepts (called \textit{core} and \textit{methodological} concepts in Aalaadin). Instances of dynamic/static concepts will end up as run-time/design-time entities in the platform-specific model.
-Like O\&P, it can be used to model holonic MASe.
-Similarly to PIM4Agents, it enables explicit modelling of protocols and messages exchanged in these protocols. 
-And finally like powerJade, it is able to represent competences (powers) and responsibilities (requirements) of roles.
+% Aaalaadin
+Similarly to Aalaadin, it contains both dynamic and static concepts (called \textit{core} and \textit{methodological} concepts in Aalaadin).
+Instances of dynamic/static concepts will end up as run-time/design-time entities in the platform-specific model.
+% O&P
+Like O\&P, it can be used to model holonic MASs.
+% PIM4Agents
+Similarly to PIM4Agents, it enables explicit modelling of protocols and messages exchanged in these protocols.
+% powerJade 
+And finally like powerJade, it is able to represent competences and responsibilities (called \textit{powers} and \textit{requirements} respectively in powerJade) of roles.
 
 % Two partitions: {organization, player and protocol}, {desgn-time and run-time}
 The Thespian metamodel can be partitioned in two orthogonal ways: in a high-level and low-level way.
@@ -49,7 +59,7 @@ Thespian has been designed to support the type-token distinction and the correct
 % Type-token distinction - MAS
 As an example of the type-token distinction, consider a MAS.
 The \textit{specification} of the MAS (its source code) is the \textit{MAS type} and its \textit{manifestation} (a running MAS) is the \textit{MAS token}.
-Just like a type can (and usually does) have many tokens, a MAS specification can have multiple manifestations -- the same source code can be run many times.
+Just like a type can (and usually does) have many tokens, a MAS specification can have multiple manifestations---the same source code can be run many times.
 
 % Static & dynamic metamodels
 The Thespian metamodel includes both a static and dynamic metamodels for describing structural and behavioural aspects of organizations respectively.
