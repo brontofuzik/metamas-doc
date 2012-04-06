@@ -18,7 +18,7 @@ This example demonstrates a not-so-simple organization---\textit{arithmetic expr
 The purpose of this organization is to facilitate divide-and-conquer evaluation of arithmetic expressions by grouping five agents: one agent \textit{breaks the expression down} (the `divide' part) and the other four compute \textit{addition}, \textit{subtraction}, \textit{multiplication} and \textit{integral division} (the `conquer' part), each agent computing one arithmetic operation.
 The reason the organization is formed in the first place is because the agent breaking the expression down is not capable of computing any arithmetic operation itself.
 % Assumptions - simple arithmetic expression
-In this example, agents evaluate \textit{simple} arithmetic expressions---consisting of natural numbers, four basic arithmetic operations (addition, subtraction, multiplication and integral division) and parentheses. However, it should be apparent that any arithmetic expressions could be evaluated this way.
+In this example, agents evaluate simple arithmetic expressions---consisting of natural numbers, four basic arithmetic operations (addition, subtraction, multiplication and integral division) and parentheses. However, it should be apparent that any arithmetic expressions could be evaluated this way.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection*{Specification}
@@ -46,7 +46,7 @@ It has one argument---an expression (a string)---and one result---the value of t
 The \textit{Adder} role (modelled by the \texttt{Adder\_Role} agent class) can perform addition of two simple arithmetic expressions.
 % 'Adder' role - multiplicity, competences & responsibilities
 % TODO Consider making the binary operator roles multiple.
-The \textit{Adder} role is a \textit{single} role.
+The \textit{Adder} role is a \textit{multiple} role\footnote{However, only one agent plays the \textit{Adder} role in our example.}.
 It has no competences and one responsibility---\textit{Add}.
 
 % 'Add' responsibility
@@ -57,7 +57,7 @@ It has two arguments---a pair of addends---and one result---their sum.
 % 'Subtractor' role
 The \textit{Subtractor} role (modelled by the \texttt{Subtractor\_Role} agent class) can perform subtraction of two simple arithmetic expressions.
 % 'Subtractor' role - multiplicity, competences & responsibilities
-The \textit{Subtractor} role is a \textit{single} role.
+The \textit{Subtractor} role is a \textit{multiple} role\footnote{However, only one agent plays the \textit{Subtractor} role in our example.}.
 It has no competences and one responsibility---\textit{Subtract}.
 
 % 'Subtract' responsibility
@@ -68,7 +68,7 @@ It has two arguments---a minuend and a subtrahend---and one result---their diffe
 % 'Multiplier' role
 The \textit{Multiplier} role (modelled by the \texttt{Multiplier\_Role} agent class) can perform multiplication of two simple arithmetic expressions.
 % 'Multiplier' role - multiplicity, competences & responsibilities
-The \textit{Multiplier} role is a \textit{single} role.
+The \textit{Multiplier} role is a \textit{multiple} role\footnote{However, only one agent plays the \textit{Multiplier} role in our example.}.
 It has no competences and one responsibility---\textit{Multiply}.
 
 % 'Multiply' responsibility
@@ -79,8 +79,8 @@ It has two arguments---a pair of factors---and one result---their product.
 % 'Divider' role
 The \textit{Divider} role (modelled by the \texttt{Divider\_Role} agent class) can perform division of two simple arithmetic expressions.
 % 'Divider' role - multiplicity, competences & responsibilities
-The \textit{Divider} role is a \textit{single} role.
-It has no competences and one responsibility---\textit{Divide}. 
+The \textit{Divider} role is a \textit{multiple} role\footnote{However, only one agent plays the \textit{Divider} role in our example.}.
+It has no competences and one responsibility---\textit{Divide}.
 
 % 'Divide' responsibility
 The \textit{Divide} responsibility (modelled by the \texttt{Divide\_Responsibility} class) is a responsibility to perform integral division of two integers.
