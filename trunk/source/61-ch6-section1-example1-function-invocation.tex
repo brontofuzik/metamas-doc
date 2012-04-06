@@ -17,8 +17,8 @@ This example demonstrates a simple organization---\textit{remote function invoca
 % 'Remote function invocation' organization - purpose
 The purpose of this organization is to facilitate remote function invocation by grouping two agents: one agent \textit{invokes} a function and the other one \textit{executes} it.
 The reason the organization is formed in the first place is because the agent invoking the function is not capable of executing it itself.
-% Assumptions
-In this example, an agent invokes the factorial function, but it should be obvious that any (computable) function could be invoked this way.
+% Assumptions - factorial function
+In this example, an agent invokes the \textit{factorial} function, but it should be obvious that any function could be invoked this way.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection*{Specification}
@@ -40,7 +40,7 @@ It has one competence---\textit{Invoke function}---and no responsibilities.
 % 'Invoke function' competence
 The \textit{Invoke function} competence (modelled by the \texttt{InvokeFunction\_Competence} class) is a competence to invoke a function.
 % 'Invoke function' competence - argument & result
-It has one argument---the function argument---and one result---the function value. 
+It has one argument---the function argument---and one result---the function value.
 
 % TODO Consider renaming to `Executor'.
 % 'Executer' role
@@ -72,13 +72,13 @@ The \textit{Invoke function reply} message (modelled by the \texttt{InvokeFuncti
 The \textit{Blank} player type (modelled by the \texttt{Blank\_Player} agent class) is a player with no capabilities.
 It has one instance in the running MAS: \textit{player1}.
 % 'player1' player
-\textit{player1} (modelled by the \texttt{player1} agent instance) intends to enact the \textit{Invoker} role in the \textit{function-invocation} organization and to perform the role's \textit{Invoke function} competence---to invoke a function to be executed by the player of the \textit{Executer} role.
+\textit{player1} (modelled by the \texttt{player1} agent instance) intends to enact the \textit{Invoker} role in the \textit{function-invocation} organization and to exercise the role's \textit{Invoke function} competence---to invoke a function to be executed by the player of the \textit{Executer} role.
 
 % 'Factorial computer' player type
 The \textit{Factorial computer} player type (modelled by the \texttt{FactorialComputer\_Player} agent class) is a player capable of computing the factorial function.
 It has one instance in the running MAS: \textit{player2}.
 % 'player2' player
-The intention of \textit{player2} (modelled by the \texttt{player2} agent instance) is to enact the \textit{Executer} role in the \textit{invoke-organization} organization and perform the role's \textit{Execute function} responsibility---to execute the function invoked by the player of the \textit{Invoker} role.
+The intention of \textit{player2} (modelled by the \texttt{player2} agent instance) is to enact the \textit{Executer} role in the \textit{invoke-organization} organization and fulfil the role's \textit{Execute function} responsibility---to execute the function invoked by the player of the \textit{Invoker} role.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection*{Manifestation}
@@ -95,26 +95,27 @@ The intention of \textit{player2} (modelled by the \texttt{player2} agent instan
 \end{figure}
 
 % Purple
-The \textbf{purple} interaction scenario between \textit{player1} and the \textit{function-invocation} organization follows the \textit{Enact role} protocol.
+The {\color{purple}{\textbf{purple}}} interaction scenario between \textit{player1} and the \textit{function-invocation} organization follows the \textit{Enact role} protocol.
 \textit{player1} requests \textit{function-invocation} to enact the \textit{Invoker} role (1\textsuperscript{st} message) and is informed about the role's responsibilities (2\textsuperscript{nd} message) .
 Since \textit{Invoker} has no responsibilities, \textit{player1} agrees that it can indeed enact the role (3\textsuperscript{rd} message).
 \textit{invoke-organization} then creates the \textit{invoker-player1} position (modelled by the \texttt{invoker\_Role\_player1} agent instance) and informs \textit{player1} of its AID.
 
 % Blue
-The \textbf{blue} interaction scenario between \textit{player1} and the \textit{function-invocation} organization follows the \textit{Subscribe to event} protocol.
+The {\color{blue}{\textbf{blue}}} interaction scenario between \textit{player1} and the \textit{function-invocation} organization follows the \textit{Subscribe to event} protocol.
 \textit{player1} requests \textit{function-invocation} to subscribe to the \textit{Role activated} event (1\textsuperscript{st} message) and \textit{function-invocation} agrees (2\textsuperscript{nd} message).
 
 % Yellow
-The \textbf{yellow} interaction scenario between \textit{player2} and the \textit{function-invocation} organization follows the \textit{Enact role} protocol.
+The {\color{yellow}{\textbf{yellow}}} interaction scenario between \textit{player2} and the \textit{function-invocation} organization follows the \textit{Enact role} protocol.
 \textit{player2} requests \textit{function-invocation} to enact the \textit{Executer} role (1\textsuperscript{st}) and is informed about the role's responsibilities (2\textsuperscript{nd} message).
 Since \textit{player2} can perform one \textit{Executer}'s responsibility---the \textit{Execute function} responsibility---it agrees that it can indeed enact the role (3\textsuperscript{rd} message).
 \textit{function-invocationn} then creates the \textit{executer-player2} position (modelled by the \texttt{executer\_Role\_player2} agent instance) and informs \textit{player2} of its AID (4\textsuperscript{th} message).
+
 % Red
-The \textbf{red} interaction scenario between t\textit{player2} and the \textit{function-invocation} organization follows the \textit{Subscribe to event} protocol.
+The {\color{red}{\textbf{red}}} interaction scenario between t\textit{player2} and the \textit{function-invocation} organization follows the \textit{Subscribe to event} protocol.
 \textit{player2} requests \textit{function-invocation} to subscribe to the \textit{Role activated} event (1\textsuperscript{st} message) and \textit{function-invocation} agrees (2\textsuperscript{nd} message).
 
 % Black
-The \textbf{black} interaction scenario between \textit{player2} and the \textit{function-invocation} organization follows the \textit{Subscribe to event} protocol.
+The {\color{black}{\textbf{black}}} interaction scenario between \textit{player2} and the \textit{function-invocation} organization follows the \textit{Subscribe to event} protocol.
 \textit{player2} requests \textit{function-invocation} to subscribe to the \textit{Role deactivated} event (1\textsuperscript{st} message) and \textit{function-invocation} agrees (2\textsuperscript{nd} message).
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -129,20 +130,20 @@ The \textbf{black} interaction scenario between \textit{player2} and the \textit
 \end{figure}
 
 % Magenta
-The \textbf{magenta} interaction scenario between \textit{player1} and the \textit{invoker-player1} position follows the \textit{Activate role} protocol.
+The {\color{magenta}{\textbf{magenta}}} interaction scenario between \textit{player1} and the \textit{invoker-player1} position follows the \textit{Activate role} protocol.
 \textit{player1} requests \textit{invoker-player1} to activate the role (1\textsuperscript{st} message) and the position promptly agrees (2\textsuperscript{nd} message).
 
 % Cyan
-The \textbf{cyan} interaction scenario between the \textit{function-invocation} organization and \textit{player2} follows the \textit{Publish event} protocol.
-\textit{invoke-organization} raises a \textit{Role activated} event (for the \textit{Invoker} role) and \textit{player2} handles it by activating its \textit{Executer} role (the \textbf{pink} interaction scenario).
+The {\color{cyan}{\textbf{cyan}}} interaction scenario between the \textit{function-invocation} organization and \textit{player2} follows the \textit{Publish event} protocol.
+\textit{invoke-organization} raises a \textit{Role activated} event (for the \textit{Invoker} role) and \textit{player2} handles it by activating its \textit{Executer} role (the {\color{pink}{\textbf{pink}}} interaction scenario).
 
 % Pink
-The \textbf{pink} interaction scenario between \textit{player2} and the \textit{executer-player2} position follows the \textit{Activate role} protocol.
+The {\color{pink}{\textbf{pink}}} interaction scenario between \textit{player2} and the \textit{executer-player2} position follows the \textit{Activate role} protocol.
 \textit{player2} requests \textit{executer-player2} to activate the role (1\textsuperscript{st} message) and the position immediately agrees (2\textsuperscript{nd} message).
 
-% Dark green
-The \textbf{dark green} interaction scenario between the \textit{function-invocation} organization and \textit{player1} follows the \textit{Publish event} protocol.
-\textit{invoke-organization} raises a \textit{Role activated} event (for the \textit{Executer} role) and \textit{player1} handles it by invoking the \textit{Invoke function} competence (the \textbf{light green} interaction scenario).
+% Teal
+The {\color{teal}{\textbf{teal}}} interaction scenario between the \textit{function-invocation} organization and \textit{player1} follows the \textit{Publish event} protocol.
+\textit{invoke-organization} raises a \textit{Role activated} event (for the \textit{Executer} role) and \textit{player1} handles it by invoking the \textit{Invoke function} competence (the {\color{green}{\textbf{green}}} interaction scenario).
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsubsection*{Stage 3: Competence and Responsibility Invocation}
@@ -159,19 +160,19 @@ The \textbf{dark green} interaction scenario between the \textit{function-invoca
 In the following discussion, is is important to keep in mind that the \textit{Invoke competence} protocol is being used to invoke the \textit{Invoke function} competence.
 The distinction between these two usages of the word `invoke' is a prerequisite to understanding the discussion of Stage 3.
 
-% Light green
-The \textbf{light green} interaction scenario between \textit{player1} and the \textit{invoker-player1} position follows the \textit{Invoke competence} protocol.
+% Green
+The {\color{green}{\textbf{green}}} interaction scenario between \textit{player1} and the \textit{invoker-player1} position follows the \textit{Invoke competence} protocol.
 \textit{player1} requests \textit{invoker-player1} to invoke the \textit{Invoke function} competence (1\textsuperscript{st} message) and is in turn requested to provide the competence argument (factorial argument---10, 2\textsuperscript{nd} message).
 \textit{player1} then promptly informs \textit{invoker-player1} about the argument (3\textsuperscript{rd} message).
-After \textit{invoker-player1} executes the competence (the \textbf{purple} interaction scenario), it informs \textit{player1} about its result (factorial value---3628800, 4\textsuperscript{th} message).
+After \textit{invoker-player1} executes the competence (the {\color{purple}{\textbf{purple}}} interaction scenario), it informs \textit{player1} about its result (factorial value---3628800, 4\textsuperscript{th} message).
 
 % Purple
-The \textbf{purple} interaction scenario between the \textit{initiator-player1} and \textit{executer-player2} positions follows the \textit{Invoke function} protocol.
+The {\color{purple}{\textbf{purple}}} interaction scenario between the \textit{initiator-player1} and \textit{executer-player2} positions follows the \textit{Invoke function} protocol.
 \textit{initiator-player1} requests \textit{executer-player2} to execute a particular function (factorial) for a particular argument (10, 1\textsuperscript{st} message).
-\textit{executer-player2}, after invoking the \textit{Execute function} responsibility on its player (the \textbf{blue} interaction scenario), informs \textit{invoker-player1} about the function return value (3628800, 2\textsuperscript{nd} message).
+\textit{executer-player2}, after invoking the \textit{Execute function} responsibility on its player (the {\color{blue}{\textbf{blue}}} interaction scenario), informs \textit{invoker-player1} about the function return value (3628800, 2\textsuperscript{nd} message).
 
 % Blue
-The \textbf{blue} interaction scenario between the \textit{executer-player2} position \textit{player2} follows the \textit{Invoke responsibility} protocol.
+The {\color{blue}{\textbf{blue}}} interaction scenario between the \textit{executer-player2} position \textit{player2} follows the \textit{Invoke responsibility} protocol.
 \textit{executer-player2} requests \textit{player2} to invoke the \textit{Execute function} responsibility (1\textsuperscript{st} message) and is in turn requested to provide the responsibility argument (factorial argument---10, 2\textsuperscript{nd} message).
 \textit{executer-player2} then immediately informs \textit{player2} about the argument (3\textsuperscript{rd} message).
 After \textit{player2} executes the responsibility, it informs \textit{executer-player2} about its result (factorial value---3628800, 4\textsuperscript{th} message).
@@ -188,15 +189,15 @@ After \textit{player2} executes the responsibility, it informs \textit{executer-
 \end{figure}
 
 % Yellow
-The \textbf{yellow} interaction scenario between \textit{player1}  and the \textit{invoker-player1} position.
+The {\color{yellow}{\textbf{yellow}}} interaction scenario between \textit{player1}  and the \textit{invoker-player1} position.
 \textit{player1} requests \textit{invoker-player1} to deactivate the role (1\textsuperscript{st} message) and the position promptly agrees (2\textsuperscript{nd} message).
 
 % Red
-The \textbf{red} interaction scenario between the \textit{function-invocation} organization and \textit{player2} follows the \textit{Publish event} protocol.
-\textit{invoke-organization} raises a \textit{Role deactivated} event (for the \textit{Invoker} role) and \textit{player2} handles it by deactivating its \textit{Executer} role (the \textbf{black} interaction scenario).
+The {\color{red}{\textbf{red}}} interaction scenario between the \textit{function-invocation} organization and \textit{player2} follows the \textit{Publish event} protocol.
+\textit{invoke-organization} raises a \textit{Role deactivated} event (for the \textit{Invoker} role) and \textit{player2} handles it by deactivating its \textit{Executer} role (the {\color{black}{\textbf{black}}} interaction scenario).
 
 % Black
-The \textbf{black} interaction scenario between \textit{player2} and the \textit{executer-player2} position.
+The {\color{black}{\textbf{black}}} interaction scenario between \textit{player2} and the \textit{executer-player2} position.
 \textit{player2} requests \textit{executer-player2} to deactivate the role (1\textsuperscript{st} message) and the position immediately agrees (2\textsuperscript{nd} message).
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -211,11 +212,11 @@ The \textbf{black} interaction scenario between \textit{player2} and the \textit
 \end{figure} 
 
 % Magenta
-The \textbf{magenta} interaction scenario between \textit{player1} and the \textit{function-invocation} organization follows the \textit{Deact role} protocol.
+The {\color{magenta}{\textbf{magenta}}} interaction scenario between \textit{player1} and the \textit{function-invocation} organization follows the \textit{Deact role} protocol.
 \textit{player1} requests \textit{function-invocation} to deact the \textit{Invoker} role (1\textsuperscript{st} message).
 \textit{function-invocation} abolishes the \textit{invoker-position1} position and confirms this for the player (2\textsuperscript{nd} message).
 
 % Cyan
-The \textbf{cyan} interaction scenario between \textit{player2} and the \textit{function-invocation} organizations follows the \textit{Deact role} protocol.
+The {\color{cyan}{\textbf{cyan}}} interaction scenario between \textit{player2} and the \textit{function-invocation} organizations follows the \textit{Deact role} protocol.
 \textit{player2} requests \textit{function-invocation} to deact the \textit{Executer} role (1\textsuperscript{st} message).
 \textit{function-invocation} abolishes the \textit{executer-player2} position and confirms this for the player (2\textsuperscript{nd} message).
