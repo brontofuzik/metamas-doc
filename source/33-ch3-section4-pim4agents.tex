@@ -13,7 +13,7 @@
 \section{PIM4Agents}
 
 % PIM4Agents - authors
-This section introduces the \textit{PIM4Agents} metamodel\footnote{For ``Platform-independent model for agents''.} \cite{Hahn07a}, \cite{Hahn07b} and \cite{Hahn08} proposed in 2007 by Christian Hahn, Cristián Madrigal-Mora and Klaus Fischer from German Research Centre for Artificial Intelligence (Deutsches Forschungszentrum f\"{u}r K\"{u}nstliche Intelligenz, DFKI).
+This section introduces the \textit{PIM4Agents} metamodel\footnote{For ``Platform-independent model for agents''.} \cite{Hahn07a}, \cite{Hahn07b} and \cite{Hahn08}, proposed in 2007 by Christian Hahn, Cristián Madrigal-Mora and Klaus Fischer from German Research Centre for Artificial Intelligence (Deutsches Forschungszentrum f\"{u}r K\"{u}nstliche Intelligenz, DFKI).
 
 % Citation
 We will present only a brief overview (distilled from \cite{Hahn07b}) since our work does not draw much inspiration from \textit{PIM4Agents}.
@@ -29,29 +29,32 @@ They have also described two sets of model transformations to convert PIMs to PS
 \subsection*{Core Model}
 
 % Core metamodel
-To support adaptability, \textit{PIM4Agents} is structured around a small core that could be augmented with extensions to model specific aspects of MASs, for example, security.
+To support adaptability, \textit{PIM4Agents} is structured around a small core that can be augmented with extensions to model specific aspects of MASs, for example, security.
 Figure~\ref{figure:pim4agents-metamodel} shows the core model.
 
 % Agent
-The metamodel, like previously introduced metamodels, is built around the concept of \textit{Agent}, an autonomous entity capable of sensing its environment and acting upon it.
-Each \textit{Agent} has access to a set of \textit{Resources} from its surrounding \textit{Environment} \cite{Hahn07b}.
+The metamodel, like previously introduced metamodels, is built around the concept of \textit{agent}, an autonomous entity capable of sensing its environment and acting upon it.
+Each agent has access to a set of \textit{resources} from its surrounding \textit{environment} \cite{Hahn07b}.
 
-% Behaviour, Capability
-A \textit{Behaviour} can be atomic or composed of sub-behaviours.
-This way, a whole hierarchy of specific \textit{Behaviours} can be created.
-A \textit{Behaviour} may also send or receive \textit{Messages} according to a \textit{Protocol}.
-A \textit{Capability} allows to group conceptually related \textit{Behaviours} \cite{Hahn07b}.
+% Behaviour
+A \textit{behaviour} can be atomic or composed of sub-behaviours.
+This way, a whole hierarchy of specific behaviours can be created.
+A behaviour may also send or receive \textit{messages}\comments{FO} according to a \textit{protocol}\comments{FO}.
+% Capability
+A \textit{capability} allows to group conceptually related behaviours \cite{Hahn07b}.
 
-% Role, Cooperation, Protocol, Message
-A \textit{Role} is an abstraction of the social behaviour of an \textit{Agent} in a given social context, usually a \textit{Cooperation}; it specifies the responsibilities of a \textit{Agent} in that social context.
-A \textit{Cooperation} represents the interaction between \textsc{Agents} playing the required set of \textit{Roles}.
-The detailed realisation of this interaction is described by a \textit{Protocol} that specifies the \textit{Messages} exchanged between the \textit{Roles} and at which point in time they are to be expected.
-A \textit{Protocol} is executed by a set of \textit{Behaviours} sending and receiving \textit{Messages} in accordance to their \textit{Roles}.
+% Role
+A \textit{role} is an abstraction of the social behaviour of an agent in a given social context, usually a \textit{cooperation}\comments{FO}; it specifies the responsibilities of an agent in that social context.
+% Cooperation
+A \textit{cooperation} represents the interaction between agents playing the required set of roles.
+% Protocol & Message
+The detailed realisation of this interaction is described by a \textit{protocol} that specifies the \textit{messages} exchanged between the involved roles and at which point in time they are to be expected.
+A protocol is executed by a set of behaviours sending and receiving messages in accordance to their roles.
 
 % Organziation
-\textit{Agents} can take part in an \textit{Organization}, a special kind of \textit{Cooperation} that also has the same characteristics as an \textit{Agent}.
-Being a \textit{Cooperation}, an \textit{Organization} can have its own internal protocol that specifies how it coordinates its members.
-Being also an \textit{Agent}, an \textit{Organization} can play roles in other \textit{Organizations} (super-organization) and has \textit{Capabilities} which can be performed by its members, be they \textit{Agents} or other \textit{Organizations} (sub-organizations).
+Agents can take part in an \textit{organization}, a special kind of cooperation that also has the same characteristics as an agent.
+Being a cooperation, an organization can have its own internal protocol that specifies how it coordinates its members.
+Being also an agent, an organization can play roles in other organizations (\textit{super-organization}) and has capabilities which can be performed by its members, be they agents or other organizations (\textit{sub-organizations}).
 
 % Figure: PIM4Agents metamodel
 \begin{figure}[ht]
@@ -64,7 +67,7 @@ Being also an \textit{Agent}, an \textit{Organization} can play roles in other \
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{JadeOrgs}
 
-JadeOrgs, \cite{Madrigal-Mora08} and \cite{Madrigal-Mora09}, is an extension of the \textit{Jade} framework that implements the \textit{JadeMM} platform-specific metamodel.
+\textit{JadeOrgs}, \cite{Madrigal-Mora08} and \cite{Madrigal-Mora09}, is an extension of the \textit{Jade} framework that implements the \textit{JadeMM} platform-specific metamodel.
 
 \textit{JadeMM} is defined using Eclipse Modeling Framework (EMF) to exploit EMF's code generation facility.
 Given a platform-independent model of a MAS (conforming to \textit{PIM4Agents}), the corresponding \textit{Jade/JadeOrgs} platform-specific model (conforming to \textit{JadeMM}) can be derived automatically.
