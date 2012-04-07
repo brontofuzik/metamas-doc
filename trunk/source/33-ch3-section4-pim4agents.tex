@@ -13,23 +13,23 @@
 \section{PIM4Agents}
 
 % PIM4Agents - authors
-This section introduces the PIM4Agents metamodel\footnote{For ``Platform-independent model for agents''.} \cite{Hahn07a}, \cite{Hahn07b} and \cite{Hahn08} proposed in 2007 by Christian Hahn, Cristián Madrigal-Mora and Klaus Fischer from German Research Centre for Artificial Intelligence (Deutsches Forschungszentrum f\"{u}r K\"{u}nstliche Intelligenz, DFKI).
+This section introduces the \textit{PIM4Agents} metamodel\footnote{For ``Platform-independent model for agents''.} \cite{Hahn07a}, \cite{Hahn07b} and \cite{Hahn08} proposed in 2007 by Christian Hahn, Cristián Madrigal-Mora and Klaus Fischer from German Research Centre for Artificial Intelligence (Deutsches Forschungszentrum f\"{u}r K\"{u}nstliche Intelligenz, DFKI).
 
 % Citation
-We will present only a brief overview (distilled from \cite{Hahn07b}) since our work does not draw much inspiration from PIM4Agents.
+We will present only a brief overview (distilled from \cite{Hahn07b}) since our work does not draw much inspiration from \textit{PIM4Agents}.
 
 %% PIM4Agents %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 % PIM4Agents & MDA
-PIM4Agents has been specifically designed to be employed in the Model-driven engineering (MDE) software development methodology, more precisely in Model-driven architecture (MDA) by Object Management Group (OMG).
-Apart from the platform-independent metamodel itself, the authors have proposed two platform-specific metamodels: JackMM and JadeMM for the JACK and Jade agent platforms respectively.
-They have also described two sets of model transformations to convert PIMs to PSMs: PIM4Agents-to-JackMM and PIM4Agents-to-JadeMM.
+\textit{PIM4Agents} has been specifically designed to be employed in the Model-driven engineering (MDE) software development methodology, more precisely in Model-driven architecture (MDA) by Object Management Group (OMG).
+Apart from the platform-independent metamodel itself, the authors have proposed two platform-specific metamodels: \textit{JackMM} and \textit{JadeMM} for the \textit{JACK} and \textit{Jade} agent platforms respectively.
+They have also described two sets of model transformations to convert PIMs to PSMs: \textit{PIM4Agents-to-JackMM} and \textit{PIM4Agents-to-JadeMM}.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection*{Core Model}
 
 % Core metamodel
-To support adaptability, PIM4Agents is structured around a small core that could be augmented with extensions to model specific aspects of MASs, for example, security.
+To support adaptability, \textit{PIM4Agents} is structured around a small core that could be augmented with extensions to model specific aspects of MASs, for example, security.
 Figure~\ref{figure:pim4agents-metamodel} shows the core model.
 
 % Agent
@@ -57,16 +57,14 @@ Being also an \textit{Agent}, an \textit{Organization} can play roles in other \
 \begin{figure}[ht]
 	\centering
 	\includegraphics[width=0.6\textwidth]{images/pim4agents/pim4agents-metamodel.png}
-	\caption{The PIM4Agents core model \cite{Hahn07b}}
+	\caption{The \textit{PIM4Agents} core model \cite{Hahn07b}}
 	\label{figure:pim4agents-metamodel}
 \end{figure}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{JadeOrgs}
 
-JadeOrgs
-\cite{Madrigal-Mora08} and \cite{Madrigal-Mora09}
-is an extension of the Jade framework that implements the JadeMM platform-specific metamodel.
+JadeOrgs, \cite{Madrigal-Mora08} and \cite{Madrigal-Mora09}, is an extension of the \textit{Jade} framework that implements the \textit{JadeMM} platform-specific metamodel.
 
-JadeMM is defined using Eclipse Modeling Framework (EMF) to exploit EMF's code generation facility.
-Given a platform-independent model of a MAS (conforming to PIM4Agents), the corresponding Jade/JadeOrgs platform-specific model (conforming to JadeMM) can be derived automatically.
+\textit{JadeMM} is defined using Eclipse Modeling Framework (EMF) to exploit EMF's code generation facility.
+Given a platform-independent model of a MAS (conforming to \textit{PIM4Agents}), the corresponding \textit{Jade/JadeOrgs} platform-specific model (conforming to \textit{JadeMM}) can be derived automatically.

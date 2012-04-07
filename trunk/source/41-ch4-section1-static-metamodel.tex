@@ -12,7 +12,7 @@
 
 \section{Static Metamodel}
 
-The static Thespian metamodel is used to model static (structural) aspects of OCMAS like:
+The static \textit{Thespian} metamodel is used to model static (structural) aspects of OCMAS like:
 \begin{itemize}
 	\item an organization's role structure and protocols,
 	\item a role's competences and responsibilities or
@@ -28,7 +28,7 @@ The Organization metamodel (figure~\ref{figure:thespian-organization-metamodel})
 \subsubsection*{Organization and Organization Type}
 
 % Type-token distinction - organization
-To enable the type-token distinction, Thespian contains concepts for modelling both an \textit{organization type} and an \textit{organization token}: \textit{Organization type} and \textit{Organization}.
+To enable the type-token distinction, \textit{Thespian} contains concepts for modelling both an \textit{organization type} and an \textit{organization token}: \textit{Organization type} and \textit{Organization}.
 
 % Organization
 \textit{Organization} (also called \textit{Organization instance}) is an actual organization in a running MAS; it is a run-time entity.
@@ -47,13 +47,13 @@ It can be instantiated to yield an \textit{Organization}.
 \subsubsection*{Role and Position}
 
 % Type-token distinction - role
-Thespian contains concepts for modelling both an \textit{role type} and \textit{role token} to enable the type-token distinction: \textit{Role} and \textit{Position}.
+\textit{Thespian} contains concepts for modelling both an \textit{role type} and \textit{role token} to enable the type-token distinction: \textit{Role} and \textit{Position}.
 
 % Role
 \textit{Role} is a role specification within an organization; it is a design-time entity.
 % Role - state
 It has a set of \textit{Competences} and a set of \textit{Responsibilities} defining its function in its containing \textit{Organization type} and multiplicity differentiating between a \textit{single role})---one that can not be played by more than one \textit{Player} in an \textit{Organization}---and a \textit{multiple role}---one that can.
-Currently, neither Thespian not Thespian4Jade support differentiating between a \textit{mandatory role}---one that has to be played at all times---and an \textit{optional role}---one that does not have to be.
+Currently, neither \textit{Thespian} not \textit{Thespian4Jade} support differentiating between a \textit{mandatory role}---one that has to be played at all times---and an \textit{optional role}---one that does not have to be.
 
 % Position
 A \textit{Position} (sometimes called \textit{Role instance}) is a role realization within an actual organization; it is a run-time entity.
@@ -91,7 +91,7 @@ The Player metamodel (figure~\ref{figure:thespian-player-metamodel}) contains co
 \subsubsection*{Player and Player Type}
 
 % Type-token distinction - player
-To facilitate the type-token distinction, Thespian contains concepts for modelling both a \textit{player type} and a \textit{player token}: \textit{Player type} and \textit{Player}.
+To facilitate the type-token distinction, \textit{Thespian} contains concepts for modelling both a \textit{player type} and a \textit{player token}: \textit{Player type} and \textit{Player}.
 
 % Player
 \textit{Player} is an actual player in a running MAS; it is a run-time entity.
@@ -138,7 +138,7 @@ It defines parties involved in the interaction and messages exchanged in the com
 % Scenario
 A realization of an interaction protocol is an \textit{Interaction scenario}---a sequence of actions performed (messages exchanged) by two or more roles within an organization; a scenario is a purely run-time entity.
 In other words, a protocol is a framework and a scenario (is) one of its possible instantiations.
-Since scenarios are usually not explicitly modelled\footnote{Scenarios can be explicitly modelled in snapshots.}, Thespian does not contain the concept of an \textit{Interaction scenario}.
+Since scenarios are usually not explicitly modelled\footnote{Scenarios can be explicitly modelled in snapshots.}, \textit{Thespian} does not contain the concept of an \textit{Interaction scenario}.
 
 % Type-token distinction - protocol
 The theme of type-token distinction is at play here: instances of \textit{Protocol} model \textit{protocol types} and instances of \textit{Scenario} represent \textit{protocol tokens}.
@@ -198,10 +198,10 @@ They models of MAS manifestations are also referred to as \textit{dynamic MAS mo
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Integrated Metamodel}
 
-Figure~\ref{figure:thespian-integrated-metamodel} shows the integrated Thespian metamodel.
+Figure~\ref{figure:thespian-integrated-metamodel} shows the integrated \textit{Thespian} metamodel.
 
 % Key property of Thespian - no association between Role and Player type
-We would like to emphasize what we perceive as key property of Thespian: there is no association between \textit{Role} and \textit{Player type}, no link between a specific role and a particular player type.
+We would like to emphasize what we perceive as key property of \textit{Thespian}: there is no association between \textit{Role} and \textit{Player type}, no link between a specific role and a particular player type.
 This means that there is no design-time dependency between roles and player types; all connections arise at run-time and happen between positions and players.
 
 % Figure: Thespian integrated metamodel
