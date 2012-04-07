@@ -34,7 +34,7 @@ The \textit{Aalaadin} metamodel has two levels:
 \begin{itemize}
 	\item The \textit{concrete level} contains relatively concrete concepts like \textit{Agent}, \textit{Group} and \textit{Role}.
 	The language represented by this level is used to model concrete organizations.
-	\item The \textit{abstract level} contains more abstract concepts like \textit{group structure}, \textit{organization structure} and \textit{interaction}.
+	\item The \textit{abstract level} contains more abstract concepts like \textit{Group structure}, \textit{Organization structure} and \textit{Interaction}.
 	The language represented by this level is used to model abstract organizations.
 \end{itemize}
 
@@ -42,7 +42,7 @@ The \textit{Aalaadin} metamodel has two levels:
 \subsection{Core Concepts}
 
 % Core model - about
-The \textit{Aalaadin} core model contains the \textit{core concepts}: \textit{agent}, \textit{group} and \textit{role}.
+The \textit{Aalaadin} core model contains the \textit{core concepts}: \textit{Agent}, \textit{Group} and \textit{Role}.
 Figure~\ref{figure:aalaadin-core-model} illustrates the core model.
 
 % Figure: Aalaadin core model
@@ -67,7 +67,7 @@ As we will see, none of the metamodels introduced in this thesis force the MAS d
 \subsubsection*{Group}
 
 % Group - definition
-In \cite{Ferber97}, a \textit{group} is defined as atomic sets of agent aggregation.
+In \cite{Ferber97}, a \textit{group} is defined as atomic set of agent aggregation.
 In its most basic form, a group is just a way to tag a set of agents, i.e. it has no structure.
 
 % Group - characteristics
@@ -110,7 +110,7 @@ It also has a capacity to revoke roles and cancel group membership.
 \subsection{Methodological Concepts}
 
 % Methodological model - about
-The \textit{Aalaadin} methodological model contains the so-called \textit{methodological concepts}.
+The \textit{Aalaadin} methodological model contains the so-called \textit{methodological concepts}: \textit{Organization structure}, \textit{Group structure}, \textit{Interaction} and \textit{Agent class}.
 These concepts are not present directly in concrete organizations, but only serve during the analysis and design phases.
 Their purpose is to describe abstract organizations from which concrete organizations, described using the core concepts, will ultimately be derived.
 Figure~\ref{figure:aalaadin-metamodel} illustrates the entire \textit{Aalaadin} metamodel. The dotted ellipsis is the demarcation line between the core and methodological models.
@@ -151,7 +151,7 @@ The organizational structure can be seen as the specification of the problem to 
 Any sort of heterogeneity within a single system (e.g. agent architecture heterogeneity or language heterogeneity) can be managed by different group structures involved in the organizational structure.
 
 % Organizational structure - partial instantiation
-Similarly to groups, an actual organization can be a incomplete manifestation of its defining organizational structure.
+Similarly to groups, an asctual organization can be a incomplete manifestation of its defining organizational structure.
 This means that while a MAS is running, there may be a point when some groups defined in the organizational structure are not present in an organization.
 This also contributes to the overall run-time flexibility.
 
