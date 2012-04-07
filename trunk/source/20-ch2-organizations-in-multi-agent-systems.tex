@@ -19,61 +19,61 @@
 \end{flushright}
 
 % Chapter intro
-In this chapter, we discuss the motivation for introducing organizations to MASs, introduce two conceptions of a MAS (agent-centric and organization-centric) and talk about some key organizational concepts for the first time in an informal manner.
+In this chapter, we discuss the motivation for introducing organizations to MASs, introduce two conceptions of a MAS and talk about some key organizational concepts for the first time in an informal manner.
 
 % Decomposable problem with independent subproblems
 Consider a problem with the following properties:
 \begin{itemize}
-	\item \textbf{Decomposability} It can easily be decomposed into well-defined subproblems. These subproblems can either be decomposable themselves or atomic.
-	Note that the subproblems do not necessarily have to resemble the original problem or each other\footnote{A characteristic necessary for divide and conquer algorithms.}. 
-	\item \textbf{Subproblem independence} The subproblems can be solved more or less independently and therefore, providing enough computational entities are available, concurrently.
+	\item \textit{decomposability} --- It can easily be decomposed into well-defined subproblems. These subproblems can either be decomposable themselves or atomic.
+	Note that the subproblems do not necessarily have to resemble the original problem or each other\footnote{A characteristic necessary for divide and conquer algorithms.}.
+	\item \textit{subproblem independence} --- The subproblems can be solved more or less independently and therefore, providing enough computational entities are available, concurrently.
 	Note that this is a quantitative characteristic, not a categorical one.
 \end{itemize}
 
 % Solving such a problem with a MAS
-Such a problem can be solved by first pondering how a society of humans (intelligent autonomous computational entities) would go about solving it, then modelling this society as a MAS and finally running the system.
+Such a problem can be solved by first pondering how a society of humans (viewed as intelligent autonomous computational entities) would go about solving it, then modelling this society as a MAS and finally running the system.
 However there is an issue we must address---organizational structure of human societies.
 
 % Organizational structure of human societies
-In all human societies but the most primitive ones, various types of \textit{organizations} emerge to facilitate cooperation among their members.
-In these organization types \textit{roles} appear and \textit{interaction protocols} governing their interaction crystallize among them.
+In all human societies but the most primitive ones, various types of \textit{organizations}\comments{FO} emerge to facilitate cooperation among their members.
+In these organization types \textit{roles}\comments{FO} appear and \textit{interaction protocols}\comments{FO} governing their interaction crystallize among them.
 We are facing the challenge of carrying these \textit{organizational concepts} over to the realm of MASs.
 
 % No standardized way to impose organizational structure upon MASs
 Unfortunately, there is no standardized way to impose organizational structure upon MASs.
-It should come as no surprise to anybody who is familiar with the field that no single, precise and universally accepted notions of organization, role or interaction protocol currently exist among researchers.
+It should come as no surprise to anybody who is familiar with MASs that no single, precise and universally accepted notions of organization, role or interaction protocol currently exist among researchers.
 In a plain vanilla MAS, every agent can (in principle) talk to any other agent, regardless of whether this is desirable or even allowed in the society being modelled by the MAS.
 
 % ACMAS vs. OCMAS
 In the next two sections, we will introduce two ways of looking at MASs:
 \begin{itemize}
-	\item agent-centric --- focused on the structure of individual agents (the traditional viewpoint) and
-	\item organization-centric --- focused on the structure of agent societies (a novel perspective).
+	\item \textit{agent-centric} --- focused on the structure of individual agents (the traditional viewpoint), and
+	\item \textit{organization-centric} --- focused on the structure of agent societies (a novel perspective).
 \end{itemize}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Agent-Centric Multi-Agent Systems}
 
 % ACMAS - architecture of individual agents
-An \textit{agent-centric multi-agent system} (ACMAS) is the classical conception of MAS.
-It focuses on the architecture of individual agents, oblivious to the considerations about the structure of their society.
+An \textit{agent-centric multi-agent system} (ACMAS) is the classical conception of a MAS.
+It focuses on the architecture of individual agents, being oblivious to the structure of their society.
 
 % ACMAS - characteristics
 An ACMAS has the following characteristics \cite{Ferber03}:
 \begin{itemize}
-	\item An agent has an \textit{agent ID} and it can be addressed with it.
-	\item An agent can communicate with any other agent.
+	\item Every agent has a public \textit{agent identifier}\footnote{\textit{Agent identifier} (AID) is a name that identifies (that is, labels the identity of) a unique agent.} and it can be addressed with it.
+	\item An agent can communicate with any other agent\footnote{Of course, the agent needs to know the other agent's AID, but since these are public, this is not an obstacle.}.
 	\item An agent provides a set of services, which are available to every other agent in the system.
-	\item It is the responsibility of each agent to constrain its accessibility from other agents.
+	\item It is the responsibility of each agent to constrain its accessibility and the accessibility of its services to other agents.
 	\item It is the responsibility of each agent to define its relations, contracts, etc. with other agents.
 \end{itemize}
 
-Ironically, the absolute freedom of interaction in ACMAS is the cause of many of its shortcomings \cite{Ferber03}:
+Perhaps ironically, the absolute freedom of interaction in an ACMAS is the cause of many of its shortcomings \cite{Ferber03}:
 \begin{itemize}
-	\item Predicting the behaviour of the whole system from the behaviour of its constituent components is extremely difficult (if not downright impossible) due to high probability of emergent (and undesirable) behaviour.
+	\item Predicting the behaviour of the whole system from the behaviour of its constituent components is extremely difficult, if not downright impossible, due to high probability of emergent behaviour.
 	\item Because there is no implicit security management, it is easy for a malicious agent to unknowingly misuse or even intentionally abuse the system.
-	\item It is not possible to apply the principles of \textit{modular design}. Agents cannot be grouped into modules with different visibilities to the outside world (public vs. private) at design-time let alone at run-time.
-	\item It is not possible to pursue the \textit{framework approach}. There is only one framework--the agent platform itself---and it is impossible to define sub-frameworks with specific interactions.
+	\item It is not possible to apply the principles of \textit{modular design}. Agents cannot be grouped into modules with different visibilities to the outside world (public vs. private) at design-time, let alone at run-time.
+	\item It is not possible to pursue the \textit{framework approach}. There is only one framework---the agent platform itself---and it is impossible to define sub-frameworks with specific interactions.
 \end{itemize}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -81,7 +81,7 @@ Ironically, the absolute freedom of interaction in ACMAS is the cause of many of
 
 % OCMAS - structure of agent society (agent social structure)
 An \textit{organization-centric multi-agent system} (OCMAS) is the modern conception of MAS proposed in \cite{Ferber03}.
-It focuses on the structure of the agent society, ignoring the considerations of the architecture of individual agents.
+It focuses on the structure of the agent society, paying no attention to the architecture of individual agents.
 
 % OCMAS - organizational level vs. agent level
 Organizations provide a natural way of describing structure of a MAS and interactions among its constituent agents.
