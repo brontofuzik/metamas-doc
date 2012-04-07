@@ -10,22 +10,21 @@
 %% Academic year: 2011/2012                                                   %%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-% TODO Rename to Organization-Centric MAS Metamodels
 \chapter{Modelling Organizations---Existing Approaches}
 
 % Chapter intro
 In this chapter, we will introduce existing metamodel-based approaches to modelling organizations in MASs.
 The initiative to model organizations in MASs using platform-independent metamodels began with the publication of a seminal paper \cite{Ferber98} by Jacques Ferber and Oliver Gutknecht and continues to this day.
 We will introduce four metamodels: Aalaadin, O\&P, PIM4Agents and powerJade.
-All of them have influenced the design of our metamodel (presented in the next chapter) to a greater or lesser degree.
+All of them have influenced the design of our metamodel to a greater or lesser degree.
 
 % PIM
-In software engineering, \textit{platform-independent model} (PIM) is a model of a software system, that is independent of the specific technological platform used to implement it \cite{Wikipedia-PIM}.
+In software engineering, a \textit{platform-independent model} (PIM) is a model of a software system, that is independent of the specific technological platform used to implement it \cite{Wikipedia-PIM}.
 % PIM - motivation
 The main motivation to use a PIM is to build the model once and then automatically transform it to any number of platform-specific models for different deployment platforms.
 
 % PSM
-The \textit{platform-specific model} (PSM) is a model of a software system bound to a specific technological platform (e.g. a hardware environment (processor), operating system or software environment (virtual machine)).
+The \textit{platform-specific model} (PSM) is a model of a software system, that is bound to a specific technological platform, for example, a hardware environment (processor), operating system or software environment (virtual machine)).
 % PSM - motivation
 PSMs are indispensable for the actual implementation of a software system \cite{Wikipedia-PSM}
 
@@ -40,12 +39,12 @@ Before talking about metamodels and metamodelling, its absolutely necessary to h
 % Model - representation
 A \textit{model} is a simplified \textit{representation} of a certain reality, for example, a system \cite{Genova09}.
 A system can be represented by a set of different models.
-Each model captures a specific aspect (or view) of the system depending on the purpose of that model.
+Each model captures a specific aspect (or view) of the system, depending on the purpose of that particular model.
 A model must not represent the system with absolute preciseness; it is useful only because it is a simplified representation \cite{Genova09}.
 
 % Model - conformance
 A model also has to be expressed in some modelling language.
-Therefore, the full definition of a model is the following: a model is a simplified representation of a certain reality \textit{conforming} to the rules of a certain modelling language \cite{Genova09}. In short, a model represents a system and conforms to a metamodel. Figure~\ref{figure:representation-and-conformance} illustrates both relationships.
+Therefore, the full definition of a model is the following: a \textit{model} is a simplified \textit{representation} of a certain reality \textit{conforming} to the rules of a certain modelling language \cite{Genova09}. In short, a model represents a system and conforms to a metamodel. Figure~\ref{figure:representation-and-conformance} illustrates both relationships.
 
 % Figure: Representation and conformance relationships
 \begin{figure}[h]
@@ -56,15 +55,15 @@ Therefore, the full definition of a model is the following: a model is a simplif
 \end{figure}
 
 % Modelling
-Modelling, in the most general sense, is the use of a model to represent a certain reality for some cognitive purpose.
+\textit{Modelling}, in the most general sense, is the use of a model to represent a certain reality for some cognitive purpose.
 
 % Contextual substitutability
-A model is characterized by \textit{contextual substitutability}: it should be able to answer a given set of questions in the same way the system would answer them \cite{Genova09}.
+A model is characterized by \textit{contextual substitutability}---it should be able to answer a given set of questions in the same way the system would answer them \cite{Genova09}.
 
 \subsection{Metamodels and Metamodelling}
 
 % Metamodel
-A metamodel is a special kind of model that specifies the abstract syntax of a modelling language \cite{OMG-MDA-Foundation-Model}.
+A \textit{metamodel} is a special kind of model that specifies the abstract syntax of a \textit{modelling language} \cite{OMG-MDA-Foundation-Model}.
 
 % Metamodel - what it represents
 A metamodel represents an abstract syntax of a modelling language; it does \textit{not} represent a model or a set of models\footnote{The popular expression ``model of a model'' is particularly confusing.}.
@@ -95,7 +94,7 @@ Transitively, we can say that a \textit{meta-metamodel} conforms to \textit{itse
 The represented-by and conforms-to relationships are essentially different; arranging them in the same direction might be confusing.
 
 % Using 'model' to refer to a metamodel
-Since metamodels are models themselves, we will use the less cumbersome `model' to refer to a metamodel where it is obvious from the context that we are talking about the metamodel and not one of the models it specifies.  
+Since metamodels are models themselves, we will use the less cumbersome term---\textit{model}---to refer to a metamodel where it is obvious from the context that we are talking about the metamodel and not one of the models it specifies.  
 
 \input{31-ch3-section2-aalaadin}
 
