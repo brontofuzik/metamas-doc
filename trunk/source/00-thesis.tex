@@ -56,6 +56,8 @@
 % Multilingual support for Plain TeX or LaTeX.
 \usepackage[english,slovak]{babel}
 
+\usepackage{aeguill}
+
 %% Formatting %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \usepackage{verbatim}
@@ -124,11 +126,21 @@
 % \chapwithtoc - Starts a unnumbered chapter included in the TOC.
 %
 \newcommand{\chapwithtoc}[1]{
-\chapter*{#1}
-\addcontentsline{toc}{chapter}{#1}
+	\chapter*{#1}
+	\addcontentsline{toc}{chapter}{#1}
 }
 
+%
+% \comments - Inserts a inline comment.
+%
 \newcommand{\comments}[1]{}
+
+%
+% \stereotype - Inserts a UML stereotype.
+%
+\newcommand{\stereotype}[1]{
+	\guillemotleft {#1}\guillemotright
+}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% Document                                                                   %%
