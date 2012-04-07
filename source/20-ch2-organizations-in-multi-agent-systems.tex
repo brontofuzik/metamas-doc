@@ -47,8 +47,8 @@ In a plain vanilla MAS, every agent can (in principle) talk to any other agent, 
 % ACMAS vs. OCMAS
 In the next two sections, we will introduce two ways of looking at MASs:
 \begin{itemize}
-	\item \textit{agent-centric} --- focused on the structure of individual agents (the traditional viewpoint), and
-	\item \textit{organization-centric} --- focused on the structure of agent societies (a novel perspective).
+	\item \textit{agent-centric}\comments{FO} --- focused on the structure of individual agents (the traditional viewpoint), and
+	\item \textit{organization-centric}\comments{FO} --- focused on the structure of agent societies (a novel perspective).
 \end{itemize}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -80,21 +80,21 @@ Perhaps ironically, the absolute freedom of interaction in an ACMAS is the cause
 \section{Organization-Centric Multi-Agent Systems}
 
 % OCMAS - structure of agent society (agent social structure)
-An \textit{organization-centric multi-agent system} (OCMAS) is the modern conception of MAS proposed in \cite{Ferber03}.
-It focuses on the structure of the agent society, paying no attention to the architecture of individual agents.
+An \textit{organization-centric multi-agent system} (OCMAS) is the modern conception of a MAS proposed in \cite{Ferber03}.
+It focuses on the structure of an agent society, paying no attention to the architecture of the individual agents.
 
 % OCMAS - organizational level vs. agent level
 Organizations provide a natural way of describing structure of a MAS and interactions among its constituent agents.
-This description is situated on the \textit{organization level} of an OCMAS, the level above the \textit{agent level}, which is the only level considered in an ACMAS.
-The organizational level contains abstract representations of the concrete organizations occurring on the agent level; in particular, it specifies the types of organizations, their roles and interaction protocols among them, which should occur on the agent level.
+This description is situated on the \textit{organization level}\comments{FO} of an OCMAS---the level above the \textit{agent level}\comments{FO}, which is the only level considered in an ACMAS.
+The organizational level contains abstract representations of the concrete organizations occurring on the agent level.
 
 % OCMAS - characteristics
 The following are the characteristics of an OCMAS \cite{Ferber03}:
 \begin{itemize}
 	\item The organizational level imposes social structure and patterns of interaction upon agents, but does not prescribe how agents should behave; it merely demarcates the space within which the agents can express their individuality.
-	\item The organizational level does not place constraints on the architectures of the agents; deliberative as well as reactive agent can take part in an organization as longs as they behave in an expected way.
+	\item The organizational level does not place constraints on the architecture of the agents; deliberative as well as reactive agents can take part in an organization as longs as they behave in an expected way.
 	\item The organizations provide a way to partition a MAS into bounded contexts of interaction.
-	Whereas the structure of an organization is known to its members and they are able to interact with one another, it is opaque to the non-members whose interaction with the organization (its members) is limited.
+	Whereas the structure of an organization is known to its members who are able to interact with one another, it is opaque to the non-members whose interaction with the organization (and its members) is limited.
 \end{itemize}
 
 \section{Organizational Concepts}
