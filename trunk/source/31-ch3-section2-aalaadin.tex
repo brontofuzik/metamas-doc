@@ -13,40 +13,36 @@
 \section{Aalaadin}
 
 % Aallaadin - authors
-This section introduces the Aalaadin metamodel\footnote{``Aalaadin'' is the old name; the metamodel is now known as ``AGR'' (for ``agent-group-role''). We will use the fancier old name.} \cite{Ferber97}, \cite{Ferber98}, \cite{Ferber00} and \cite{Ferber03} proposed in 1997 by Jacques Ferber, Oliver Gutknecht and their colleagues from Montpellier 2 University in Montpellier, France.
+This section introduces the \textit{Aalaadin} metamodel\footnote{``Aalaadin'' is the old name; the metamodel is now known as ``AGR'' (for ``agent-group-role''). We will use the fancier old name.} \cite{Ferber97}, \cite{Ferber98}, \cite{Ferber00} and \cite{Ferber03} proposed in 1997 by Jacques Ferber, Oliver Gutknecht and their colleagues from Montpellier 2 University in Montpellier, France.
 
 % Citation
 The overview presented here is distilled from the seminal paper on Aalaadin \cite{Ferber97}.
 
-%% Summary %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-% Aalaadin - about
-Aalaadin is based on three core concepts: agent, group and role.
-It enables a MAS designer to describe various organization models such as flat (e.g. market-like) or hierarchical (e.g. enterprise-like) organizations.
-
-% Two levels: concrete and abstract
-The metamodel has two levels:
-\begin{itemize}
-	\item The \textbf{concrete level} contains relatively concrete concepts like \textit{agent}, \textit{group} and \textit{role}.
-	The language defined by this level is used by models representing concrete organizations.
-	\item The \textbf{abstract level} contains more abstract concepts like \textit{group structure}, \textit{organization structure} and \textit{interaction}. 
-	The language defined by this level is used by models representing abstract organizations, i.e. families of organizations sharing the same structural characteristics.
-\end{itemize}
-
-% Concrete organization vs. abstract organization
-To understand the following text, it is essential to make a distinction between a \textit{concrete organization} and \textit{abstract organization}.
-A concrete organization is the actual organization that exists in a MAS at run-time, whereas an abstract organization is the organization specification that exists in a MAS at design-time.
+% Abstract organization vs. concrete organization
+To understand the following text, it is essential to make a distinction between an \textit{abstract organization}\comments{FO} and a \textit{concrete organization}\comments{FO}.
+An \textit{abstract organization} is the organization specification that exists in a MAS at design-time, whereas a \textit{concrete organization} is the actual organization that exists in a MAS at run-time.
 Put differently, an abstract organization is a (possibly infinite) set of all imaginable organizations conforming to a common specification (sharing the same role structure) and a concrete organization is a member of this set.
 
-% Organization instance vs organization class
-Later we will use the terms \textit{organization instance} and \textit{organization class} (or \textit{organziation type}) to refer to an concrete organization and abstract organization respectively.
-These terms try to capture the essence of the relationship between an abstract and concrete organization (namely, a concrete organization being an instance of an abstract organization and conversely, an abstract organization being a class of a concrete organization) and are imported from OOP where it is necessary to make a similar distinction. 
+% Organization type vs. organization token
+Later we will use the terms \textit{organization type} and \textit{organization token} to refer to an abstract organization and a concrete organization respectively.
+These terms try to capture the essence of the relationship between an abstract and concrete organization (namely, a concrete organization being an instance of an abstract organization and conversely, an abstract organization being a class of a concrete organization)
+
+%% Aalaadin %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% Two levels: concrete and abstract
+The \textit{Aalaadin} metamodel has two levels:
+\begin{itemize}
+	\item The \textit{concrete level} contains relatively concrete concepts like \textit{Agent}, \textit{Group} and \textit{Role}.
+	The language represented by this level is used to model concrete organizations.
+	\item The \textit{abstract level} contains more abstract concepts like \textit{group structure}, \textit{organization structure} and \textit{interaction}.
+	The language represented by this level is used to model abstract organizations.
+\end{itemize}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Core Concepts}
 
 % Core model - about
-The Aalaadin core model contains three \textit{core concepts}: \textit{agent}, \textit{group} and \textit{role}.
+The \textit{Aalaadin} core model contains the \textit{core concepts}: \textit{agent}, \textit{group} and \textit{role}.
 Figure~\ref{figure:aalaadin-core-model} illustrates the core model.
 
 % Figure: Aalaadin core model
@@ -60,49 +56,48 @@ Figure~\ref{figure:aalaadin-core-model} illustrates the core model.
 \subsubsection*{Agent}
 
 % Agent - definition
-An \textit{agent} is defined in \cite{Ferber97} as an active communicating entity which plays \textit{roles} within \textit{groups}.
+An \textit{agent} is defined in \cite{Ferber97} as an active communicating entity which plays roles within groups.
 
 % Agent - no agent architecture imposed
 Aalaadin does not prescribe any particular agent architecture.
-Indeed, any metamodel striving for generality should impose as few constraints upon the resulting MAS models as possible.
+Indeed, any MAS metamodel striving for generality should impose as few constraints upon the resulting MAS models as possible.
 After all, the decision of which agent architecture to employ is best made by the the MAS designer and relates to the MAS as such, not just its organizational structure.
 As we will see, none of the metamodels introduced in this thesis force the MAS designer to adapt a concrete definition of agenthood.
 
 \subsubsection*{Group}
 
 % Group - definition
-In \cite{Ferber97}, \textit{groups} are defined as atomic sets of agent aggregation.
-% Group - about
-In its most basic form, a group is just a way to tag a set of agents, it has no structure.
-The real advantage of grouping agents becomes apparent when we introduce some structure to these groups.
-This structure can be imposed using roles.
+In \cite{Ferber97}, a \textit{group} is defined as atomic sets of agent aggregation.
+In its most basic form, a group is just a way to tag a set of agents, i.e. it has no structure.
 
 % Group - characteristics
 Groups have the following characteristics:
 \begin{itemize}
 	\item An agent can be a member of a number of groups simultaneously.
-	This means that group can overlap, which is major point of Aalaadin.
+	This means that groups can overlap, which is major point of Aalaadin.
 	\item A new group can be founded by any agent; an agent must request its admission to an existing group.
 	\item A group may be local or distributed across multiple machines.
 \end{itemize}
+
+The real advantage of grouping agents becomes apparent when we use roles to impose some structure to these groups.
 
 \subsubsection*{Role}
 
 % Role - definition
 A \textit{role} is an abstract representation of an agent function, service or identification within a group \cite{Ferber97}.
-An agent can play multiple roles each of which is local to a group.
-Similarly to group admission, playing a group in a role must be requested by the candidate agent (already belonging to the group) and awarded by the group founder agent.
+An agent can play multiple roles, each of which is local to a particular group.
+Similarly to group admission, playing a role in a group must be requested by the candidate agent (already a member of the group) and awarded by the group founder agent.
 
 % Role & communication
-In Aalaadin, the communication is related to roles. Since an agent can play multiple roles, it can be engage in several independent dialogues simultaneously.
+In \textit{Aalaadin}, the communication is related to roles. Since an agent can play multiple roles, it can be engage in several independent dialogues simultaneously.
 
 % Role - definition characteristics
 The following characteristics are part of a role definition:
 \begin{itemize}
-	\item Uniqueness ---  A role can be \textit{unique} or \textit{multiple} within a group.
-	A unique role can be played by at most one agent in a group; a multiple role, on the other hand, can be played by any number of agents within a group. 
-	\item Competences --- A \textit{competence} specifies a condition the candidate agent must satisfy to be eligible to play the role within the group. 
-	\item Capacities --- A \textit{capacity} specifies an ability attributed to an agent while it is playing the role.
+	\item \textit{Uniqueness} ---  A role can be \textit{single} or \textit{multiple} within a group.
+	A \textit{single role} can be played by at most one agent in a group; a \textit{multiple role}, on the other hand, can be played by any number of agents within a group. 
+	\item \textit{Competences} --- A \textit{competence} specifies a condition the candidate agent must satisfy to be eligible to play the role.
+	\item \textit{Capacities} --- A \textit{capacity} specifies an ability attributed to an agent while it is playing the role.
 \end{itemize}
 By default a role is multiple, does not require any competences and does not provide any capacities.
 
@@ -115,10 +110,10 @@ It also has a capacity to revoke roles and cancel group membership.
 \subsection{Methodological Concepts}
 
 % Methodological model - about
-The Aalaadin methodological model contains so-called \textit{methodological concepts}.
-These concepts are not present directly in concrete organizations but only serve during the analysis and design phases.
+The \textit{Aalaadin} methodological model contains the so-called \textit{methodological concepts}.
+These concepts are not present directly in concrete organizations, but only serve during the analysis and design phases.
 Their purpose is to describe abstract organizations from which concrete organizations, described using the core concepts, will ultimately be derived.
-Figure~\ref{figure:aalaadin-metamodel} illustrates the entire Aalaadin metamodel. The dotted ellipsis is the demarcation line between the core and methodological models.
+Figure~\ref{figure:aalaadin-metamodel} illustrates the entire \textit{Aalaadin} metamodel. The dotted ellipsis is the demarcation line between the core and methodological models.
 
 % Figure: Aalaadin metamodel
 \begin{figure}[h]
@@ -137,13 +132,13 @@ It identifies all roles comprising the group and defines interactions among them
 % Group structure - definition characteristics
 A group structure is defined by:
 \begin{itemize}
-	\item a list of available roles (see role definition) that can be played by agents in the group and
-	\item a set of valid interaction schemes (including language) between roles.
+	\item a set of available roles that can be played by agents in the group, and
+	\item a set of valid interaction schemes between the roles.
 \end{itemize}
 
 % Group structure - partial instantiation
 Note that an actual group might be a partial instantiation of its defining group structure.
-This means that during the MAS execution, there might be a moment when some roles defined in the group structure are not played in a group.
+This means that during the MAS run, there might be a moment when some roles defined in the group structure are not played in an actual group.
 This dynamic nature of groups allows for a great deal of run-time flexibility.
 
 \subsubsection*{Organizational Structure}
@@ -153,21 +148,19 @@ The \textit{organizational structure}, as defined in \cite{Ferber97}, is a set o
 
 % Organizational structure - about
 The organizational structure can be seen as the specification of the problem to be solved (organization to be modelled) using a MAS.
-Any sort of heterogeneity within a single system (e.g. agent architecture or language heterogeneity) can be managed by different group structures involved in the organizational structure.
+Any sort of heterogeneity within a single system (e.g. agent architecture heterogeneity or language heterogeneity) can be managed by different group structures involved in the organizational structure.
 
 % Organizational structure - partial instantiation
 Similarly to groups, an actual organization can be a incomplete manifestation of its defining organizational structure.
-This means that while a MAS is being executed, there may be a point when some groups defined in the organizational structure are not present in an organization.
+This means that while a MAS is running, there may be a point when some groups defined in the organizational structure are not present in an organization.
 This also contributes to the overall run-time flexibility.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{MadKit}
 
 % MadKit - authors & references
-The authors of Aalaadin also developed an agent platform implementing their metamodel called MadKit (Multi-Agent Development Kit)
-\cite{Ferber97}, \cite{Ferber98} and \cite{Gutknecht00}.
+The authors of Aalaadin also developed an agent platform implementing their metamodel called \textit{MadKit}\footnote{Multi-Agent Development Kit ---\url{http://www.madkit.org/}} \cite{Ferber97}, \cite{Ferber98} and \cite{Gutknecht00}.
 
 % MadKit - basic philosophy
-The basic philosophy of the Aalaadin/MadKit architecture is to use the platform itself for its own management wherever possible.
-MadKit's main design principles are micro-kernel architecture and agentification of services;
-all services except for the most fundamental ones provided by the micro-kernel are implemented as agents, organized in groups and identified by roles \cite{Ferber98}.
+The basic philosophy of the \textit{Aalaadin/MadKit} architecture is to use the platform itself for its own management wherever possible.
+\textit{MadKit's} main design principles are \textit{micro-kernel architecture} and \textit{agentification of services}---all services except for the most fundamental ones provided by the micro-kernel are implemented as agents, organized in groups and identified by roles \cite{Ferber98}.
