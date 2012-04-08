@@ -199,11 +199,11 @@ To implement a concrete organization
 \end{enumerate}
 
 The following classes implement an organization's behaviour in all four role-related infrastructure protocols:
-\begin{itemize} % Labelled list
-	\item \texttt{Organization\_EnactRole\_ResponderParty} --- a responder party in the \textit{Enact role} protocol,
-	\item \texttt{Organization\_DeactRole\_ResponderParty} --- a responder party in the \textit{Deact role} protocol,
-	\item \texttt{Organization\_SubscribeToEvent\_ResponderParty} --- a responder party in the \textit{Subscribe to event} protocol, and
-	\item \texttt{Organization\_PublishEvent\_InitiatorParty} --- an initiator party in the \textit{Publish event} protocol.
+\begin{itemize}
+	\item \texttt{Organization\_EnactRole\_ResponderParty} implements a responder party in the \textit{Enact role} protocol,
+	\item \texttt{Organization\_DeactRole\_ResponderParty} implements a responder party in the \textit{Deact role} protocol,
+	\item \texttt{Organization\_SubscribeToEvent\_ResponderParty} implements a responder party in the \textit{Subscribe to event} protocol, and
+	\item \texttt{Organization\_PublishEvent\_InitiatorParty} implements an initiator party in the \textit{Publish event} protocol.
 \end{itemize}
 
 
@@ -221,11 +221,11 @@ To implement a concrete role
 \end{enumerate}
 
 The following classes implement a role's behaviour in all four role-related infrastructure protocols:
-\begin{itemize} % Labelled list
-	\item \texttt{Role\_ActivateRole\_ResponderParty} --- a responder party in the \textit{Activate role} protocol,
-	\item \texttt{Role\_DeactivateRole\_ResponderParty} --- a responder party in the \textit{Deactivate role} protocol,
-	\item \texttt{Role\_InvokeCompetence\_ResponderParty} --- a responder party in the \textit{Invoke competence} protocol, and
-	\item \texttt{Role\_InvokeResponsibility\_InitiatorParty} --- an initiator party in the \textit{Invoke responsibility} protocol.
+\begin{itemize}
+	\item \texttt{Role\_ActivateRole\_ResponderParty} implements a responder party in the \textit{Activate role} protocol,
+	\item \texttt{Role\_DeactivateRole\_ResponderParty} implements a responder party in the \textit{Deactivate role} protocol,
+	\item \texttt{Role\_InvokeCompetence\_ResponderParty} implements a responder party in the \textit{Invoke competence} protocol, and
+	\item \texttt{Role\_InvokeResponsibility\_InitiatorParty} implements an initiator party in the \textit{Invoke responsibility} protocol.
 \end{itemize}
 
 \subsubsection{Organization Knowledge Base}
@@ -290,15 +290,15 @@ To implement a concrete player
 \end{enumerate}
 
 The following classes implement a player's behaviour in all eight infrastructure protocols:
-\begin{itemize} % Labelled list
-	\item \texttt{Player\_EnactRole\_InitiatorParty} --- an initiator party in the \textit{Enact role} protocol,
-	\item \texttt{Player\_DeactRole\_InitiatorParty} --- an initiator party in the \textit{Deact role} protocol,
-	\item \texttt{Player\_SubscribeToEvent\_InitiatorParty} --- an initiator party in the \textit{Subscribe to event} protocol,
-	\item \texttt{Player\_PublishEvent\_ReponderParty} --- a responder party in the \textit{Publish event} protocol,
-	\item \texttt{Player\_ActivateRole\_InitiatorParty} --- an initiator party in the \textit{Activate role} protocol,
-	\item \texttt{Player\_DeactivateRole\_InitiatorParty} --- an initiator party in the \textit{Deactivate role} protocol,
-	\item\texttt{Player\_InvokeCompetence\_InitiatorParty} --- an initiator party in the \textit{Invoke competence} protocol, and
-	\item\texttt{Player\_InvokeResponsibility\_RespodnerParty} --- a responder party in the \textit{Invoke responsibility} protocol.
+\begin{itemize}
+	\item \texttt{Player\_EnactRole\_InitiatorParty} implements an initiator party in the \textit{Enact role} protocol,
+	\item \texttt{Player\_DeactRole\_InitiatorParty} implements an initiator party in the \textit{Deact role} protocol,
+	\item \texttt{Player\_SubscribeToEvent\_InitiatorParty} implements an initiator party in the \textit{Subscribe to event} protocol,
+	\item \texttt{Player\_PublishEvent\_ReponderParty} implements a responder party in the \textit{Publish event} protocol,
+	\item \texttt{Player\_ActivateRole\_InitiatorParty} implements an initiator party in the \textit{Activate role} protocol,
+	\item \texttt{Player\_DeactivateRole\_InitiatorParty} implements an initiator party in the \textit{Deactivate role} protocol,
+	\item\texttt{Player\_InvokeCompetence\_InitiatorParty} implements an initiator party in the \textit{Invoke competence} protocol, and
+	\item\texttt{Player\_InvokeResponsibility\_RespodnerParty} implements a responder party in the \textit{Invoke responsibility} protocol.
 \end{itemize}
 
 \subsubsection{Player Knowledge Base}
