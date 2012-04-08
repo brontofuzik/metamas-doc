@@ -16,10 +16,10 @@
 In this chapter, we will present our platform-independent metamodel for modelling organizations in MASs---\textit{Thespian}.
 
 % Thespian - defnition
-\textit{Thespian} is a metamodel to which platform-independent models of organizations in MASs must conform; in more detail, it is a model\footnote{Recall that a metamodel is a kind of model.} representing a modelling language \footnote{When can call this language the \textit{Thespian modelling language}.} to which platform-independent models of organizations in MASs must conform.
+\textit{Thespian} is a metamodel to which platform-independent models of organizations in MASs must conform; more precisely, it is a model\footnote{Recall that a metamodel is a kind of model.} representing a modelling language \footnote{When can call this language the \textit{Thespian modelling language}.} to which platform-independent models of organizations in MASs must conform.
 
 % Thespian name inspiration - Thespis of Icaria
-\textit{Thespian} is named after \textit{Thespis of Icaria} (present-day Dionysos, Greece), who lived in the 6th century BC and, according to certain Ancient Greece sources and especially Aristotle, was the first person ever to appear on stage as an actor playing a character in a play (instead of just speaking as himself) \cite{Wikipedia-Thespis}.
+The metamodel is named after \textit{Thespis of Icaria} (present-day Dionysos, Greece), who lived in the 6th century BC and, according to certain Ancient Greece sources and especially Aristotle, was the first person ever to appear on stage as an actor playing a character in a play (instead of speaking as themselves) \cite{Wikipedia-Thespis}.
 
 % Thespian inspiration - Aalaadin, O&P, PIM4Agents and powerJade
 \textit{Thespian} is inspired by all four metamodels introduced in the previous chapter: \textit{Aalaadin}, \textit{O\&P}, \textit{PIM4Agents} and \textit{powerJade}.
@@ -33,33 +33,13 @@ Similarly to \textit{PIM4Agents}, it enables explicit modelling of protocols and
 % powerJade 
 And finally like \textit{powerJade}, it is able to represent competences and responsibilities (called \textit{powers} and \textit{requirements} respectively in \textit{powerJade}) of roles.
 
-% Two partitions: {organization, player and protocol}, {desgn-time and run-time}
-The \textit{Thespian} metamodel can be partitioned in two orthogonal ways: in a high-level and low-level way.
-Both partitions will be described in the following sections; the integrated metamodel will be presented in the last section.
-
-% High-level partition
-The high-level partition divides the concepts according to the area they represent: organization, player or protocol.
-This is a more natural partition of the two since fewer dependencies among concepts from different parts exists than in the other partition.
-The organization/protocol part of the MAS can be designed (and implemented) independently of the player part; indeed agent developed by one team can become members of organizations and play roles developed by another team. 
-
-% Low-level partition
-The low-level partition separates the concepts based on whether they represent design-time or run-time entities.
-The design-time entities are created already at design-time and are usually implemented as \textit{agent classes} in the target agent platform; they are analogous to the concept of \textit{Class} in OOP.
-The run-time entities are created only at run-time and are usually implemented as \textit{agent instances} in the target agent platform; they are analogous to the concept of \textit{Instance} in OOP.
-
-% Type-token distinction - definition
-Before continuing with the presentation of \textit{Thespian}, it is important to explain the \textit{type-token distinction}.
-In disciplines such as philosophy and knowledge representation, the type-token distinction is a distinction that separates a \textit{concept} from objects that are particular \textit{instances} of that concept.
-\textit{Thespian} has been designed to support the type-token distinction and the correct differentiation is a recurring theme in this chapter.
-
-% Type-token distinction - MAS
-As an example of the type-token distinction, consider a MAS.
-The \textit{specification} of the MAS (its source code) is the \textit{MAS type} and its \textit{manifestation} (a running MAS) is the \textit{MAS token}.
-Just like a type can (and usually does) have many tokens, a MAS specification can have multiple manifestations---the same source code can be run many times.
-
-% Static & dynamic metamodels
-The \textit{Thespian} metamodel includes both a static and dynamic metamodels for describing structural and behavioural aspects of organizations respectively.
-In the following two sections, we will introduce both metamodels in detail.
+% Static & dynamic models
+The metamodel encompasses
+\begin{itemize}
+	\item a \textit{static model} for modelling static (structural) aspects of organizations, and
+	\item a \textit{dynamic model} for modelling their dynamic (behavioural) aspect.
+\end{itemize}
+In the following two sections, we will introduce both models in detail.
 
 \input{41-ch4-section1-static-metamodel.tex}
 
