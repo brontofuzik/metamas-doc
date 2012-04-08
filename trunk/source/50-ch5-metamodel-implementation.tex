@@ -22,7 +22,7 @@ However, first we talk briefly about agent platforms in general and about \texti
 % About agent platforms
 An agent platform is a software platform on which multi-agent systems---targeting this platform---can be run.
 Being a software platform, it abstracts the underlying hardware platform and operating system.
-Every agent platform comprises:
+Every agent platform comprises
 \begin{itemize}
 	\item a \textit{run-time environment}, in which a MAS can be run and
 	\item an \textit{framework}, using which a MAS can be built\footnote{A framework is actually an optional component of an agent platform; there are agent platforms that do not come with a framework, e.g. 3APL.}.
@@ -137,7 +137,7 @@ It has two implementations:
 
 % thespian4jade.behaviours.states.sender
 The \texttt{thespian4jade.behaviours.states.sender} package contains, above all, the \texttt{OuterSenderState} abstract class implementing a state in which the party sends a message to the other party.
-It is further specialized as:
+It is further specialized as
 \begin{itemize}
 	\item \texttt{SingleSenderState<TMessage>} implementing a state in which only one kind of message is sent,
 	\item \texttt{SendSuccessOrFailure<TMessage>} implementing a state in which two kinds of messages can be sent---one in case of success and the other one in case of failure---and 
@@ -199,11 +199,11 @@ To implement a concrete organization
 \end{enumerate}
 
 The following classes implement an organization's behaviour in all four role-related infrastructure protocols:
-\begin{itemize}
-	\item \texttt{Organization\_EnactRole\_ResponderParty}---a responder party in the \textit{Enact role} protocol,
-	\item \texttt{Organization\_DeactRole\_ResponderParty}---a responder party in the \textit{Deact role} protocol,
-	\item \texttt{Organization\_SubscribeToEvent\_ResponderParty}---a responder party in the \textit{Subscribe to event} protocol, and
-	\item \texttt{Organization\_PublishEvent\_InitiatorParty}---an initiator party in the \textit{Publish event} protocol.
+\begin{itemize} % Labelled list
+	\item \texttt{Organization\_EnactRole\_ResponderParty} --- a responder party in the \textit{Enact role} protocol,
+	\item \texttt{Organization\_DeactRole\_ResponderParty} --- a responder party in the \textit{Deact role} protocol,
+	\item \texttt{Organization\_SubscribeToEvent\_ResponderParty} --- a responder party in the \textit{Subscribe to event} protocol, and
+	\item \texttt{Organization\_PublishEvent\_InitiatorParty} --- an initiator party in the \textit{Publish event} protocol.
 \end{itemize}
 
 
@@ -221,11 +221,11 @@ To implement a concrete role
 \end{enumerate}
 
 The following classes implement a role's behaviour in all four role-related infrastructure protocols:
-\begin{itemize}
-	\item \texttt{Role\_ActivateRole\_ResponderParty}---a responder party in the \textit{Activate role} protocol,
-	\item \texttt{Role\_DeactivateRole\_ResponderParty}---a responder party in the \textit{Deactivate role} protocol --- ,
-	\item \texttt{Role\_InvokeCompetence\_ResponderParty}---a responder party in the \textit{Invoke competence} protocol, and
-	\item \texttt{Role\_InvokeResponsibility\_InitiatorParty}---an initiator party in the \textit{Invoke responsibility} protocol.
+\begin{itemize} % Labelled list
+	\item \texttt{Role\_ActivateRole\_ResponderParty} --- a responder party in the \textit{Activate role} protocol,
+	\item \texttt{Role\_DeactivateRole\_ResponderParty} --- a responder party in the \textit{Deactivate role} protocol,
+	\item \texttt{Role\_InvokeCompetence\_ResponderParty} --- a responder party in the \textit{Invoke competence} protocol, and
+	\item \texttt{Role\_InvokeResponsibility\_InitiatorParty} --- an initiator party in the \textit{Invoke responsibility} protocol.
 \end{itemize}
 
 \subsubsection{Organization Knowledge Base}
@@ -239,8 +239,8 @@ The \texttt{OrganizationKnowledgeBase} represents an organization's knowledge ba
 It stores knowledge about the players enacting roles in the organization (e.g. their responsibilities).
 It provides two views:
 \begin{itemize}
-	\item the \textit{Query} view, accessed via the \texttt{query()} method, exposing API to query the knowledge base, and
-	\item the \textit{Update} view, accessed via the \texttt{update()} method, exposing API to update the knowledge base.
+	\item \textit{Query}, accessed via the \texttt{query()} method, exposing API to query the knowledge base, and
+	\item \textit{Update}, accessed via the \texttt{update()} method, exposing API to update the knowledge base.
 \end{itemize}
 
 \subsubsection{Competence}
@@ -290,15 +290,15 @@ To implement a concrete player
 \end{enumerate}
 
 The following classes implement a player's behaviour in all eight infrastructure protocols:
-\begin{itemize}
-	\item \texttt{Player\_EnactRole\_InitiatorParty}---an initiator party in the \textit{Enact role} protocol,
-	\item \texttt{Player\_DeactRole\_InitiatorParty}---an initiator party in the \textit{Deact role} protocol,
-	\item \texttt{Player\_SubscribeToEvent\_InitiatorParty}---an initiator party in the \textit{Subscribe to event} protocol,
-	\item \texttt{Player\_PublishEvent\_ReponderParty}---a responder party in the \textit{Publish event} protocol,
-	\item \texttt{Player\_ActivateRole\_InitiatorParty}---an initiator party in the \textit{Activate role} protocol,
-	\item \texttt{Player\_DeactivateRole\_InitiatorParty}---an initiator party in the \textit{Deactivate role} protocol,
-	\item\texttt{Player\_InvokeCompetence\_InitiatorParty}---an initiator party in the \textit{Invoke competence} protocol, and
-	\item\texttt{Player\_InvokeResponsibility\_RespodnerParty}---a responder party in the \textit{Invoke responsibility} protocol.
+\begin{itemize} % Labelled list
+	\item \texttt{Player\_EnactRole\_InitiatorParty} --- an initiator party in the \textit{Enact role} protocol,
+	\item \texttt{Player\_DeactRole\_InitiatorParty} --- an initiator party in the \textit{Deact role} protocol,
+	\item \texttt{Player\_SubscribeToEvent\_InitiatorParty} --- an initiator party in the \textit{Subscribe to event} protocol,
+	\item \texttt{Player\_PublishEvent\_ReponderParty} --- a responder party in the \textit{Publish event} protocol,
+	\item \texttt{Player\_ActivateRole\_InitiatorParty} --- an initiator party in the \textit{Activate role} protocol,
+	\item \texttt{Player\_DeactivateRole\_InitiatorParty} --- an initiator party in the \textit{Deactivate role} protocol,
+	\item\texttt{Player\_InvokeCompetence\_InitiatorParty} --- an initiator party in the \textit{Invoke competence} protocol, and
+	\item\texttt{Player\_InvokeResponsibility\_RespodnerParty} --- a responder party in the \textit{Invoke responsibility} protocol.
 \end{itemize}
 
 \subsubsection{Player Knowledge Base}
@@ -359,28 +359,28 @@ There will be an identically named static class of similar purpose in each of ou
 The \texttt{thespian4jade.protocols.organization} package and its sub-packages contain classes modelling the protocols that control the interaction between a player and an organization:
 \begin{itemize}
 	% thespian4jade.protocols.organization.enactrole
-	\item the \texttt{EnactRoleProtocol} class models the \textit{Enact role} protocol,
+	\item \texttt{EnactRoleProtocol} models the \textit{Enact role} protocol,
 	% thespian4jade.protocols.organization.deactrole
-	\item the \texttt{DeactRoleProtocol} class represents the \textit{Deact role} protocol,
+	\item \texttt{DeactRoleProtocol} represents the \textit{Deact role} protocol,
 	% thespian4jade.protocols.organization.subscribetoevent
-	\item the \texttt{SubscribeToEventProtocol} class models the \textit{Subscribe to event} protocol, and
+	\item \texttt{SubscribeToEventProtocol} models the \textit{Subscribe to event} protocol, and
 	% thespian4jade.protocols.organization.publishrole
-	\item the \texttt{PublishEventProtocol} class represents the \textit{Publish event} protocol.
+	\item \texttt{PublishEventProtocol} represents the \textit{Publish event} protocol.
 \end{itemize}
 
 \subsubsection{Role Protocols}
 
 % thespian4jade.protocols.role
-The \texttt{thespian4jade.protocols.role} package and its sub-packages include classes representing the protocols that govern the communication between a player and a role (more precisely, a position) it enacts:
+The \texttt{thespian4jade.protocols.role} package and its sub-packages include classes representing the protocols that govern the communication between a player and a role:
 \begin{itemize}
 	%thespian4jade.protocols.role.activaterole
-	\item the \texttt{ActivateRoleProtocol} class models the \textit{Activate role} protocol,
+	\item \texttt{ActivateRoleProtocol} models the \textit{Activate role} protocol,
 	% thespian4jade.protocols.role.deactivaterole
-	\item the \texttt{DeactivateRoleProtocol} class represents the \textit{Deactivate role} protocol,
+	\item \texttt{DeactivateRoleProtocol} represents the \textit{Deactivate role} protocol,
 	% thespian4jade.protocols.role.invokecompetence
-	\item the \texttt{InvokeCompetenceProtocol} class models the \textit{Invoke competence} protocol, and
+	\item \texttt{InvokeCompetenceProtocol} models the \textit{Invoke competence} protocol, and
 	% thespian4jade.protocols.role.invokeresponsibility
-	\item the \texttt{InvokeResponsibilityProtocol} class represents the \textit{Invoke responsibility} protocol.
+	\item \texttt{InvokeResponsibilityProtocol} represents the \textit{Invoke responsibility} protocol.
 \end{itemize}
 
 \subsubsection{Messages}
