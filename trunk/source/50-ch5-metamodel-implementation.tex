@@ -99,7 +99,14 @@ In order for parties to be composable, their design follows the \textit{Composit
 \end{itemize}
 
 % Responder
-% TODO Describe the Responder class.
+The \texttt{Responder} abstract class implements a responder behaviour that receives protocol initiation messages and invokes the corresponding protocol responder parties.
+
+% Concrete responder implementation
+To implement a concrete responder:
+\begin{enumerate}
+	\item extend the \texttt{Responder} class, and
+	\item implement the constructor to add the protocols using the \texttt{addProtocol(protocol: Protocol)} method.
+\end{enumerate}}
 
 \subsubsection{States}
 
@@ -188,7 +195,7 @@ The \texttt{Organization\_Responder} class implements an organization's responde
 To implement a concrete organization:
 \begin{enumerate}
 	\item extend the \texttt{Organization} class, and
-	\item override the \texttt{action()} method to add the organization's roles using the \texttt{addRole(roleClass: Class)} method.	
+	\item override the \texttt{action()} method to add the organization's roles using the \texttt{addRole(roleClass: Class)} method.
 \end{enumerate}
 
 The following classes implement an organization's behaviour in all four role-related infrastructure protocols:
@@ -331,7 +338,7 @@ By virtue of good design, the same base classes that are used to model the appli
 % Protocol - package's main class
 The \texttt{Protocol} abstract class models an interaction (or communication) protocol.
 Although \textit{Thespian} has been designed to support protocols between more than two interacting parties, \textit{Thespian4Jade} currently supports only protocols between two parties: the initiator and responder parties.
-A concrete protocol must override two abstract methods (\textit{Abstract factory} design pattern):
+A concrete protocol must specify the protocol-initiating performative and override two abstract methods (\textit{Abstract factory} design pattern):
 \begin{itemize}
 	\item \texttt{createInitiatorParty()} that creates a new \texttt{InitiatorParty}, and
 	\item \texttt{createResponderParty()} that creates a new \texttt{ResponderParty}.
@@ -382,7 +389,7 @@ The \texttt{thespian4jade.protocols.role} package and its sub-packages include c
 The \texttt{thespian4jade.language}package holds classes modelling messages exchanged in the protocols.
 % Message - packages's main class 
 The \texttt{Message} abstract class models a message with structured content; it is an abstraction over \textit{Jade's} \texttt{ACLMessage} representing a message with unstructured content.
-A concrete message must override two abstract methods:
+A concrete message must specify the performative and override two abstract methods:
 \begin{itemize}
 	\item \texttt{generateACLMessage(): ACLMessage} that converts this T4J message to an ACL message to be sent, and
 	\item \texttt{parseACLMessage(aclMessage: ACLMessage)} that converts a received ACL message to this T4J message.
