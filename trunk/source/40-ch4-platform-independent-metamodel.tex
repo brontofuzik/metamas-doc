@@ -22,16 +22,17 @@ In this chapter, we will present our platform-independent metamodel for modellin
 The metamodel is named after \textit{Thespis of Icaria} (present-day Dionysos, Greece), who lived in the 6th century BC and, according to certain Ancient Greece sources and especially Aristotle, was the first person ever to appear on stage as an actor playing a character in a play (instead of speaking as themselves) \cite{Wikipedia-Thespis}.
 
 % Thespian inspiration - Aalaadin, O&P, PIM4Agents and powerJade
-\textit{Thespian} is inspired by all four metamodels introduced in the previous chapter: \textit{Aalaadin}, \textit{O\&P}, \textit{PIM4Agents} and \textit{powerJade}.
+The design of \textit{Thespian} is inspired, to a greater or lesser degree, by all four metamodels introduced in the previous chapter.
 % Aaalaadin
-Similarly to \textit{Aalaadin}, it contains both dynamic and static concepts (called \textit{core} and \textit{methodological} concepts in Aalaadin).
-Instances of dynamic/static concepts will end up as run-time/design-time entities in the platform-specific model.
+Similarly to \textit{Aalaadin}, its static model can be partitioned into a \textit{run-time model} and \textit{design-time model} (called \textit{core model} and \textit{methodological model} respectively in \textit{Aalaadin}.)
 % O&P
-Like \textit{O\&P}, it can be used to model holonic MASs.
+Like \textit{O\&P}, it can be used to model \textit{holonic} MASs\footnote{A \textit{holonic} MAS is a MAS where agents are \textit{holons}---simultaneously a \textit{whole} and a \textit{part}. This means that the agents in a holonic MAS can not only form aggregations, but these aggregations are full-fledged agents; in particular, they can form other aggregations and so on. An \textit{object} from OOP is another example of a holon.}.
 % PIM4Agents
-Similarly to \textit{PIM4Agents}, it enables explicit modelling of protocols and messages exchanged in these protocols.
-% powerJade 
-And finally like \textit{powerJade}, it is able to represent competences and responsibilities (called \textit{powers} and \textit{requirements} respectively in \textit{powerJade}) of roles.
+Similarly to \textit{PIM4Agents}, its static model contains concepts for modelling protocols and messages exchanged in these protocols. Overall, \textit{PIM4Agents} has had the least influence on \textit{Thespian} from all four metamodels.
+% powerJade
+And like \textit{powerJade}, it can be used to represent role \textit{competences} and \textit{responsibilities} (called \textit{powers} and \textit{requirements} respectively in \textit{powerJade}).
+Furthermore, \textit{Thespian's} dynamic model also makes a distinction between \textit{enacting} a role and actually \textit{activating} it.
+All in all, \textit{powerJade} has had the greatest influence on \textit{Thespian} from all four metamodels.
 
 % Static & dynamic models
 The metamodel encompasses
