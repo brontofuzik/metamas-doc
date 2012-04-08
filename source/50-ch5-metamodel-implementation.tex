@@ -102,7 +102,7 @@ In order for parties to be composable, their design follows the \textit{Composit
 The \texttt{Responder} abstract class implements a responder behaviour that receives protocol initiation messages and invokes the corresponding protocol responder parties.
 
 % Concrete responder implementation
-To implement a concrete responder:
+To implement a concrete responder
 \begin{enumerate}
 	\item extend the \texttt{Responder} class, and
 	\item implement the constructor to add the protocols using the \texttt{addProtocol(protocol: Protocol)} method.
@@ -192,7 +192,7 @@ Since organizations in \textit{Thespian4Jade} are agentified\footnote{An agentif
 The \texttt{Organization\_Responder} class implements an organization's responder behaviour configured to respond to the \textit{Enact role}, \textit{Deact role} and \textit{Subscribe to event} protocols.
 
 % Concrete organization type implementation
-To implement a concrete organization:
+To implement a concrete organization
 \begin{enumerate}
 	\item extend the \texttt{Organization} class, and
 	\item override the \texttt{action()} method to add the organization's roles using the \texttt{addRole(roleClass: Class)} method.
@@ -214,7 +214,7 @@ Since, like organizations, roles are agentified, the class extends \textit{Jade'
 The \texttt{Role\_Responder} class implements a role's default responder behaviour configured to respond to the \textit{Activate role}, \textit{Deactiavte role} and \textit{Invoke competence} protocols.
 
 % Concrete role implementation
-To implement a concrete role:
+To implement a concrete role
 \begin{enumerate}
 	\item extend the \texttt{Role} class, and
 	\item override the \texttt{action()} method to schedule the role's custom responder behaviour (if the role acts as a responder party in any application-logic protocol) and to add the role's competences using the \texttt{addCompetence(competenceClass: Class)} method.	
@@ -283,7 +283,7 @@ Since the player is basically an agent able to play roles in organizations, the 
 The \texttt{Player\_Responder} class implements a player's responder behaviour configured to respond to the \textit{Publish event} and \textit{Invoke responsibility} protocols.
 
 % Concrete player implementation
-To implement a concrete player:
+To implement a concrete player
 \begin{enumerate}
 	\item extend the \texttt{Player} class, and
 	\item override the \texttt{action()} method to add the player's responsibilities using the \texttt{addResponsibility(responsibilityClass: Class)} method.	
