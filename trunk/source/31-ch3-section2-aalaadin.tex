@@ -28,27 +28,21 @@ Put differently, an abstract organization is a (possibly infinite) set of all im
 Later we will use the terms \textit{organization type} and \textit{organization token} to refer to an abstract organization and a concrete organization respectively.
 These terms try to capture the essence of the relationship between an abstract and concrete organization (namely, a concrete organization being an instance of an abstract organization and conversely, an abstract organization being a class of a concrete organization)
 
-% Two levels: concrete and abstract
-The \textit{Aalaadin} metamodel has two levels:
-\begin{itemize}
-	\item The \textit{concrete level} contains relatively concrete concepts like \textit{Agent}, \textit{Group} and \textit{Role}.
-	The language represented by this level is used to model concrete organizations.
-	\item The \textit{abstract level} contains more abstract concepts like \textit{Group structure}, \textit{Organization structure} and \textit{Interaction}.
-	The language represented by this level is used to model abstract organizations.
-\end{itemize}
+% Two models: concrete and abstract
+The \textit{Aalaadin} metamodel comprises two models: \textit{Core model} and \textit{Methodological model}.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Core Model}
 
 % Core model - about
-The \textit{Aalaadin} core model contains the \textit{core concepts}: \textit{Agent}, \textit{Group} and \textit{Role}.
-Figure~\ref{figure:aalaadin-core-model} illustrates the core model.
+The \textit{Core model} contains concepts for modelling concrete organizations, the so-called \textit{core} concepts: \textit{Agent}, \textit{Group} and \textit{Role}.
+Figure~\ref{figure:aalaadin-core-model} illustrates the \textit{Core model}.
 
-% Figure: Aalaadin core model
+% Figure: Core model
 \begin{figure}[h]
 	\centering
 	\includegraphics[width=0.4\textwidth]{images/aalaadin/core-model.png}
-	\caption{The \textit{Aalaadin} core model \cite{Ferber97}}
+	\caption{The \textit{Core model} \cite{Ferber97}}
 	\label{figure:aalaadin-core-model}
 \end{figure}
 
@@ -109,10 +103,10 @@ It also has a capacity to revoke roles and cancel group membership.
 \subsection{Methodological Model}
 
 % Methodological model - about
-The \textit{Aalaadin} methodological model contains the so-called \textit{methodological concepts}: \textit{Organization structure}, \textit{Group structure}, \textit{Interaction} and \textit{Agent class}.
+The \textit{Methodological model} contains concepts for modelling abstract organizations, the so-called \textit{methodological} concepts: \textit{Organization structure}, \textit{Group structure}, \textit{Interaction} and \textit{Agent class}.
 These concepts are not present directly in concrete organizations, but only serve during the analysis and design phases.
 Their purpose is to describe abstract organizations from which concrete organizations, described using the core concepts, will ultimately be derived.
-Figure~\ref{figure:aalaadin-metamodel} illustrates the entire \textit{Aalaadin} metamodel. The dotted ellipsis is the demarcation line between the core and methodological models.
+Figure~\ref{figure:aalaadin-metamodel} illustrates the integrated \textit{Aalaadin} metamodel. The dotted ellipsis is the demarcation line between the \textit{Core model} and \textit{Methodological model}.
 
 % Figure: Aalaadin metamodel
 \begin{figure}[h]
