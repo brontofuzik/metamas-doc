@@ -13,8 +13,8 @@
 \chapter{Metamodel Implementation---Thespian4Jade}
 
 % Chapter - intro
-In this chapter, we will present an implementation of the \textit{Thespian} metamodel for the \textit{Jade} agent platform---\textit{Thespian4Jade}.
-However, first we talk briefly about agent platforms in general and about \textit{Jade} in particular. 
+In this chapter, we will present our implementation of the \textit{Thespian} metamodel for the \textit{Jade} agent platform---\textit{Thespian4Jade}.
+However, first we talk briefly about agent platforms in general and about \textit{Jade} in particular.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Agent Platform}
@@ -82,8 +82,9 @@ To run \textit{Jade} 4.1.1, the Java Platform, Standard Edition (Java SE) 1.4 or
 \section{Thespian4Jade}
 
 % Thespian4Jade - definition
-\textit{Thespian4Jade} is an implementation of the \textit{Thespian} metamodel for the \textit{Jade} platform.
+\textit{Thespian4Jade} is our implementation of the \textit{Thespian} metamodel for the \textit{Jade} platform.
 It is a module extending the \textit{Jade} framework with classes that can be subclassed to define platform-specific models of organizations in a MAS running on the \textit{Jade} platform.
+\textit{Thespian4Jade} is one of our two contributions to the field, the other one being \textit{Thespian}.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{States and Parties}
@@ -448,6 +449,6 @@ Note that a \texttt{Future<T>} implements both the \texttt{IObserver} and \textt
 % thespian4jade.example package
 The \texttt{thespian4jade.example} package holds classes that extend the base classes (e.g. \texttt{Player}) with functionality that is used in all three examples, yet is not belong to the extended class.
 % RoleEnacterPlayer
-The \texttt{RoleEnacterPlayer} class models a player whose intention is to enact a role in an organization and both the role and the organization are predetermined.
+The \texttt{RoleEnacterPlayer} class models a player whose intention is to enact a role in an organization, and both the role and the organization are predetermined.
 % COmpetenceInvokerPlayer
 The \texttt{CompetenceInvoker} class, represents a player who intends to invoke a predetermined competence. Such player is also a role-enacter since the competence has to be invoked on some predetermined role.
