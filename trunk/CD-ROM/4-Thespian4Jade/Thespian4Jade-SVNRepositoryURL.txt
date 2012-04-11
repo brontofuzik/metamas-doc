@@ -1,0 +1,4 @@
+Thespian4Jade SVN repository URL
+--------------------------------
+
+http://metamas.googlecode.com/svn/trunk/Thespian4Jade

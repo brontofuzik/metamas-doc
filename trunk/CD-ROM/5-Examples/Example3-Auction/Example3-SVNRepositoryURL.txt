@@ -1,0 +1,4 @@
+Example3-Auction SVN Repository URL
+-----------------------------------
+
+http://metamas.googlecode.com/svn/trunk/Example3Auction
