@@ -1,4 +1,7 @@
-﻿Title (en): Multiagent Systems and Organizations
+﻿Contact Details
+---------------
+
+Title (en): Multi-Agent Systems and Organizations
 
 Title (cs): Multiagentní systémy a organizace
 
